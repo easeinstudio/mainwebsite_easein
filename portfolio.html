@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Portfolio • Easein Studio</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="portfolio.css" />
+</head>
+<body>
+
+ <!-- Cursor Glow (hidden on mobile via JS) -->
+  <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="header">
+    <nav class="navbar">
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="Easein Studio Logo" class="logo" />
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About Us</a></li>
+        
+        <li class="dropdown">
+          <a class="nav-link" href="#services">Services ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="/ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="/ad.html">Ads</a></li>
+            <li><a href="/ugc.html">UGC Videos</a></li>
+            <li><a href="/brand.html">Brand Videos</a></li>
+            <li><a href="/podcast.html">Podcast Production</a></li>
+            <li><a href="/motion.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="nav-link" href="#portfolio">Portfolio ▾</a>
+          <ul class="dropdown-menu">
+           <li><a href="portfolio.html">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html">Ads</a></li>
+            <li><a href="portfolio.html">UGC Videos</a></li>
+            <li><a href="portfolio.html">Brand Videos</a></li>
+            <li><a href="portfolio.html">Podcast Production</a></li>
+            <li><a href="portfolio.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!-- HAMBURGER -->
+      <button id="hamburger" class="hamburger" aria-label="Open Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span another="hamburger-line"></span>
+      </button>
+    </nav>
+  </header>
+
+
+  <!-- ===================== FULL-SCREEN MOBILE MENU ===================== -->
+  <div id="mobileMenu" class="mobile-menu">
+
+    <!-- CLOSE BUTTON -->
+    <button id="mobileClose" class="mobile-close">&times;</button>
+
+    <!-- SCROLLABLE MENU CONTENT -->
+    <div class="mobile-content">
+
+      <ul class="mobile-links">
+
+        <li><a href="index.html" class="mobile-link">Home</a></li>
+        <li><a href="about.html" class="mobile-link">About Us</a></li>
+
+        <!-- Services Accordion -->
+        <li class="mobile-accordion">
+          <button class="accordion-toggle">Services ▾</button>
+          <ul class="accordion-panel">
+            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="ad.html">Ads</a></li>
+            <li><a href="ugc.html">UGC Videos</a></li>
+            <li><a href="brand.html">Brand Videos</a></li>
+            <li><a href="podcast.html">Podcast Production</a></li>
+            <li><a href="motion.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <!-- Portfolio Accordion -->
+        <li class="mobile-accordion">
+          <button class="accordion-toggle">Portfolio ▾</button>
+          <ul class="accordion-panel">
+            <li><a href="portfolio.html">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html">Ads</a></li>
+            <li><a href="portfolio.html">UGC Videos</a></li>
+            <li><a href="portfolio.html">Brand Videos</a></li>
+            <li><a href="portfolio.html">Podcast Production</a></li>
+            <li><a href="portfolio.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
+
+      </ul>
+
+    </div>
+  </div>
+
+  <main class="portfolio-page" id="top">
+   
+
+    <section class="portfolio-hero">
+      <div class="portfolio-hero-inner">
+        <div class="portfolio-hero-text">
+          <p class="hero-tag">OUR WORK</p>
+          <h1 class="hero-heading">
+            A portfolio of <span class="accent">videos</span> that
+            engage, inspire, and convert.
+          </h1>
+          <p class="hero-sub">
+            Explore the different types of content we create for brands,
+            creators, and storytellers using modern editing and AI-powered workflows.
+          </p>
+
+          <div class="hero-pills">
+            <button class="pill" type="button" data-target="#ai-videos">
+              <span class="material-symbols-rounded">auto_awesome_motion</span>
+              AI Generated
+            </button>
+            <button class="pill" type="button" data-target="#ads">
+              <span class="material-symbols-rounded">ads_click</span>
+              Ads
+            </button>
+            <button class="pill" type="button" data-target="#ugc">
+              <span class="material-symbols-rounded">smartphone</span>
+              UGC Videos
+            </button>
+            <button class="pill" type="button" data-target="#podcast">
+              <span class="material-symbols-rounded">mic</span>
+              Podcast Production
+            </button>
+            <button class="pill" type="button" data-target="#motion-graphics">
+              <span class="material-symbols-rounded">animation</span>
+              Motion Graphics
+            </button>
+          </div>
+        </div>
+
+        <div class="portfolio-hero-visual">
+          <div class="hero-reel-container">
+            <video class="reel-video video-blur" autoplay loop muted playsinline>
+              <source src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765136053/EaseinStudio_Brand_position_website_hero_banner_video_gspmre_1_kowydf.mp4" type="video/mp4">
+            </video>
+
+            <video class="reel-video video-main" autoplay loop muted playsinline>
+              <source src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765136053/EaseinStudio_Brand_position_website_hero_banner_video_gspmre_1_kowydf.mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+      <!-- Ghost Parallax Text -->
+  <div class="ghost-text">EASEIN STUDIO</div>
+
+    <section class="portfolio-section" id="ai-videos">
+      <div class="section-header">
+        <div>
+          <p class="section-tag">AI GENERATED</p>
+          <h2>AI Generated Videos</h2>
+        </div>
+        <p class="section-desc">Smart content powered by AI creativity.</p>
+      </div>
+
+      <div class="portfolio-carousel" data-carousel="ai">
+        <button class="carousel-btn prev" aria-label="Previous">
+          <span class="material-symbols-rounded">chevron_left</span>
+        </button>
+
+        <div class="carousel-track">
+          <article class="video-card">
+            <div class="thumb-wrapper">
+              <video
+                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853922/Ambhuwachi_Mela_2025_llgkwk.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" aria-label="Play video" type="button">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Festival</span>
+                <span class="duration">0:45</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Ambubachi Mela 2025</h3>
+              <p>Cinematic vertical coverage of one of the most spiritual gatherings.</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumb-wrapper">
+              <video
+                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853919/Jab_Tu_Sajan_uq2ak7.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" aria-label="Play video" type="button">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Music</span>
+                <span class="duration">0:30</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Jab Tu Sajan</h3>
+              <p>Emotion-led edit blending performance, story, and rhythm.</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumb-wrapper">
+              <video
+                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853910/Jaganath_Yatra_2025_lmpdvi.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" aria-label="Play video" type="button">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Yatra</span>
+                <span class="duration">0:58</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Jagannath Yatra 2025</h3>
+              <p>Vertical documentary-style edit capturing culture and devotion.</p>
+            </div>
+          </article>
+          
+        </div>
+
+        <button class="carousel-btn next" aria-label="Next">
+          <span class="material-symbols-rounded">chevron_right</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="portfolio-section" id="ads">
+      <div class="section-header">
+        <div>
+          <p class="section-tag">COMMERCIALS</p>
+          <h2>Ads</h2>
+        </div>
+        <p class="section-desc">Creative stories designed to sell.</p>
+      </div>
+
+      <div class="portfolio-carousel" data-carousel="ads">
+        <button class="carousel-btn prev" aria-label="Previous">
+          <span class="material-symbols-rounded">chevron_left</span>
+        </button>
+
+        <div class="carousel-track">
+          <article class="video-card">
+            <div class="thumb-wrapper">
+              <video
+                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853885/Budweiser_magnum_beer_ixwys8.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" aria-label="Play video" type="button">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Product</span>
+                <span class="duration">0:20</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Budweiser Magnum</h3>
+              <p>Bold, punchy product spot with fast cuts and impact frames.</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="thumb-wrapper">
+               <video
+                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853882/Red_Bull_fggzix.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" type="button" aria-label="Play video">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Social Ad</span>
+                <span class="duration">0:18</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Red Bull Vertical Spot</h3>
+              <p>High-energy vertical ad cut for social feeds and reels.</p>
+            </div>
+          </article>
+          
+           <article class="video-card">
+            <div class="thumb-wrapper">
+              <video
+                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853797/Cadbury_dairy_milk_dmjdbn.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" aria-label="Play video" type="button">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Brand</span>
+                <span class="duration">0:32</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Cadbury Dairy Milk</h3>
+              <p>Warm, story-first edit focused on emotion and brand recall.</p>
+            </div>
+          </article>
+          <article class="video-card">
+            <div class="thumb-wrapper">
+              <video
+                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853866/KFC_raaeur.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" aria-label="Play video" type="button">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Brand</span>
+                <span class="duration">0:32</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Cadbury Dairy Milk</h3>
+              <p>Warm, story-first edit focused on emotion and brand recall.</p>
+            </div>
+          </article>
+            <article class="video-card">
+            <div class="thumb-wrapper">
+              <video
+                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853834/Maggi_p3uaan.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" aria-label="Play video" type="button">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Brand</span>
+                <span class="duration">0:32</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Maggi Street Style Edition</h3>
+              <p>Short, punchy vertical edit made for reels and social media engagement.</p>
+            </div>
+          </article>
+          <article class="video-card">
+            <div class="thumb-wrapper">
+               <video
+                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853809/VID_20250617_060151_646_bsl_nq8khi.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" type="button" aria-label="Play video">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Testimonial</span>
+                <span class="duration">0:45</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>KFC Hot & Crispy Vertical Cut – ANF</h3>
+              <p>Short, punchy vertical ad tailored for reels and social feeds.</p>
+            </div>
+          </article>
+          
+        </div>
+
+        <button class="carousel-btn next" aria-label="Next">
+          <span class="material-symbols-rounded">chevron_right</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="portfolio-section" id="ugc">
+      <div class="section-header">
+        <div>
+          <p class="section-tag">UGC</p>
+          <h2>UGC Videos</h2>
+        </div>
+        <p class="section-desc">Authentic content that builds trust.</p>
+      </div>
+
+      <div class="portfolio-carousel" data-carousel="ugc">
+        <button class="carousel-btn prev" aria-label="Previous">
+          <span class="material-symbols-rounded">chevron_left</span>
+        </button>
+
+        <div class="carousel-track">
+          <article class="video-card">
+            <div class="thumb-wrapper">
+               <video
+                src=""
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" type="button" aria-label="Play video">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Testimonial</span>
+                <span class="duration">0:45</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Coming Soon</h3>
+              <p></p>
+            </div>
+          </article>
+
+          <article class="video-card">
+               <div class="thumb-wrapper">
+               <video
+                src=""
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" type="button" aria-label="Play video">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Testimonial</span>
+                <span class="duration">0:45</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Coming Soon</h3>
+              <p></p>
+            </div>
+          </article>
+        </div>
+
+        <button class="carousel-btn next" aria-label="Next">
+          <span class="material-symbols-rounded">chevron_right</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="portfolio-section" id="podcast">
+      <div class="section-header">
+        <div>
+          <p class="section-tag">PODCAST</p>
+          <h2>Podcast Production</h2>
+        </div>
+        <p class="section-desc">Bringing voices to life through visuals.</p>
+      </div>
+
+      <div class="portfolio-carousel" data-carousel="podcast">
+        <button class="carousel-btn prev" aria-label="Previous">
+          <span class="material-symbols-rounded">chevron_left</span>
+        </button>
+
+        <div class="carousel-track">
+          <article class="video-card">
+               <div class="thumb-wrapper">
+               <video
+                src=""
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" type="button" aria-label="Play video">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Testimonial</span>
+                <span class="duration">0:45</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Coming Soon</h3>
+              <p></p>
+            </div>
+          </article>
+          <article class="video-card">
+               <div class="thumb-wrapper">
+               <video
+                src=""
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" type="button" aria-label="Play video">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Testimonial</span>
+                <span class="duration">0:45</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Coming Soon</h3>
+              <p></p>
+            </div>
+          </article>
+          <article class="video-card">
+               <div class="thumb-wrapper">
+               <video
+                src=""
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" type="button" aria-label="Play video">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Testimonial</span>
+                <span class="duration">0:45</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Coming Soon</h3>
+              <p></p>
+            </div>
+          </article>
+       
+        </div>
+
+        <button class="carousel-btn next" aria-label="Next">
+          <span class="material-symbols-rounded">chevron_right</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="portfolio-section" id="motion-graphics">
+      <div class="section-header">
+        <div>
+          <p class="section-tag">MOTION GRAPHICS</p>
+          <h2>Motion Graphics</h2>
+        </div>
+        <p class="section-desc">Animations that make every frame count.</p>
+      </div>
+
+      <div class="portfolio-carousel" data-carousel="motion">
+        <button class="carousel-btn prev" aria-label="Previous">
+          <span class="material-symbols-rounded">chevron_left</span>
+        </button>
+
+        <div class="carousel-track">
+          <article class="video-card">
+               <div class="thumb-wrapper">
+               <video
+                src=""
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" type="button" aria-label="Play video">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Testimonial</span>
+                <span class="duration">0:45</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Coming Soon</h3>
+              <p></p>
+            </div>
+          </article>
+          <article class="video-card">
+               <div class="thumb-wrapper">
+               <video
+                src=""
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" type="button" aria-label="Play video">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Testimonial</span>
+                <span class="duration">0:45</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Coming Soon</h3>
+              <p></p>
+            </div>
+          </article>
+          <article class="video-card">
+               <div class="thumb-wrapper">
+               <video
+                src=""
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="thumb-overlay">
+                <button class="play-btn" type="button" aria-label="Play video">
+                  <span class="material-symbols-rounded">play_arrow</span>
+                </button>
+                <span class="badge">Testimonial</span>
+                <span class="duration">0:45</span>
+              </div>
+            </div>
+            <div class="video-meta">
+              <h3>Coming Soon</h3>
+              <p></p>
+            </div>
+          </article>
+          
+        </div>
+
+        <button class="carousel-btn next" aria-label="Next">
+          <span class="material-symbols-rounded">chevron_right</span>
+        </button>
+      </div>
+    </section>
+    <!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- COLUMN 1 – ABOUT -->
+    <div class="footer-col">
+      <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
+
+      <p class="footer-about">
+        Easein Studio helps individuals and brands tell their stories through 
+        powerful videos. From ads to podcasts, our team brings your ideas to life 
+        with creativity and precision.
+      </p>
+
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <!-- COLUMN 2 – QUICK LINKS -->
+    <div class="footer-col">
+      <h3 class="footer-title">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- COLUMN 3 – CONTACT -->
+    <div class="footer-col">
+      <h3 class="footer-title">Let’s Talk</h3>
+
+      <p class="footer-contact"><strong>Location:</strong> India</p>
+      <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
+      <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
+
+      <a href="#contact" class="footer-cta">Get a Free Quote</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>© 2025 Easein Studio. All rights reserved.</p>
+    <p>Designed by RBP Digital 360</p>
+  </div>
+
+</footer>
+
+  </main>
+
+  <script src="portfolio.js"></script>
+</body>
+</html>

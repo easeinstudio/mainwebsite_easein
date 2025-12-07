@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <title>AI-Generated Videos | Easein Studio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Cursor Glow (hidden on mobile via JS) -->
+  <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="header">
+    <nav class="navbar">
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="Easein Studio Logo" class="logo" />
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About Us</a></li>
+        
+        <li class="dropdown">
+          <a class="nav-link" href="#services">Services ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="/ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="/ad.html">Ads</a></li>
+            <li><a href="/ugc.html">UGC Videos</a></li>
+            <li><a href="/brand.html">Brand Videos</a></li>
+            <li><a href="/podcast.html">Podcast Production</a></li>
+            <li><a href="/motion.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="nav-link" href="#portfolio">Portfolio ▾</a>
+          <ul class="dropdown-menu">
+           <li><a href="portfolio.html">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html">Ads</a></li>
+            <li><a href="portfolio.html">UGC Videos</a></li>
+            <li><a href="portfolio.html">Brand Videos</a></li>
+            <li><a href="portfolio.html">Podcast Production</a></li>
+            <li><a href="portfolio.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!-- HAMBURGER -->
+      <button id="hamburger" class="hamburger" aria-label="Open Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span another="hamburger-line"></span>
+      </button>
+    </nav>
+  </header>
+
+
+  <!-- ===================== FULL-SCREEN MOBILE MENU ===================== -->
+  <div id="mobileMenu" class="mobile-menu">
+
+    <!-- CLOSE BUTTON -->
+    <button id="mobileClose" class="mobile-close">&times;</button>
+
+    <!-- SCROLLABLE MENU CONTENT -->
+    <div class="mobile-content">
+
+      <ul class="mobile-links">
+
+        <li><a href="index.html" class="mobile-link">Home</a></li>
+        <li><a href="about.html" class="mobile-link">About Us</a></li>
+
+        <!-- Services Accordion -->
+        <li class="mobile-accordion">
+          <button class="accordion-toggle">Services ▾</button>
+          <ul class="accordion-panel">
+            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="ad.html">Ads</a></li>
+            <li><a href="ugc.html">UGC Videos</a></li>
+            <li><a href="brand.html">Brand Videos</a></li>
+            <li><a href="podcast.html">Podcast Production</a></li>
+            <li><a href="motion.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <!-- Portfolio Accordion -->
+        <li class="mobile-accordion">
+          <button class="accordion-toggle">Portfolio ▾</button>
+          <ul class="accordion-panel">
+            <li><a href="portfolio.html">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html">Ads</a></li>
+            <li><a href="portfolio.html">UGC Videos</a></li>
+            <li><a href="portfolio.html">Brand Videos</a></li>
+            <li><a href="portfolio.html">Podcast Production</a></li>
+            <li><a href="portfolio.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
+
+      </ul>
+
+    </div>
+  </div>
+  <!-- Ghost Parallax Text (reusing global ghost styles & JS) -->
+<div class="ghost-text">EASEIN STUDIO</div>
+
+<!-- ===================== AI SERVICE HERO ===================== -->
+<section class="service-hero">
+  <div class="service-hero-inner">
+    
+    <!-- LEFT: Text content -->
+    <div class="service-hero-left">
+      <p class="service-pill">Podcast Video Production</p>
+      
+      <h1 class="service-hero-title">
+        Deliver the best of
+        <span class="service-hero-highlight">Podcast Production.</span>
+      </h1>
+
+      <p class="service-hero-subtext">
+       Turn your podcast into a full visual experience. We edit and brand your podcast for YouTube,
+        Spotify Video, and social channels — making every episode look professional and engaging.
+      </p>
+
+      <div class="service-hero-cta">
+        <a href="#ai-contact" class="btn-primary">Request a Demo</a>
+        <a href="/portfolio/ai-videos.html" class="btn-secondary">Our Portfolio</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: AI Orbit visual -->
+    <div class="service-hero-right">
+      <div class="service-orbit">
+        <div class="orbit-ring orbit-ring-1"></div>
+        <div class="orbit-ring orbit-ring-2"></div>
+
+        <div class="orbit-core">
+          <span >Podcast</span>
+        </div>
+
+        <div class="orbit-node orbit-node-1">Podcasters</div>
+        <div class="orbit-node orbit-node-2">Thought Leaders </div>
+        <div class="orbit-node orbit-node-3">Coaches</div>
+        <div class="orbit-node orbit-node-4">Interview Shows</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ===================== WHAT'S INCLUDED (UPDATED) ===================== -->
+<section class="service-section service-included" id="ai-included">
+  <div class="service-included-inner">
+
+    <!-- LEFT CONTENT -->
+    <div class="included-left">
+      <div class="service-section-header">
+        <h2 class="service-section-title">What’s Included</h2>
+        <p class="service-section-sub">
+          Everything you need to go from a rough idea to a polished Podcast Video.
+        </p>
+      </div>
+
+      <div class="included-list">
+        <div class="included-card"><span>●</span> Audio cleanup & mastering</div>
+        <div class="included-card"><span>●</span> Multi-camera sync & editing (if available)</div>
+        <div class="included-card"><span>●</span> Branded intro/outro, lower-thirds, visuals</div>
+        <div class="included-card"><span>●</span> Subtitles and social highlight clips</div>
+        <div class="included-card"><span>●</span> 2 rounds of revisions</div>
+      </div>
+    </div>
+
+    <!-- RIGHT VISUAL -->
+    <div class="included-right">
+      <div class="included-visual">
+        <img src="head.jpg" class="included-image" alt="AI Module">
+        <div class="included-ring included-ring-1"></div>
+        <div class="included-ring included-ring-2"></div>
+        <div class="included-scan"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ===================== AI SPLIT SECTION (IDEAL + PROCESS) ===================== -->
+<section class="ai-split-section">
+  <div class="ai-split-inner">
+
+    <!-- LEFT: IDEAL FOR -->
+    <div class="ai-col ai-col-left">
+      <h2 class="service-section-title">Ideal For</h2>
+      <p class="service-section-sub">
+        Good Quality Production always helps in Scaling.
+      </p>
+
+      <div class="ai-chip-grid">
+        <span class="ai-chip">Podcasters</span>
+        <span class="ai-chip">Coaches</span>
+        <span class="ai-chip">Thought Leaders </span>
+        <span class="ai-chip">Interview Shows</span>
+      </div>
+    </div>
+
+    <!-- MIDDLE: AI CORE ANIMATION -->
+    <div class="ai-col ai-col-middle">
+      <div class="ai-core">
+        <!-- vertical data beam -->
+        <div class="ai-core-beam"></div>
+
+        <!-- pulsing core -->
+        <div class="ai-core-node">
+          <span>Podcast</span>
+        </div>
+
+        <!-- orbit rings -->
+        <div class="ai-core-ring ai-core-ring-1"></div>
+        <div class="ai-core-ring ai-core-ring-2"></div>
+
+        <!-- floating data bits -->
+        <div class="ai-core-dot ai-core-dot-1"></div>
+        <div class="ai-core-dot ai-core-dot-2"></div>
+        <div class="ai-core-dot ai-core-dot-3"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: PROCESS -->
+    <div class="ai-col ai-col-right">
+      <h2 class="service-section-title">Process</h2>
+      <p class="service-section-sub">
+        A simple, transparent pipeline — with AI where it helps and humans where it matters.
+      </p>
+
+      <ol class="ai-process-list">
+        <li class="ai-process-step">
+          <div class="ai-step-badge">01</div>
+          <div class="ai-step-body">
+            <h3>Brief &amp; Script</h3>
+            <p>We start with your objective, audience, and key message — then shape that into a clear script.</p>
+          </div>
+        </li>
+        <li class="ai-process-step">
+          <div class="ai-step-badge">02</div>
+          <div class="ai-step-body">
+            <h3>AI Draft Generation</h3>
+            <p>We generate AI-based visuals, avatars, or scenes to match the script and visual direction.</p>
+          </div>
+        </li>
+        <li class="ai-process-step">
+          <div class="ai-step-badge">03</div>
+          <div class="ai-step-body">
+            <h3>Human Edit &amp; Polish</h3>
+            <p>Our editors refine pacing, transitions, graphics, and audio for a natural, human feel.</p>
+          </div>
+        </li>
+        <li class="ai-process-step">
+          <div class="ai-step-badge">04</div>
+          <div class="ai-step-body">
+            <h3>Final Delivery</h3>
+            <p>We export platform-ready versions and deliver in your required formats and aspect ratios.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+<section id="why" class="why-section hologram-section">
+
+  <!-- subtle hologram texture (uses uploaded image) -->
+  <div class="holo-texture" aria-hidden="true"></div>
+
+  <!-- floating orbs (AI particles) -->
+  <div class="holo-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+<!-- new section why choose -->
+<section class="why-ai-section">
+  <div class="why-ai-inner">
+
+    <h2 class="why-ai-title">Why Choose AI Videos from <span class="highlight-cyan gradient-text ">Easein Studio</span></h2>
+
+    <div class="why-ai-list">
+      <div class="why-ai-card">
+        <span class="icon">⚡</span>
+        <p>Save up to 70% production time</p>
+      </div>
+
+      <div class="why-ai-card">
+        <span class="icon">📈</span>
+        <p>Scale your content output affordably</p>
+      </div>
+
+      <div class="why-ai-card">
+        <span class="icon">✨</span>
+        <p>Combine AI precision with human creativity</p>
+      </div>
+
+      <div class="why-ai-card">
+        <span class="icon">🚀</span>
+        <p>Perfect for brands experimenting with automation</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SAMPLE WORK SHOWCASE – AI ===================== -->
+<section class="service-section ai-showcase" id="ai-showcase">
+  <!-- full-width background band -->
+  <div class="ai-showcase-bg-band"></div>
+
+  <div class="ai-showcase-inner">
+    <div class="service-section-header ai-showcase-header">
+      <h2 class="service-section-title">Sample Work Showcase</h2>
+      <p class="service-section-sub">
+        Featured AI-powered videos — from explainers to short-form ads.
+      </p>
+    </div>
+
+    <div class="ai-showcase-window">
+      <div class="ai-showcase-track">
+
+        <!-- CARD 1 -->
+        <div class="ai-showcase-card">
+          <div class="ai-showcase-thumb">
+            <!-- 🔧 replace src & poster with your real files -->
+            <video
+              class="ai-showcase-video"
+              src="ai-video1.mp4"
+              poster="ai-thumb1.jpg"
+              muted
+            ></video>
+            <div class="ai-showcase-overlay">
+              <span>▶</span>
+            </div>
+          </div>
+          <p class="ai-showcase-caption">video 1</p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="ai-showcase-card">
+          <div class="ai-showcase-thumb">
+            <video
+              class="ai-showcase-video"
+              src="ai-video2.mp4"
+              poster="ai-thumb2.jpg"
+              muted
+            ></video>
+            <div class="ai-showcase-overlay">
+              <span>▶</span>
+            </div>
+          </div>
+          <p class="ai-showcase-caption">video 2</p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="ai-showcase-card">
+          <div class="ai-showcase-thumb">
+            <video
+              class="ai-showcase-video"
+              src="ai-video3.mp4"
+              poster="ai-thumb3.jpg"
+              muted
+            ></video>
+            <div class="ai-showcase-overlay">
+              <span>▶</span>
+            </div>
+          </div>
+          <p class="ai-showcase-caption">video 3</p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="ai-showcase-card">
+          <div class="ai-showcase-thumb">
+            <video
+              class="ai-showcase-video"
+              src="ai-video4.mp4"
+              poster="ai-thumb4.jpg"
+              muted
+            ></video>
+            <div class="ai-showcase-overlay">
+              <span>▶</span>
+            </div>
+          </div>
+          <p class="ai-showcase-caption">video 4</p>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="ai-showcase-card">
+          <div class="ai-showcase-thumb">
+            <video
+              class="ai-showcase-video"
+              src="ai-video5.mp4"
+              poster="ai-thumb5.jpg"
+              muted
+            ></video>
+            <div class="ai-showcase-overlay">
+              <span>▶</span>
+            </div>
+          </div>
+          <p class="ai-showcase-caption">video 5</p>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="ai-showcase-card">
+          <div class="ai-showcase-thumb">
+            <video
+              class="ai-showcase-video"
+              src="ai-video6.mp4"
+              poster="ai-thumb6.jpg"
+              muted
+            ></video>
+            <div class="ai-showcase-overlay">
+              <span>▶</span>
+            </div>
+          </div>
+          <p class="ai-showcase-caption">Video 6</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="ai-showcase-cta">
+      <a href="/portfolio#ai-videos" class="ai-showcase-btn">View More Samples in Portfolio</a>
+    </div>
+  </div>
+</section>
+<!-- ===================== CTA BANNER ===================== -->
+<section class="cta-banner">
+  <!-- Neon Strip -->
+  <div class="cta-neon-strip"></div>
+  <div class="cta-particles"></div>
+  <div class="cta-content">
+    <h2 class="cta-title">Ready to Scale Your Content with AI?</h2>
+    <p class="cta-sub">Let’s build it.</p>
+    <a href="#contact" class="cta-btn">Request an AI Video</a>
+  </div>
+</section>
+  <!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- COLUMN 1 – ABOUT -->
+    <div class="footer-col">
+      <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
+
+      <p class="footer-about">
+        Easein Studio helps individuals and brands tell their stories through 
+        powerful videos. From ads to podcasts, our team brings your ideas to life 
+        with creativity and precision.
+      </p>
+
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <!-- COLUMN 2 – QUICK LINKS -->
+    <div class="footer-col">
+      <h3 class="footer-title">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- COLUMN 3 – CONTACT -->
+    <div class="footer-col">
+      <h3 class="footer-title">Let’s Talk</h3>
+
+      <p class="footer-contact"><strong>Location:</strong> India</p>
+      <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
+      <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
+
+      <a href="#contact" class="footer-cta">Get a Free Quote</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>© 2025 Easein Studio. All rights reserved.</p>
+    <p>Designed by RBP Digital 360</p>
+  </div>
+
+</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

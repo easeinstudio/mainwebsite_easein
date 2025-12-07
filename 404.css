@@ -1,0 +1,82 @@
+/* ===================================
+    404 PAGE — EASEIN STYLE
+=================================== */
+
+body {
+  margin: 0;
+  background: #00141a;
+  font-family: "Inter", sans-serif;
+  color: #e8fdff;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-page {
+  text-align: center;
+  max-width: 480px;
+  padding: 20px;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.error-image {
+  width: 60%;
+  max-width: 260px;
+  margin-bottom: 20px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.error-title {
+  font-size: 42px;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+
+.error-text {
+  font-size: 15px;
+  opacity: 0.85;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.back-home {
+  display: inline-block;
+  padding: 12px 26px;
+  font-size: 14px;
+  border-radius: 999px;
+  color: #00141a;
+  background: #7dfaff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.back-home:hover {
+  background: #9ffcff;
+  transform: translateY(-3px);
+}
+
+/* ============ Keyframes ============ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ============ Responsive ============ */
+
+@media (max-width: 650px) {
+  .error-title { font-size: 32px; }
+  .error-image { max-width: 200px; }
+  .error-text { font-size: 14px; }
+}
+
+@media (max-width: 400px) {
+  .error-title { font-size: 26px; }
+  .error-image { width: 70%; }
+}

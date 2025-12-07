@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found</title>
+  <link rel="stylesheet" href="404.css" />
+</head>
+
+<body>
+  <div class="error-page">
+
+    <img src="web.png" alt="404 Not Found" class="error-image" />
+
+    <h1 class="error-title">Page Not Found</h1>
+
+    <p class="error-text">
+      The page you're looking for doesn't exist or has been moved.
+    </p>
+
+    <a href="/" class="back-home">Go Back Home</a>
+
+  </div>
+
+  <!-- Optional GSAP animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    gsap.from(".error-page", { opacity: 0, y: 20, duration: 0.8, ease: "power2.out" });
+  </script>
+</body>
+</html>

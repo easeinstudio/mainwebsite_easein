@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>About Us • Easein Studio</title>
+
+  <!-- Google Material Symbols (NEW) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- Global site styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- About Page Styles -->
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+  <!-- Cursor Glow (hidden on mobile via JS) -->
+  <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="header">
+    <nav class="navbar">
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="Easein Studio Logo" class="logo" />
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About Us</a></li>
+        
+        <li class="dropdown">
+          <a class="nav-link" href="#services">Services ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="/ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="/ad.html">Ads</a></li>
+            <li><a href="/ugc.html">UGC Videos</a></li>
+            <li><a href="/brand.html">Brand Videos</a></li>
+            <li><a href="/podcast.html">Podcast Production</a></li>
+            <li><a href="/motion.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="nav-link" href="#portfolio">Portfolio ▾</a>
+          <ul class="dropdown-menu">
+           <li><a href="portfolio.html">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html">Ads</a></li>
+            <li><a href="portfolio.html">UGC Videos</a></li>
+            <li><a href="portfolio.html">Brand Videos</a></li>
+            <li><a href="portfolio.html">Podcast Production</a></li>
+            <li><a href="portfolio.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!-- HAMBURGER -->
+      <button id="hamburger" class="hamburger" aria-label="Open Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span another="hamburger-line"></span>
+      </button>
+    </nav>
+  </header>
+
+
+  <!-- ===================== FULL-SCREEN MOBILE MENU ===================== -->
+  <div id="mobileMenu" class="mobile-menu">
+
+    <!-- CLOSE BUTTON -->
+    <button id="mobileClose" class="mobile-close">&times;</button>
+
+    <!-- SCROLLABLE MENU CONTENT -->
+    <div class="mobile-content">
+
+      <ul class="mobile-links">
+
+        <li><a href="index.html" class="mobile-link">Home</a></li>
+        <li><a href="about.html" class="mobile-link">About Us</a></li>
+
+        <!-- Services Accordion -->
+        <li class="mobile-accordion">
+          <button class="accordion-toggle">Services ▾</button>
+          <ul class="accordion-panel">
+            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="ad.html">Ads</a></li>
+            <li><a href="ugc.html">UGC Videos</a></li>
+            <li><a href="brand.html">Brand Videos</a></li>
+            <li><a href="podcast.html">Podcast Production</a></li>
+            <li><a href="motion.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <!-- Portfolio Accordion -->
+        <li class="mobile-accordion">
+          <button class="accordion-toggle">Portfolio ▾</button>
+          <ul class="accordion-panel">
+            <li><a href="portfolio.html">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html">Ads</a></li>
+            <li><a href="portfolio.html">UGC Videos</a></li>
+            <li><a href="portfolio.html">Brand Videos</a></li>
+            <li><a href="portfolio.html">Podcast Production</a></li>
+            <li><a href="portfolio.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
+
+      </ul>
+
+    </div>
+  </div>
+
+ <!-- ===================== ABOUT PAGE CONTENT ===================== -->
+<div class="ghost-text">EASEIN STUDIO</div>
+
+<main class="about-page">
+  <!-- HERO -->
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <div class="about-hero-text">
+        <p class="about-tag">ABOUT EASEIN STUDIO</p>
+
+        <h1 class="about-heading">
+          About <span class="accent">Easein Studio</span>
+        </h1>
+
+        <p class="about-sub">
+          Easein Studio is a modern video editing and production company focused on helping individuals and brands create videos that engage, inspire, and convert.
+        </p>
+
+        <p class="about-sub">
+          Founded by a team of passionate editors and creators, we blend creativity with technology to deliver videos that stand out — whether it’s a social media ad, political campaign, or podcast episode.
+        </p>
+
+        <div class="about-pills">
+          <span class="pill">
+            <span class="material-symbols-rounded">auto_awesome</span>
+            Creative Editing
+          </span>
+          <span class="pill">
+            <span class="material-symbols-rounded">bolt</span>
+            Fast Delivery
+          </span>
+          <span class="pill">
+            <span class="material-symbols-rounded">robot_2</span>
+            AI-Enhanced Workflow
+          </span>
+        </div>
+
+        <div class="about-hero-cta">
+          <a href="/index.html#contact" class="btn-primary about-btn-primary">
+            Start your next video
+          </a>
+          <button class="btn-ghost" type="button" data-scroll-target="#vision-mission">
+            Our Vision &amp; Mission
+            <i class="fa-solid fa-arrow-down-long"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="about-hero-visual">
+  <div class="hero-video-frame">
+    <div class="hero-video-inner">
+      <video
+        src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765136053/EaseinStudio_Brand_position_website_hero_banner_video_gspmre_1_kowydf.mp4"
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+    </div>
+  </div>
+
+  <!-- <p class="hero-video-caption">
+    A studio built at the intersection of creativity, technology, and storytelling.
+  </p> -->
+</div>
+
+    </div>
+  </section>
+
+  <!-- VISION & MISSION -->
+  <section class="about-mission" id="vision-mission">
+    <div class="about-section-header">
+      <h2>Our Vision &amp; Mission</h2>
+      <p>We exist to make high-quality video creation simple, accessible, and impact-driven for everyone.</p>
+    </div>
+
+    <div class="about-mission-grid">
+      <div class="mission-card">
+        <h3>
+          <span class="material-symbols-rounded">visibility</span>
+          Our Vision
+        </h3>
+        <p>
+          To make video creation simple, accessible, and high-quality for everyone — from startups to established brands.
+        </p>
+      </div>
+
+      <div class="mission-card">
+        <h3>
+          <span class="material-symbols-rounded">target</span>
+          Our Mission
+        </h3>
+        <p>
+          To bring ideas to life through visual storytelling that drives results and builds meaningful connections.
+        </p>
+      </div>
+
+      <div class="mission-card">
+        <h3>
+          <span class="material-symbols-rounded">movie_edit</span>
+          Behind the Studio
+        </h3>
+        <p>
+          We use the latest editing tools, AI-based software, and a dedicated creative team to deliver videos that make an impact.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR CORE VALUES (timeline style) -->
+  <section class="about-process" id="about-core-values">
+    <div class="about-section-header">
+      <h2>Our Core Values</h2>
+      <p>
+        The principles that shape how we create, communicate, and deliver every video at Easein Studio.
+      </p>
+    </div>
+
+    <div class="process-timeline">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-badge">01</div>
+        <div class="timeline-content">
+          <h3>
+            <span class="material-symbols-rounded">brush</span>
+            Creativity
+          </h3>
+          <p>
+            Every frame tells a story. We craft visuals, pacing, and sound that make your message unforgettable.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-badge">02</div>
+        <div class="timeline-content">
+          <h3>
+            <span class="material-symbols-rounded">filter_center_focus</span>
+            Clarity
+          </h3>
+          <p>
+            Simple ideas, powerful results. We remove noise and focus on what your audience truly needs to see and hear.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-badge">03</div>
+        <div class="timeline-content">
+          <h3>
+            <span class="material-symbols-rounded">speed</span>
+            Speed
+          </h3>
+          <p>
+            Fast, efficient, and on-time delivery — with a workflow optimized for campaigns, social content, and recurring edits.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-badge">04</div>
+        <div class="timeline-content">
+          <h3>
+            <span class="material-symbols-rounded">gavel</span>
+            Integrity
+          </h3>
+          <p>
+            Transparent process and honest communication at every step, from first brief to final export.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEHIND THE STUDIO -->
+  <section class="about-behind">
+    <div class="about-section-header">
+      <h2>Behind the Studio</h2>
+      <p>
+        At Easein Studio, we work with the latest editing tools, AI-based software, and a dedicated creative team.
+        Whether it’s a product explainer, campaign video, or podcast edit — we deliver videos that make an impact.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <div class="about-cta-inner">
+      <h2>Let’s bring your next idea to life</h2>
+      <p>Share your footage, script, or idea — we’ll craft a video that engages, inspires, and converts.</p>
+      <div class="cta-actions">
+        <a href="/index.html#contact" class="btn-primary about-btn-primary">
+          Start a Project
+        </a>
+        <a href="/portfolio" class="btn-outline">
+          View our Work
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- COLUMN 1 – ABOUT -->
+    <div class="footer-col">
+      <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
+
+      <p class="footer-about">
+        Easein Studio helps individuals and brands tell their stories through 
+        powerful videos. From ads to podcasts, our team brings your ideas to life 
+        with creativity and precision.
+      </p>
+
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <!-- COLUMN 2 – QUICK LINKS -->
+    <div class="footer-col">
+      <h3 class="footer-title">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- COLUMN 3 – CONTACT -->
+    <div class="footer-col">
+      <h3 class="footer-title">Let’s Talk</h3>
+
+      <p class="footer-contact"><strong>Location:</strong> India</p>
+      <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
+      <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
+
+      <a href="#contact" class="footer-cta">Get a Free Quote</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>© 2025 Easein Studio. All rights reserved.</p>
+    <p>Designed by RBP Digital 360</p>
+  </div>
+
+</footer>
+</main>
+
+
+  <!-- ABOUT PAGE JS -->
+  <script src="about.js"></script>
+
+</body>
+</html>

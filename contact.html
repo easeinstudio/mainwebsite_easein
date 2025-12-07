@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <title>Easein Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+    <!-- Cursor Glow (hidden on mobile via JS) -->
+  <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="header">
+    <nav class="navbar">
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="Easein Studio Logo" class="logo" />
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About Us</a></li>
+        
+        <li class="dropdown">
+          <a class="nav-link" href="#services">Services ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="/ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="/ad.html">Ads</a></li>
+            <li><a href="/ugc.html">UGC Videos</a></li>
+            <li><a href="/brand.html">Brand Videos</a></li>
+            <li><a href="/podcast.html">Podcast Production</a></li>
+            <li><a href="/motion.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="nav-link" href="#portfolio">Portfolio ▾</a>
+          <ul class="dropdown-menu">
+           <li><a href="portfolio.html">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html">Ads</a></li>
+            <li><a href="portfolio.html">UGC Videos</a></li>
+            <li><a href="portfolio.html">Brand Videos</a></li>
+            <li><a href="portfolio.html">Podcast Production</a></li>
+            <li><a href="portfolio.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <!-- HAMBURGER -->
+      <button id="hamburger" class="hamburger" aria-label="Open Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span another="hamburger-line"></span>
+      </button>
+    </nav>
+  </header>
+
+
+  <!-- ===================== FULL-SCREEN MOBILE MENU ===================== -->
+  <div id="mobileMenu" class="mobile-menu">
+
+    <!-- CLOSE BUTTON -->
+    <button id="mobileClose" class="mobile-close">&times;</button>
+
+    <!-- SCROLLABLE MENU CONTENT -->
+    <div class="mobile-content">
+
+      <ul class="mobile-links">
+
+        <li><a href="index.html" class="mobile-link">Home</a></li>
+        <li><a href="about.html" class="mobile-link">About Us</a></li>
+
+        <!-- Services Accordion -->
+        <li class="mobile-accordion">
+          <button class="accordion-toggle">Services ▾</button>
+          <ul class="accordion-panel">
+            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="ad.html">Ads</a></li>
+            <li><a href="ugc.html">UGC Videos</a></li>
+            <li><a href="brand.html">Brand Videos</a></li>
+            <li><a href="podcast.html">Podcast Production</a></li>
+            <li><a href="motion.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <!-- Portfolio Accordion -->
+        <li class="mobile-accordion">
+          <button class="accordion-toggle">Portfolio ▾</button>
+          <ul class="accordion-panel">
+            <li><a href="portfolio.html">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html">Ads</a></li>
+            <li><a href="portfolio.html">UGC Videos</a></li>
+            <li><a href="portfolio.html">Brand Videos</a></li>
+            <li><a href="portfolio.html">Podcast Production</a></li>
+            <li><a href="portfolio.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
+
+      </ul>
+
+    </div>
+  </div>
+  
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      
+      <div class="contact-form-card">
+        <h2 class="contact-heading">
+          <span class="typer" data-text="Let’s Create Something Amazing Together.">Let’s Create Something Amazing Together.</span>
+        </h2>
+        <p class="contact-subtext">
+          Tell us what you need, and we’ll get back to you with ideas, timelines, and a quote.
+        </p>
+
+        <form class="contact-form" id="contactForm" action="#" method="post" enctype="multipart/form-data">
+          
+          <div class="form-group">
+            <label for="name">Name<span>*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Your full name" />
+            <i class="fa-solid fa-circle-check validation-icon"></i>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email<span>*</span></label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+            <i class="fa-solid fa-circle-check validation-icon"></i>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone<span>*</span></label>
+            <input type="tel" id="phone" name="phone" required placeholder="+91 - 98765 43210" />
+            <i class="fa-solid fa-circle-check validation-icon"></i>
+          </div>
+
+          <div class="form-group">
+            <label for="videoType">Type of Video<span>*</span></label>
+            <select id="videoType" name="video_type" required>
+              <option value="" disabled selected>Select a video type</option>
+              <option value="ai">AI-Generated Video</option>
+              <option value="ads">Ads</option>
+              <option value="ugc-videos">UGC Videos</option>
+              <option value="brand-videos">Brand Videos</option>
+              <option value="podcast">Podcast Production</option>
+              <option value="motion-graphics">Motion Graphics</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+            </div>
+
+          <div class="form-group">
+            <label for="projectDetails">Project Details<span>*</span></label>
+            <textarea
+              id="projectDetails"
+              name="project_details"
+              rows="5"
+              required
+              placeholder="Tell us about your idea, goals, style preference, deadlines, etc."
+            ></textarea>
+            <i class="fa-solid fa-circle-check validation-icon" style="top: 45px;"></i>
+          </div>
+
+          <!-- <div class="form-group">
+            <label for="referenceUpload">Upload Reference (Optional)</label>
+            <div class="file-input-wrapper">
+              <input
+                type="file"
+                id="referenceUpload"
+                name="reference_upload"
+                accept=".jpg,.jpeg,.png,.mp4,.mov,.pdf,.ppt,.pptx"
+              />
+            </div>
+            <small class="field-hint">You can upload moodboards, sample videos, scripts, or briefs.</small>
+          </div> -->
+
+          <button type="submit" class="contact-submit-btn">
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <aside class="contact-direct-card">
+        <h3 class="contact-direct-title">Direct Contact</h3>
+        <p class="contact-direct-text">
+          Prefer talking to a human right away? Reach out directly and we’ll respond as soon as possible.
+        </p>
+
+        <div class="direct-item">
+          <span class="direct-icon"><i class="fa-solid fa-envelope"></i></span>
+          <div>
+            <div class="direct-label">Email</div>
+            <a href="mailto:hello@easeinstudio.com" class="direct-value">hello@easeinstudio.com</a>
+          </div>
+        </div>
+
+        <div class="direct-item">
+          <span class="direct-icon"><i class="fa-solid fa-phone"></i></span>
+          <div>
+            <div class="direct-label">Phone</div>
+            <a href="tel:+919999999999" class="direct-value">+91 99 9999 9999</a>
+          </div>
+        </div>
+
+        <div class="direct-item">
+          <span class="direct-icon"><i class="fa-solid fa-location-dot"></i></span>
+          <div>
+            <div class="direct-label">Address</div>
+            <p class="direct-value">
+              Easein Studio<br />
+              Your Street, Your City<br />
+              State, India
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-note">
+          <i class="fa-regular fa-clock"></i>
+          <span>Typical response time: within 24 hours.</span>
+        </div>
+
+        <div class="contact-vertical-reel">
+            <div class="reel-window" id="stackReel">
+                <div class="reel-overlay">
+                    <span class="pulsing-dot"></span>
+                    <span>Studio Reel</span>
+                </div>
+                
+                <div class="reel-stack">
+                    <div class="reel-card active">
+                        <video autoplay loop muted playsinline>
+                            <source src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765136053/EaseinStudio_Brand_position_website_hero_banner_video_gspmre_1_kowydf.mp4">
+                        </video>
+                    </div>
+                    <!-- <div class="reel-card next">
+                         <video autoplay loop muted playsinline>
+                            <source src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853922/Ambhuwachi_Mela_2025_llgkwk.mp4" type="video/mp4">
+                        </video>
+                    </div> -->
+                    <!-- <div class="reel-card back">
+                         <video autoplay loop muted playsinline>
+                            <source src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853919/Jab_Tu_Sajan_uq2ak7.mp4" type="video/mp4">
+                        </video>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+      </aside>
+    </div>
+    <!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- COLUMN 1 – ABOUT -->
+    <div class="footer-col">
+      <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
+
+      <p class="footer-about">
+        Easein Studio helps individuals and brands tell their stories through 
+        powerful videos. From ads to podcasts, our team brings your ideas to life 
+        with creativity and precision.
+      </p>
+
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <!-- COLUMN 2 – QUICK LINKS -->
+    <div class="footer-col">
+      <h3 class="footer-title">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- COLUMN 3 – CONTACT -->
+    <div class="footer-col">
+      <h3 class="footer-title">Let’s Talk</h3>
+
+      <p class="footer-contact"><strong>Location:</strong> India</p>
+      <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
+      <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
+
+      <a href="#contact" class="footer-cta">Get a Free Quote</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>© 2025 Easein Studio. All rights reserved.</p>
+    <p>Designed by RBP Digital 360</p>
+  </div>
+
+</footer>
+
+  </section>
+<!-- 
+  <div id="successModal" class="success-modal">
+    <div class="success-modal-content">
+      <div class="success-icon-wrapper">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h2>Message Sent!</h2>
+      <p>Thanks for reaching out. We've received your project details and will get back to you within 24 hours.</p>
+      <button id="closeModalBtn" class="success-close-btn">Awesome!</button>
+    </div>
+  </div> -->
+
+ 
+  <script src="js/contact.js"></script>
+  <script src="js/typing.js"></script>
+  
+</body>
+</html>
