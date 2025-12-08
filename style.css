@@ -1030,6 +1030,7 @@ body {
 
 /* text inside card */
 .matrix-card h3 {
+  text-align:center;
   color: #eaffff;
   font-size: 18px;
   margin-bottom: 10px;
@@ -1037,10 +1038,12 @@ body {
 }
 
 .matrix-card p {
+  text-align:center;
   color: #c0edf9;
   font-size: 14px;
 }
 .click-btn{
+  text-align:center;
   font-size: 18px;
   padding: 10px;
   color: #eaffff;
