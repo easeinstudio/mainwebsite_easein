@@ -674,6 +674,34 @@ function initMobileWorkCarousel() {
 
 // Run once DOM is ready
 document.addEventListener('DOMContentLoaded', initMobileWorkCarousel);
+//harshek//
+/* ===================== VIDEO MODAL LOGIC ===================== */
+
+const modal = document.getElementById("videoModal");
+const videoPlayer = document.getElementById("workVideoPlayer");
+const backdrop = document.querySelector(".video-modal-backdrop");
+
+// Replace thumbnail click → open modal with video
+document.querySelectorAll(".work-item, .work-mobile-card").forEach(item => {
+  item.addEventListener("click", () => {
+    
+    // 🔧 Add Cloudinary video link here
+    const videoURL = item.dataset.video || "CLOUDINARY_VIDEO_URL";
+
+    videoPlayer.src = videoURL;
+    modal.style.display = "flex";
+    videoPlayer.play();
+  });
+});
+
+// Close when clicking outside video
+backdrop.addEventListener("click", () => {
+  modal.style.display = "none";
+  videoPlayer.pause();
+  videoPlayer.src = "";
+});
+
+//harshek end//
 
 // ===================== CTA GHOST TEXT PARALLAX =====================
 (function initCtaGhostParallax() {
