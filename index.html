@@ -199,13 +199,7 @@
           <textarea id="pop-projectDetails" name="project_details" rows="4" required placeholder="Tell us about your idea, goals, style preference, deadlines, etc."></textarea>
         </div>
 
-        <div class="form-group">
-          <label for="pop-referenceUpload">Upload Reference (Optional)</label>
-          <div class="file-input-wrapper">
-            <input type="file" id="pop-referenceUpload" name="reference_upload" accept=".jpg,.jpeg,.png,.mp4,.mov,.pdf,.ppt,.pptx" />
-          </div>
-          <small class="field-hint">You can upload moodboards, sample videos, scripts, or briefs.</small>
-        </div>
+        
 
         <button type="submit" class="contact-submit-btn">Submit</button>
       </form>
@@ -564,7 +558,7 @@
   <div class="cta-content">
     <h2 class="cta-title">Have a video idea in mind?</h2>
     <p class="cta-sub">Let’s bring it to life.</p>
-    <a href="#contact" class="cta-btn">Let’s Talk</a>
+    <a href="#contact" class="btn-primary open-quote-popup"  onclick="openQuoteModal()" >Let’s Talk</a>
   </div>
 
 </section>
@@ -663,8 +657,7 @@
       <p class="footer-contact"><strong>Location:</strong> India</p>
       <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
       <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
-
-      <a href="#contact" class="footer-cta">Get a Free Quote</a>
+      <a href="javascript:void(0)" class="footer-cta open-quote-popup" onclick="openQuoteModal()">Get a Free Quote</a>
     </div>
 
   </div>

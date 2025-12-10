@@ -23,6 +23,7 @@
 
   <!-- About Page Styles -->
   <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
   <!-- Cursor Glow (hidden on mobile via JS) -->
@@ -162,9 +163,10 @@
         </div>
 
         <div class="about-hero-cta">
-          <a href="/index.html#contact" class="btn-primary about-btn-primary">
-            Start your next video
-          </a>
+         <a href="javascript:void(0)" class="btn-primary about-btn-primary open-quote-popup" onclick="openQuoteModal()">
+  Start your next video
+</a>
+          
           <button class="btn-ghost" type="button" data-scroll-target="#vision-mission">
             Our Vision &amp; Mission
             <i class="fa-solid fa-arrow-down-long"></i>
@@ -193,7 +195,64 @@
 
     </div>
   </section>
+<div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
+  
+  <div class="popup-container">
+    <div class="popup-content contact-form-card">
+      
+      <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
+        <i class="fas fa-times"></i>
+      </button>
 
+      <div class="popup-header">
+        <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
+        <p class="contact-subtext">Tell us what you need, and we'll get back to you with ideas, timelines, and a quote.</p>
+      </div>
+
+      <form id="easein-contact-form" class="contact-form" enctype="multipart/form-data">
+        
+        <div class="form-group">
+          <label for="pop-name">Name<span>*</span></label>
+          <input type="text" id="pop-name" name="name" required placeholder="Your full name" />
+        </div>
+
+        <div class="form-group">
+          <label for="pop-email">Email<span>*</span></label>
+          <input type="email" id="pop-email" name="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="pop-phone">Phone<span>*</span></label>
+          <input type="tel" id="pop-phone" name="phone" required placeholder="+91 - 98765 43210" />
+        </div>
+
+        <div class="form-group">
+          <label for="pop-videoType">Type of Video<span>*</span></label>
+          <select id="pop-videoType" name="video_type" required>
+            <option value="" disabled selected>Select a video type</option>
+            <option value="ai">AI-Generated Video</option>
+            <option value="podcast">Podcast Video</option>
+            <option value="sports-news">Sports & News Video</option>
+            <option value="political">Political Campaign Video</option>
+            <option value="ads-pvc">Advertisement & PVC Video</option>
+            <option value="motion-graphics">Motion Graphics</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="pop-projectDetails">Project Details<span>*</span></label>
+          <textarea id="pop-projectDetails" name="project_details" rows="4" required placeholder="Tell us about your idea, goals, style preference, deadlines, etc."></textarea>
+        </div>
+
+        
+
+        <button type="submit" class="contact-submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
   <!-- VISION & MISSION -->
   <section class="about-mission" id="vision-mission">
     <div class="about-section-header">
@@ -222,15 +281,6 @@
         </p>
       </div>
 
-      <div class="mission-card">
-        <h3>
-          <span class="material-symbols-rounded">movie_edit</span>
-          Behind the Studio
-        </h3>
-        <p>
-          We use the latest editing tools, AI-based software, and a dedicated creative team to deliver videos that make an impact.
-        </p>
-      </div>
     </div>
   </section>
 
@@ -317,9 +367,9 @@
       <h2>Let’s bring your next idea to life</h2>
       <p>Share your footage, script, or idea — we’ll craft a video that engages, inspires, and converts.</p>
       <div class="cta-actions">
-        <a href="/index.html#contact" class="btn-primary about-btn-primary" aria-label="Start a project">
-          Start a Project
-        </a>
+        <a href="javascript:void(0)" class="btn-primary about-btn-primary open-quote-popup" onclick="openQuoteModal()" aria-label="Start a project">
+  Start a Project
+</a>
         <a href="/portfolio" class="btn-outline" aria-label="View our work">
           View our Work
         </a>
@@ -373,7 +423,7 @@
       <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
       <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
 
-      <a href="#contact" class="footer-cta">Get a Free Quote</a>
+     <a href="javascript:void(0)" class="footer-cta open-quote-popup" onclick="openQuoteModal()">Get a Free Quote</a>
     </div>
 
   </div>
@@ -391,6 +441,7 @@
   <!-- ABOUT PAGE JS -->
   <script src="about.js"></script>
   <script src="app.js"></script>
+  <script src="popup.js"></script>
 
 </body>
 </html>
