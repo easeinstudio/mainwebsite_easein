@@ -124,10 +124,10 @@
     </div>
   </div>
 
- <!-- ===================== ABOUT PAGE CONTENT ===================== -->
-<div class="ghost-text">EASEIN STUDIO</div>
+<!-- ===================== ABOUT PAGE CONTENT ===================== -->
+<div class="ghost-text" aria-hidden="true">EASEIN STUDIO</div>
 
-<main class="about-page">
+<main id="main" class="about-page" role="main">
   <!-- HERO -->
   <section class="about-hero">
     <div class="about-hero-inner">
@@ -186,9 +186,9 @@
     </div>
   </div>
 
-  <!-- <p class="hero-video-caption">
+  <p class="hero-video-caption">
     A studio built at the intersection of creativity, technology, and storytelling.
-  </p> -->
+  </p>
 </div>
 
     </div>
@@ -317,15 +317,19 @@
       <h2>Let’s bring your next idea to life</h2>
       <p>Share your footage, script, or idea — we’ll craft a video that engages, inspires, and converts.</p>
       <div class="cta-actions">
-        <a href="/index.html#contact" class="btn-primary about-btn-primary">
+        <a href="/index.html#contact" class="btn-primary about-btn-primary" aria-label="Start a project">
           Start a Project
         </a>
-        <a href="/portfolio" class="btn-outline">
+        <a href="/portfolio" class="btn-outline" aria-label="View our work">
           View our Work
         </a>
       </div>
     </div>
   </section>
+</main>
+
+
+
   <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
 
@@ -386,6 +390,7 @@
 
   <!-- ABOUT PAGE JS -->
   <script src="about.js"></script>
+  <script src="app.js"></script>
 
 </body>
 </html>

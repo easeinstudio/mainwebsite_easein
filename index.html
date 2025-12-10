@@ -10,6 +10,7 @@
 
   <title>Easein Studio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
 
@@ -139,13 +140,79 @@
       From AI-generated visuals to ad films and podcasts — Easein Studio creates
       videos that tell stories, connect with audiences, and help brands grow.
     </p>
+<div class="hero-cta">
+  <a href="#contact" class="btn-primary open-quote-popup"  onclick="openQuoteModal()" >Get a Free Quote</a>
 
-    <div class="hero-cta">
-      <a href="#contact" class="btn-primary">Get a Free Quote</a>
-      <a href="#portfolio" class="btn-secondary">View Our Work</a>
-    </div>
+  
+  <a href="#portfolio" class="btn-secondary">View Our Work</a>
+</div>
   </div>
 </section>
+<div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
+  
+  <div class="popup-container">
+    <div class="popup-content contact-form-card">
+      
+      <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="popup-header">
+        <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
+        <p class="contact-subtext">Tell us what you need, and we'll get back to you with ideas, timelines, and a quote.</p>
+      </div>
+
+      <form id="easein-contact-form" class="contact-form" enctype="multipart/form-data">
+        
+        <div class="form-group">
+          <label for="pop-name">Name<span>*</span></label>
+          <input type="text" id="pop-name" name="name" required placeholder="Your full name" />
+        </div>
+
+        <div class="form-group">
+          <label for="pop-email">Email<span>*</span></label>
+          <input type="email" id="pop-email" name="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="pop-phone">Phone<span>*</span></label>
+          <input type="tel" id="pop-phone" name="phone" required placeholder="+91 - 98765 43210" />
+        </div>
+
+        <div class="form-group">
+          <label for="pop-videoType">Type of Video<span>*</span></label>
+          <select id="pop-videoType" name="video_type" required>
+            <option value="" disabled selected>Select a video type</option>
+            <option value="ai">AI-Generated Video</option>
+            <option value="podcast">Podcast Video</option>
+            <option value="sports-news">Sports & News Video</option>
+            <option value="political">Political Campaign Video</option>
+            <option value="ads-pvc">Advertisement & PVC Video</option>
+            <option value="motion-graphics">Motion Graphics</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="pop-projectDetails">Project Details<span>*</span></label>
+          <textarea id="pop-projectDetails" name="project_details" rows="4" required placeholder="Tell us about your idea, goals, style preference, deadlines, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="pop-referenceUpload">Upload Reference (Optional)</label>
+          <div class="file-input-wrapper">
+            <input type="file" id="pop-referenceUpload" name="reference_upload" accept=".jpg,.jpeg,.png,.mp4,.mov,.pdf,.ppt,.pptx" />
+          </div>
+          <small class="field-hint">You can upload moodboards, sample videos, scripts, or briefs.</small>
+        </div>
+
+        <button type="submit" class="contact-submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
 <section class="brand-reel">
   <div class="brand-reel-inner">
 
@@ -157,6 +224,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil iste ratione adipisci!
       </p>
     </div>
+ 
 
     <!-- RIGHT VIDEO -->
     <div class="brand-reel-right">
@@ -593,5 +661,6 @@
 </footer>
 
   <script src="app.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>
