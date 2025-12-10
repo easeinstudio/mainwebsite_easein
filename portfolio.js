@@ -330,11 +330,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const progress = scrollY / triggerHeight;
         const scale = 1 - progress * 0.1; // 1 → 0.9
         const opacity = 1 - progress * 0.6; // 1 → 0.4
-        const blur = progress * 10; // 0 → 10px
+        // const blur = progress * 10; // 0 → 10px
 
         heroVideoContainer.style.transform = `scale(${scale})`;
         heroVideoContainer.style.opacity = `${opacity}`;
-        heroVideoContainer.style.filter = `blur(${blur}px)`;
+        // heroVideoContainer.style.filter = `blur(${blur}px)`;
       }
     });
   }
