@@ -18,6 +18,11 @@
   --border-color: rgba(0, 255, 255, 0.1);
   --border-active: rgba(0, 255, 255, 0.4);
 
+  /* Popup Specific Variables */
+  --bg-overlay: rgba(0, 20, 26, 0.8);
+  --bg-input: #001217;
+  --radius-input: 10px;
+
   /* Layout */
   --header-height: 80px;
   --max-width: 1200px;
@@ -52,9 +57,8 @@ ul { list-style: none; }
 button { font-family: inherit; border: none; background: none; cursor: pointer; }
 
 
-
 /* ==========================================================================
-   3. SHARED UTILITIES & COMPONENTS
+   2. UTILITIES & COMPONENTS
    ========================================================================== */
 .about-page {
   padding-top: calc(var(--header-height) + 40px);
@@ -131,8 +135,9 @@ section { padding: 60px 20px; position: relative; }
 }
 .pill span { font-size: 16px; }
 
+
 /* ==========================================================================
-   4. HERO SECTION
+   3. HERO SECTION
    ========================================================================== */
 .about-hero-inner {
   max-width: var(--max-width); margin: 0 auto;
@@ -174,7 +179,7 @@ section { padding: 60px 20px; position: relative; }
 }
 .hero-video {
   width: 100%; height: auto;
-  border-radius: 14px; /* Slightly less than frame */
+  border-radius: 14px;
   display: block;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
@@ -183,180 +188,123 @@ section { padding: 60px 20px; position: relative; }
   color: var(--text-muted); opacity: 0.7;
 }
 
-/* ==========================================================================
-   5. MISSION & CARDS (ADVANCED ANIMATION)
-   ========================================================================== */
 
-/* Container for the 3D perspective */
+/* ==========================================================================
+   4. MISSION & CARDS (3D Animation)
+   ========================================================================== */
 .about-mission-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px;
   max-width: var(--max-width);
   margin: 0 auto;
-  perspective: 1000px; /* Essential for 3D feel */
+  perspective: 1000px;
 }
 
-/* Card Base */
 .mission-card {
   position: relative;
-  background: rgba(2, 11, 16, 0.6); /* Darker, more transparent base */
+  background: rgba(2, 11, 16, 0.6);
   border-radius: var(--radius-lg);
   padding: 40px 30px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: 1px solid rgba(0, 240, 255, 0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  display: flex; flex-direction: column; height: 100%;
 }
 
-/* The Glowing Gradient Border (Animated Pseudo-element) */
+/* Gradient Border */
 .mission-card::before {
   content: "";
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   border-radius: var(--radius-lg);
-  padding: 2px; /* Thickness of gradient border */
-  background: linear-gradient(135deg, 
-    rgba(0, 240, 255, 0.1), 
-    rgba(85, 255, 208, 0.1), 
-    rgba(0, 0, 0, 0)
-  );
-  -webkit-mask: 
-     linear-gradient(#fff 0 0) content-box, 
-     linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(85, 255, 208, 0.1), rgba(0, 0, 0, 0));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none; transition: opacity 0.4s ease;
 }
 
-/* Background Highlight Blob */
+/* Background Highlight */
 .mission-card::after {
   content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
   background: radial-gradient(circle, rgba(0, 240, 255, 0.05) 0%, transparent 60%);
-  opacity: 0;
-  transform: scale(0.5);
+  opacity: 0; transform: scale(0.5);
   transition: opacity 0.5s ease, transform 0.5s ease;
-  pointer-events: none;
-  z-index: -1;
+  pointer-events: none; z-index: -1;
 }
 
-/* Typography & Content */
 .mission-icon {
-  font-size: 32px;
-  margin-bottom: 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
+  font-size: 32px; margin-bottom: 24px;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 60px; height: 60px;
   background: rgba(0, 240, 255, 0.05);
-  border-radius: 12px;
-  color: var(--accent-1);
+  border-radius: 12px; color: var(--accent-1);
   box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.1);
   transition: all 0.4s ease;
 }
 
 .mission-card h3 {
-  font-size: 22px;
-  color: var(--text-main);
-  margin-bottom: 16px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-size: 22px; color: var(--text-main);
+  margin-bottom: 16px; font-weight: 700;
 }
-
 .mission-card p {
-  font-size: 15px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  flex-grow: 1; /* Pushes bottom elements down if you add any */
+  font-size: 15px; color: var(--text-muted); line-height: 1.7; flex-grow: 1;
 }
 
-/* --- HOVER EFFECTS --- */
-
-/* 1. Lift and Glow */
+/* Hover Effects */
 .mission-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
-              0 0 20px rgba(0, 240, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 240, 255, 0.1);
   border-color: rgba(0, 240, 255, 0.3);
 }
-
-/* 2. Gradient Border Brightens */
 .mission-card:hover::before {
-  background: linear-gradient(135deg, 
-    var(--accent-1), 
-    var(--accent-2), 
-    rgba(0, 0, 0, 0)
-  );
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2), rgba(0, 0, 0, 0));
 }
-
-/* 3. Background Blob Expands */
-.mission-card:hover::after {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* 4. Icon Animation */
+.mission-card:hover::after { opacity: 1; transform: scale(1); }
 .mission-card:hover .mission-icon {
-  background: var(--accent-1);
-  color: #000;
+  background: var(--accent-1); color: #000;
   box-shadow: 0 0 15px var(--accent-glow);
-  transform: rotateY(180deg); /* 3D Flip effect */
+  transform: rotateY(180deg);
 }
 
-/* --- ENTRANCE ANIMATION (Staggered) --- */
+/* Entrance Animation */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-.mission-card {
-  animation: fadeInUp 0.8s ease backwards;
-}
-
-/* Delay for staggering */
+.mission-card { animation: fadeInUp 0.8s ease backwards; }
 .mission-card:nth-child(1) { animation-delay: 0.1s; }
 .mission-card:nth-child(2) { animation-delay: 0.2s; }
 .mission-card:nth-child(3) { animation-delay: 0.3s; }
 
+
 /* ==========================================================================
-   6. TIMELINE SECTION (Responsive)
+   5. TIMELINE SECTION (Step-by-Step Single Line + Scroll Active)
    ========================================================================== */
 .process-timeline {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px 0;
+  position: relative; max-width: 800px;
+  margin: 0 auto; padding: 20px 0;
 }
 
-/* The Line (Default Mobile: Left side) */
+/* The Line (Always Left) */
 .timeline-line {
-  position: absolute;
-  top: 0; bottom: 0; left: 19px; /* Centers in the 40px badge area */
+  position: absolute; top: 0; bottom: 0; left: 19px; /* Centers in the 40px badge */
   width: 2px;
   background: linear-gradient(180deg, var(--accent-1) 0%, rgba(0,240,255,0.1) 100%);
 }
 
 .timeline-item {
-  position: relative;
-  margin-bottom: 40px;
+  position: relative; margin-bottom: 40px;
   padding-left: 60px; /* Space for badge + line */
+  width: 100%;
 }
 
 /* The Badge */
 .timeline-badge {
-  position: absolute;
-  left: 0; top: 0;
+  position: absolute; left: 0; top: 0;
   width: 40px; height: 40px;
   background: #002b33;
   border: 2px solid var(--accent-1);
@@ -366,27 +314,69 @@ section { padding: 60px 20px; position: relative; }
   font-weight: 700; font-size: 14px;
   z-index: 2;
   box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* The Card Content */
 .timeline-content {
-  background: rgba(0, 30, 40, 0.4);
+  position: relative;
+  background: rgba(2, 11, 16, 0.6);
   border: 1px solid var(--border-color);
   padding: 24px;
   border-radius: var(--radius-md);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
 }
+
+/* --- Timeline Effects (Hover OR Scroll Active) --- */
+/* These rules apply if you Hover OR if JS adds .active class */
+.timeline-item:hover .timeline-content,
+.timeline-item.active .timeline-content {
+  transform: translateY(-5px);
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 240, 255, 0.1);
+  background: rgba(2, 20, 26, 0.9);
+}
+
+.timeline-item:hover .timeline-badge,
+.timeline-item.active .timeline-badge {
+  transform: scale(1.1);
+  background: var(--accent-1);
+  color: #000;
+  box-shadow: 0 0 20px var(--accent-1);
+}
+
+/* Gradient Overlay */
+.timeline-content::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), transparent 50%);
+  opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
+}
+.timeline-item:hover .timeline-content::before,
+.timeline-item.active .timeline-content::before {
+  opacity: 1;
+}
+
+/* Typography Colors */
 .timeline-content h3 {
   font-size: 18px; margin-bottom: 8px;
   display: flex; align-items: center; gap: 10px;
+  color: var(--text-main); transition: color 0.3s ease;
+}
+.timeline-item:hover .timeline-content h3,
+.timeline-item.active .timeline-content h3 {
+  color: var(--accent-1);
 }
 .timeline-content h3 span { color: var(--accent-2); font-size: 20px; }
 
+
 /* ==========================================================================
-   7. CTA SECTION
+   6. CTA SECTION
    ========================================================================== */
 .about-cta-inner {
   max-width: 900px; margin: 0 auto;
-  text-align: center;
-  padding: 60px 20px;
+  text-align: center; padding: 60px 20px;
   background: radial-gradient(circle at top, rgba(0, 60, 70, 0.4), rgba(2, 11, 16, 1));
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
@@ -396,22 +386,91 @@ section { padding: 60px 20px; position: relative; }
   display: flex; justify-content: center; gap: 16px; margin-top: 30px; flex-wrap: wrap;
 }
 
+
 /* ==========================================================================
-   8. ANIMATIONS (Reveal Class)
+   7. POPUP MODAL (For "Get a Quote")
    ========================================================================== */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+.popup-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 9999;
+  display: flex; justify-content: center; align-items: center;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: var(--transition);
+}
+.popup-backdrop {
+  position: absolute; inset: 0;
+  background: var(--bg-overlay);
+  backdrop-filter: blur(3px);
+}
+.popup-overlay.active { opacity: 1; visibility: visible; pointer-events: auto; }
+
+.popup-container {
+  position: relative; width: 100%; max-width: 500px;
+  margin: 20px; z-index: 10000;
+  transform: translateY(20px) scale(0.95);
+  transition: var(--transition);
+}
+.popup-overlay.active .popup-container { transform: translateY(0) scale(1); }
+
+.contact-form-card {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  color: var(--text-main);
+  max-height: 90vh; overflow-y: auto;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Modal Close Button */
+.popup-close-btn {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  font-size: 1.5rem; color: var(--text-muted);
+  transition: color 0.2s;
 }
+.popup-close-btn:hover { color: var(--accent-1); }
+
+/* Modal Headings */
+.contact-heading {
+  font-size: 1.8rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-main);
+}
+.text-accent { color: var(--accent-1); }
+.contact-subtext { color: var(--text-muted); font-size: 0.95rem; }
+
+/* Modal Inputs */
+.form-group { margin-bottom: 1.5rem; }
+.form-group label {
+  display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.95rem; color: var(--text-main);
+}
+.form-group label span { color: var(--accent-1); margin-left: 4px; }
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 0.875rem 1rem;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-input);
+  color: var(--text-main); font-size: 1rem;
+  transition: var(--transition);
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--accent-1);
+  box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.2);
+}
+
+/* Modal Submit Button */
+.contact-submit-btn {
+  display: inline-block; width: 100%; padding: 0.875rem 2.5rem;
+  background-color: var(--accent-1); color: #020b10;
+  border: none; border-radius: 2rem; font-size: 1.1rem;
+  font-weight: 700; cursor: pointer; transition: var(--transition);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4); margin-top: 1rem;
+}
+.contact-submit-btn:hover { background-color: var(--accent-2); box-shadow: 0 0 30px rgba(0, 240, 255, 0.6); }
+
 
 /* ==========================================================================
-   9. MEDIA QUERIES (Desktop)
+   8. MEDIA QUERIES
    ========================================================================== */
 @media (min-width: 768px) {
   .nav-links { display: flex; }
@@ -424,33 +483,7 @@ section { padding: 60px 20px; position: relative; }
   .about-hero-text { flex: 1; text-align: left; }
   .about-hero-visual { flex: 1; }
   
-  /* Timeline Desktop (Alternating) */
-  .timeline-line { left: 50%; transform: translateX(-50%); }
-  
-  .timeline-item { width: 50%; padding-left: 0; padding-right: 0; }
-  
-  /* Odd items (Left) */
-  .timeline-item:nth-child(odd) {
-    margin-right: auto;
-    padding-right: 50px;
-    text-align: right;
-  }
-  .timeline-item:nth-child(odd) .timeline-badge {
-    left: auto; right: -20px; /* Half of badge width */
-  }
-  .timeline-item:nth-child(odd) .timeline-content h3 {
-    justify-content: flex-end; flex-direction: row-reverse;
-  }
-  
-  /* Even items (Right) */
-  .timeline-item:nth-child(even) {
-    margin-left: auto;
-    padding-left: 50px;
-    text-align: left;
-  }
-  .timeline-item:nth-child(even) .timeline-badge {
-    left: -20px;
-  }
+  /* NOTE: Timeline is single line on all screens */
 }
 
 @media (max-width: 480px) {

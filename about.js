@@ -4,22 +4,19 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. SCROLL REVEAL ANIMATION (Intersection Observer)
+  // 1. STANDARD REVEAL ANIMATION (Fade In Up)
   // --------------------------------------------------------------------------
   const revealElements = document.querySelectorAll('.reveal');
 
   const revealOptions = {
-    threshold: 0.15, // Trigger animation when 15% of element is visible
-    rootMargin: "0px 0px -50px 0px" // Offset slightly so it triggers before bottom
+    threshold: 0.15, 
+    rootMargin: "0px 0px -50px 0px"
   };
 
   const revealOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Add the class that triggers CSS opacity/transform
         entry.target.classList.add('visible');
-        
-        // Stop observing once animated (so it doesn't fade out again)
         observer.unobserve(entry.target);
       }
     });
@@ -30,13 +27,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+  // 2. TIMELINE PROCESS ANIMATION (Dark to Light on Scroll)
+  // --------------------------------------------------------------------------
+  // Triggers when the timeline item is 40% visible in the viewport
+  const timelineItems = document.querySelectorAll('.timeline-item');
+
+  const timelineObserverOptions = {
+    threshold: 0.4, 
+    rootMargin: "0px 0px -10% 0px"
+  };
+
+  const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // Toggle 'active' class: Lights up when in view, goes dark when out
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      } else {
+        entry.target.classList.remove('active');
+      }
+    });
+  }, timelineObserverOptions);
+
+  timelineItems.forEach(item => {
+    timelineObserver.observe(item);
+  });
+
 
   // 3. SMOOTH SCROLL FOR BUTTONS
   // --------------------------------------------------------------------------
-  // Handles the "Our Vision & Mission" ghost button or any anchor links
   document.querySelectorAll('a[href^="#"], button[data-scroll-target]').forEach(trigger => {
     trigger.addEventListener('click', function(e) {
-      // Determine target ID
       let targetId;
       if (this.hasAttribute('data-scroll-target')) {
         targetId = this.getAttribute('data-scroll-target');
@@ -44,13 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
         targetId = this.getAttribute('href');
       }
 
-      // Check if target exists on this page
       if (targetId && targetId.startsWith('#')) {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           e.preventDefault();
-          
-          // Calculate header offset
           const headerOffset = 90;
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
