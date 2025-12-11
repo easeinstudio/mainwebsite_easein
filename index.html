@@ -10,6 +10,7 @@
 
   <title>Easein Studio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
 
@@ -31,12 +32,12 @@
         <li class="dropdown">
           <a class="nav-link" href="#services">Services ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="/ai-videos.html">AI-Generated Videos</a></li>
-            <li><a href="/ad.html">Ads</a></li>
-            <li><a href="/ugc.html">UGC Videos</a></li>
-            <li><a href="/brand.html">Brand Videos</a></li>
-            <li><a href="/podcast.html">Podcast Production</a></li>
-            <li><a href="/motion.html">Motion Graphics</a></li>
+            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="ad.html">Ads</a></li>
+            <li><a href="ugc.html">UGC Videos</a></li>
+            <li><a href="brand.html">Brand Videos</a></li>
+            <li><a href="podcast.html">Podcast Production</a></li>
+            <li><a href="motion.html">Motion Graphics</a></li>
           </ul>
         </li>
 
@@ -139,13 +140,73 @@
       From AI-generated visuals to ad films and podcasts — Easein Studio creates
       videos that tell stories, connect with audiences, and help brands grow.
     </p>
+<div class="hero-cta">
+  <a href="#contact" class="btn-primary open-quote-popup"  onclick="openQuoteModal()" >Get a Free Quote</a>
 
-    <div class="hero-cta">
-      <a href="#contact" class="btn-primary">Get a Free Quote</a>
-      <a href="#portfolio" class="btn-secondary">View Our Work</a>
-    </div>
+  
+  <a href="#portfolio" class="btn-secondary">View Our Work</a>
+</div>
   </div>
 </section>
+<div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
+  
+  <div class="popup-container">
+    <div class="popup-content contact-form-card">
+      
+      <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="popup-header">
+        <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
+        <p class="contact-subtext">Tell us what you need, and we'll get back to you with ideas, timelines, and a quote.</p>
+      </div>
+
+      <form id="easein-contact-form" class="contact-form" enctype="multipart/form-data">
+        
+        <div class="form-group">
+          <label for="pop-name">Name<span>*</span></label>
+          <input type="text" id="pop-name" name="name" required placeholder="Your full name" />
+        </div>
+
+        <div class="form-group">
+          <label for="pop-email">Email<span>*</span></label>
+          <input type="email" id="pop-email" name="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="pop-phone">Phone<span>*</span></label>
+          <input type="tel" id="pop-phone" name="phone" required placeholder="+91 - 98765 43210" />
+        </div>
+
+        <div class="form-group">
+          <label for="pop-videoType">Type of Video<span>*</span></label>
+          <select id="pop-videoType" name="video_type" required>
+            <option value="" disabled selected>Select a video type</option>
+            <option value="ai">AI-Generated Video</option>
+            <option value="podcast">Podcast Video</option>
+            <option value="sports-news">Sports & News Video</option>
+            <option value="political">Political Campaign Video</option>
+            <option value="ads-pvc">Advertisement & PVC Video</option>
+            <option value="motion-graphics">Motion Graphics</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="pop-projectDetails">Project Details<span>*</span></label>
+          <textarea id="pop-projectDetails" name="project_details" rows="4" required placeholder="Tell us about your idea, goals, style preference, deadlines, etc."></textarea>
+        </div>
+
+        
+
+        <button type="submit" class="contact-submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
 <section class="brand-reel">
   <div class="brand-reel-inner">
 
@@ -157,6 +218,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil iste ratione adipisci!
       </p>
     </div>
+ 
 
     <!-- RIGHT VIDEO -->
     <div class="brand-reel-right">
@@ -166,7 +228,6 @@
         </video>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -366,43 +427,43 @@
       <!-- 3D Ring of Thumbnails -->
       <div class="work-slider" style="--quantity: 8">
 
-        <button class="work-item" style="--position: 1" data-url="/portfolio#ai">
-          <img src="111.jpg" alt="AI Generated Video">
+        <button class="work-item" style="--position: 1" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271584/Red_Bull_jbw5qf.mp4">
+          <img src="Screenshot 2025-12-09 230307.png" alt="AI Generated Video">
           <span class="work-play">▶</span>
         </button>
 
-        <button class="work-item" style="--position: 2" data-url="/portfolio#ads">
-          <img src="222.jpg" alt="Ads Video">
+        <button class="work-item" style="--position: 2" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765202908/Jaganath_Yatra_2025_xhu9bg.mp4">
+          <img src="jagarnath.png" alt="Ads Video">
           <span class="work-play">▶</span>
         </button>
 
-        <button class="work-item" style="--position: 3" data-url="/portfolio#ugc">
-          <img src="111.jpg" alt="UGC Video">
+        <button class="work-item" style="--position: 3" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765203014/Ambhuwachi_Mela_2025_y7tucx.mp4">
+          <img src="kamakhya.png" alt="UGC Video">
           <span class="work-play">▶</span>
         </button>
 
-        <button class="work-item" style="--position: 4" data-url="/portfolio#brand">
-          <img src="222.jpg" alt="Brand Video">
+        <button class="work-item" style="--position: 4" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271570/income_tax_animation_Video_s9gdzi.mp4">
+          <img src="india.png" alt="Brand Video">
           <span class="work-play">▶</span>
         </button>
 
-        <button class="work-item" style="--position: 5" data-url="/portfolio#podcast">
-          <img src="111.jpg" alt="Podcast Production">
+        <button class="work-item" style="--position: 5" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271587/NTPC_Reel_01_o3nrzb.mp4">
+          <img src="ntpc.png" alt="Podcast Production">
           <span class="work-play">▶</span>
         </button>
 
-        <button class="work-item" style="--position: 6" data-url="/portfolio#sports">
-          <img src="222.jpg" alt="Sports Edit">
+        <button class="work-item" style="--position: 6" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271578/Lays_isrmhj.mp4">
+          <img src="lays.png" alt="Sports Edit">
           <span class="work-play">▶</span>
         </button>
 
-        <button class="work-item" style="--position: 7" data-url="/portfolio#political">
-          <img src="111.jpg" alt="Political Campaign Video">
+        <button class="work-item" style="--position: 7" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271394/Hoichoi_Short_film_Purpose_chandra_Narayan_Thapa_1_xwauuo.mp4">
+          <img src="indiagate.png" alt="Political Campaign Video">
           <span class="work-play">▶</span>
         </button>
 
-        <button class="work-item" style="--position: 8" data-url="/portfolio#motion">
-          <img src="222.jpg" alt="Motion Graphics">
+        <button class="work-item" style="--position: 8" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271588/VID_20250617_060151_646_bsl_xjhfvx.mp4">
+          <img src="thumsup.png" alt="Motion Graphics">
           <span class="work-play">▶</span>
         </button>
 
@@ -421,47 +482,64 @@
       <div class="work-mobile-overlay"></div>
 
       <div class="work-mobile-carousel">
-        <button class="work-mobile-card" data-url="/portfolio#ai">
-          <img src="thumb.png" alt="AI Generated Video">
+        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271588/VID_20250617_060151_646_bsl_xjhfvx.mp4">
+          <img src="thumsup.png" alt="AI Generated Video">
           <div class="work-mobile-meta">
         </button>
 
-        <button class="work-mobile-card" data-url="/portfolio#ads">
-          <img src="thumb.png" alt="Ads Video">
+        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271565/Budweiser_magnum_beer_qjtsyh.mp4">
+          <img src="Budweiser magnum beer.png" alt="Ads Video">
         </button>
 
-        <button class="work-mobile-card" data-url="/portfolio#ugc">
-          <img src="thumb.png" alt="UGC Video">
+        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271573/Maggi_euvyu7.mp4">
+          <img src="maggie.png" alt="UGC Video">
         </button>
 
-        <button class="work-mobile-card" data-url="/portfolio#brand">
-          <img src="thumb.png" alt="Brand Video">
+        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271585/KFC_ejly7f.mp4">
+          <img src="kfc.png" alt="Brand Video">
         </button>
 
-        <button class="work-mobile-card" data-url="/portfolio#podcast">
-          <img src="thumb.png" alt="Podcast Production">
+        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271584/Red_Bull_jbw5qf.mp4">
+          <img src="Screenshot 2025-12-09 230307.png" alt="Podcast Production">
         </button>
 
-        <button class="work-mobile-card" data-url="/portfolio#sports">
-          <img src="thumb.png" alt="Sports Edit">
+        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271578/Lays_isrmhj.mp4">
+          <img src="lays.png" alt="Sports Edit">
         </button>
 
-        <button class="work-mobile-card" data-url="/portfolio#political">
-          <img src="thumb.png" alt="Political Campaign">
+        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271587/NTPC_Reel_01_o3nrzb.mp4">
+          <img src="ntpc.png" alt="Political Campaign">
         </button>
 
-        <button class="work-mobile-card" data-url="/portfolio#motion">
-          <img src="thumb.png" alt="Motion Graphics">
+        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271570/income_tax_animation_Video_s9gdzi.mp4">
+          <img src="indiagate.png" alt="Motion Graphics">
         </button>
       </div>
     </div>
 
     <!-- CTA -->
     <div class="work-cta-wrap">
-      <a href="/portfolio" class="work-cta-btn">View Full Portfolio</a>
+      <a href="portfolio.html" class="work-cta-btn">View Full Portfolio</a>
     </div>
 
   </div>
+
+  <!--harshek-->
+  <!-- ===================== VIDEO MODAL ===================== -->
+<div id="videoModal" class="video-modal">
+  <div class="video-modal-backdrop"></div>
+  
+  <div class="video-modal-box">
+      <!-- <video id="workVideoPlayer" controls playsinline></video> -->
+       <video id="workVideoPlayer" 
+             controls 
+             playsinline 
+             controlsList="nodownload noplaybackrate">
+      </video>
+  </div>
+</div>
+
+  <!--harshek end-->
 </section>
 <!-- ===================== CTA BANNER ===================== -->
 <section class="cta-banner">
@@ -479,7 +557,7 @@
   <div class="cta-content">
     <h2 class="cta-title">Have a video idea in mind?</h2>
     <p class="cta-sub">Let’s bring it to life.</p>
-    <a href="#contact" class="cta-btn">Let’s Talk</a>
+    <a href="#contact" class="btn-primary open-quote-popup"  onclick="openQuoteModal()" >Let’s Talk</a>
   </div>
 
 </section>
@@ -578,8 +656,7 @@
       <p class="footer-contact"><strong>Location:</strong> India</p>
       <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
       <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
-
-      <a href="#contact" class="footer-cta">Get a Free Quote</a>
+      <a href="javascript:void(0)" class="footer-cta open-quote-popup" onclick="openQuoteModal()">Get a Free Quote</a>
     </div>
 
   </div>
@@ -593,5 +670,6 @@
 </footer>
 
   <script src="app.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>

@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Portfolio • Easein Studio</title>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@300;400;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@300;400;600&display=swap"
+    rel="stylesheet" />
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
 
   <link rel="stylesheet" href="style.css" />
-
+  <link rel="stylesheet" href="popup.css" />
   <link rel="stylesheet" href="portfolio.css" />
 </head>
+
 <body>
 
- <!-- Cursor Glow (hidden on mobile via JS) -->
+  <!-- Cursor Glow (hidden on mobile via JS) -->
   <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div>
 
   <!-- ===================== NAVBAR ===================== -->
@@ -39,31 +38,31 @@
       <ul class="nav-links">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About Us</a></li>
-        
+
         <li class="dropdown">
           <a class="nav-link" href="#services">Services ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="/ai-videos.html">AI-Generated Videos</a></li>
-            <li><a href="/ad.html">Ads</a></li>
-            <li><a href="/ugc.html">UGC Videos</a></li>
-            <li><a href="/brand.html">Brand Videos</a></li>
-            <li><a href="/podcast.html">Podcast Production</a></li>
-            <li><a href="/motion.html">Motion Graphics</a></li>
+            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="ad.html">Ads</a></li>
+            <li><a href="ugc.html">UGC Videos</a></li>
+            <li><a href="brand.html">Brand Videos</a></li>
+            <li><a href="podcast.html">Podcast Production</a></li>
+            <li><a href="motion.html">Motion Graphics</a></li>
           </ul>
         </li>
 
         <li class="dropdown">
-          <a class="nav-link" href="#portfolio">Portfolio ▾</a>
+          <a class="nav-link" href="portfolio.html">Portfolio ▾</a>
+
           <ul class="dropdown-menu">
-           <li><a href="portfolio.html">AI-Generated Videos</a></li>
-            <li><a href="portfolio.html">Ads</a></li>
-            <li><a href="portfolio.html">UGC Videos</a></li>
-            <li><a href="portfolio.html">Brand Videos</a></li>
-            <li><a href="portfolio.html">Podcast Production</a></li>
-            <li><a href="portfolio.html">Motion Graphics</a></li>
+            <li><a href="portfolio.html#ai-videos">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html#ads">Ads</a></li>
+            <li><a href="portfolio.html#ugc">UGC Videos</a></li>
+            <li><a href="portfolio.html#brand-videos">Brand Videos</a></li>
+            <li><a href="portfolio.html#podcast">Podcast Production</a></li>
+            <li><a href="portfolio.html#motion-graphics">Motion Graphics</a></li>
           </ul>
         </li>
-
         <li><a class="nav-link" href="contact.html">Contact Us</a></li>
       </ul>
 
@@ -71,7 +70,7 @@
       <button id="hamburger" class="hamburger" aria-label="Open Menu">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
-        <span another="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </nav>
   </header>
@@ -108,12 +107,11 @@
         <li class="mobile-accordion">
           <button class="accordion-toggle">Portfolio ▾</button>
           <ul class="accordion-panel">
-            <li><a href="portfolio.html">AI-Generated Videos</a></li>
-            <li><a href="portfolio.html">Ads</a></li>
-            <li><a href="portfolio.html">UGC Videos</a></li>
-            <li><a href="portfolio.html">Brand Videos</a></li>
-            <li><a href="portfolio.html">Podcast Production</a></li>
-            <li><a href="portfolio.html">Motion Graphics</a></li>
+            <li><a href="portfolio.html#ai-videos">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html#ads">Ads</a></li>
+            <li><a href="portfolio.html#ugc">UGC Videos</a></li>
+            <li><a href="portfolio.html#podcast">Podcast Production</a></li>
+            <li><a href="portfolio.html#motion-graphics">Motion Graphics</a></li>
           </ul>
         </li>
 
@@ -124,8 +122,69 @@
     </div>
   </div>
 
+
   <main class="portfolio-page" id="top">
-   
+    <div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
+
+      <div class="popup-container">
+        <div class="popup-content contact-form-card">
+
+          <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <div class="popup-header">
+            <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
+            <p class="contact-subtext">Tell us what you need, and we'll get back to you with ideas, timelines, and a
+              quote.</p>
+          </div>
+
+          <form id="easein-contact-form" class="contact-form" enctype="multipart/form-data">
+
+            <div class="form-group">
+              <label for="pop-name">Name<span>*</span></label>
+              <input type="text" id="pop-name" name="name" required placeholder="Your full name" />
+            </div>
+
+            <div class="form-group">
+              <label for="pop-email">Email<span>*</span></label>
+              <input type="email" id="pop-email" name="email" required placeholder="you@example.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="pop-phone">Phone<span>*</span></label>
+              <input type="tel" id="pop-phone" name="phone" required placeholder="+91 - 98765 43210" />
+            </div>
+
+            <div class="form-group">
+              <label for="pop-videoType">Type of Video<span>*</span></label>
+              <select id="pop-videoType" name="video_type" required>
+                <option value="" disabled selected>Select a video type</option>
+                <option value="ai">AI-Generated Video</option>
+                <option value="podcast">Podcast Video</option>
+                <option value="sports-news">Sports & News Video</option>
+                <option value="political">Political Campaign Video</option>
+                <option value="ads-pvc">Advertisement & PVC Video</option>
+                <option value="motion-graphics">Motion Graphics</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="pop-projectDetails">Project Details<span>*</span></label>
+              <textarea id="pop-projectDetails" name="project_details" rows="4" required
+                placeholder="Tell us about your idea, goals, style preference, deadlines, etc."></textarea>
+            </div>
+
+
+
+            <button type="submit" class="contact-submit-btn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
 
     <section class="portfolio-hero">
       <div class="portfolio-hero-inner">
@@ -166,19 +225,26 @@
 
         <div class="portfolio-hero-visual">
           <div class="hero-reel-container">
-            <video class="reel-video video-blur" autoplay loop muted playsinline>
-              <source src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765136053/EaseinStudio_Brand_position_website_hero_banner_video_gspmre_1_kowydf.mp4" type="video/mp4">
-            </video>
+            <!-- <video class="reel-video video-blur" autoplay loop muted playsinline>
+              <source src="" type="video/mp4">
+            </video> -->
 
+<<<<<<< HEAD
             <!-- <video class="reel-video video-main" autoplay loop muted playsinline>
               <source src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765136053/EaseinStudio_Brand_position_website_hero_banner_video_gspmre_1_kowydf.mp4">
             </video> -->
+=======
+            <video class="reel-video video-main" autoplay loop muted playsinline>
+              <source
+                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765136053/EaseinStudio_Brand_position_website_hero_banner_video_gspmre_1_kowydf.mp4">
+            </video>
+>>>>>>> c582f631e1b71be7d953e6e97fc19a364c621b07
           </div>
         </div>
       </div>
     </section>
-      <!-- Ghost Parallax Text -->
-  <div class="ghost-text">EASEIN STUDIO</div>
+    <!-- Ghost Parallax Text -->
+    <div class="ghost-text">EASEIN STUDIO</div>
 
     <section class="portfolio-section" id="ai-videos">
       <div class="section-header">
@@ -197,13 +263,8 @@
         <div class="carousel-track">
           <article class="video-card">
             <div class="thumb-wrapper">
-              <video
-                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853922/Ambhuwachi_Mela_2025_llgkwk.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+              <video src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853922/Ambhuwachi_Mela_2025_llgkwk.mp4"
+                muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" aria-label="Play video" type="button">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -220,13 +281,8 @@
 
           <article class="video-card">
             <div class="thumb-wrapper">
-              <video
-                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853919/Jab_Tu_Sajan_uq2ak7.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+              <video src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765203047/Jab_Tu_Sajan_obsx4v.mp4" muted
+                loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" aria-label="Play video" type="button">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -243,13 +299,8 @@
 
           <article class="video-card">
             <div class="thumb-wrapper">
-              <video
-                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853910/Jaganath_Yatra_2025_lmpdvi.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+              <video src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765202908/Jaganath_Yatra_2025_xhu9bg.mp4"
+                muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" aria-label="Play video" type="button">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -263,7 +314,7 @@
               <p>Vertical documentary-style edit capturing culture and devotion.</p>
             </div>
           </article>
-          
+
         </div>
 
         <button class="carousel-btn next" aria-label="Next">
@@ -290,12 +341,8 @@
           <article class="video-card">
             <div class="thumb-wrapper">
               <video
-                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853885/Budweiser_magnum_beer_ixwys8.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271565/Budweiser_magnum_beer_qjtsyh.mp4"
+                muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" aria-label="Play video" type="button">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -312,13 +359,8 @@
 
           <article class="video-card">
             <div class="thumb-wrapper">
-               <video
-                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853882/Red_Bull_fggzix.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+              <video src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271584/Red_Bull_jbw5qf.mp4" muted loop
+                playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -332,16 +374,11 @@
               <p>High-energy vertical ad cut for social feeds and reels.</p>
             </div>
           </article>
-          
-           <article class="video-card">
+
+          <article class="video-card">
             <div class="thumb-wrapper">
-              <video
-                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853797/Cadbury_dairy_milk_dmjdbn.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+              <video src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271566/Cadbury_dairy_milk_jtgkad.mp4"
+                muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" aria-label="Play video" type="button">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -355,7 +392,7 @@
               <p>Warm, story-first edit focused on emotion and brand recall.</p>
             </div>
           </article>
-          <article class="video-card">
+          <!-- <article class="video-card">
             <div class="thumb-wrapper">
               <video
                 src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853866/KFC_raaeur.mp4"
@@ -376,16 +413,11 @@
               <h3>Cadbury Dairy Milk</h3>
               <p>Warm, story-first edit focused on emotion and brand recall.</p>
             </div>
-          </article>
-            <article class="video-card">
+          </article> -->
+          <article class="video-card">
             <div class="thumb-wrapper">
-              <video
-                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853834/Maggi_p3uaan.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+              <video src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271573/Maggi_euvyu7.mp4" muted loop
+                playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" aria-label="Play video" type="button">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -401,13 +433,8 @@
           </article>
           <article class="video-card">
             <div class="thumb-wrapper">
-               <video
-                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853809/VID_20250617_060151_646_bsl_nq8khi.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+              <video src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271585/KFC_ejly7f.mp4" muted loop
+                playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -421,7 +448,7 @@
               <p>Short, punchy vertical ad tailored for reels and social feeds.</p>
             </div>
           </article>
-          
+
         </div>
 
         <button class="carousel-btn next" aria-label="Next">
@@ -447,13 +474,7 @@
         <div class="carousel-track">
           <article class="video-card">
             <div class="thumb-wrapper">
-               <video
-                src=""
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+              <video src="" muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -469,14 +490,8 @@
           </article>
 
           <article class="video-card">
-               <div class="thumb-wrapper">
-               <video
-                src=""
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+            <div class="thumb-wrapper">
+              <video src="" muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -514,14 +529,8 @@
 
         <div class="carousel-track">
           <article class="video-card">
-               <div class="thumb-wrapper">
-               <video
-                src=""
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+            <div class="thumb-wrapper">
+              <video src="" muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -536,14 +545,8 @@
             </div>
           </article>
           <article class="video-card">
-               <div class="thumb-wrapper">
-               <video
-                src=""
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+            <div class="thumb-wrapper">
+              <video src="" muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -558,14 +561,8 @@
             </div>
           </article>
           <article class="video-card">
-               <div class="thumb-wrapper">
-               <video
-                src=""
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+            <div class="thumb-wrapper">
+              <video src="" muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -579,7 +576,7 @@
               <p></p>
             </div>
           </article>
-       
+
         </div>
 
         <button class="carousel-btn next" aria-label="Next">
@@ -604,14 +601,8 @@
 
         <div class="carousel-track">
           <article class="video-card">
-               <div class="thumb-wrapper">
-               <video
-                src=""
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+            <div class="thumb-wrapper">
+              <video src="" muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -626,14 +617,8 @@
             </div>
           </article>
           <article class="video-card">
-               <div class="thumb-wrapper">
-               <video
-                src=""
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+            <div class="thumb-wrapper">
+              <video src="" muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -648,14 +633,8 @@
             </div>
           </article>
           <article class="video-card">
-               <div class="thumb-wrapper">
-               <video
-                src=""
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
+            <div class="thumb-wrapper">
+              <video src="" muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -669,7 +648,7 @@
               <p></p>
             </div>
           </article>
-          
+
         </div>
 
         <button class="carousel-btn next" aria-label="Next">
@@ -678,63 +657,64 @@
       </div>
     </section>
     <!-- ===================== FOOTER ===================== -->
-<footer class="footer">
+    <footer class="footer">
 
-  <div class="footer-container">
+      <div class="footer-container">
 
-    <!-- COLUMN 1 – ABOUT -->
-    <div class="footer-col">
-      <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
+        <!-- COLUMN 1 – ABOUT -->
+        <div class="footer-col">
+          <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
 
-      <p class="footer-about">
-        Easein Studio helps individuals and brands tell their stories through 
-        powerful videos. From ads to podcasts, our team brings your ideas to life 
-        with creativity and precision.
-      </p>
+          <p class="footer-about">
+            Easein Studio helps individuals and brands tell their stories through
+            powerful videos. From ads to podcasts, our team brings your ideas to life
+            with creativity and precision.
+          </p>
 
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- COLUMN 2 – QUICK LINKS -->
+        <div class="footer-col">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- COLUMN 3 – CONTACT -->
+        <div class="footer-col">
+          <h3 class="footer-title">Let’s Talk</h3>
+
+          <p class="footer-contact"><strong>Location:</strong> India</p>
+          <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
+          <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
+          <a href="javascript:void(0)" class="footer-cta open-quote-popup" onclick="openQuoteModal()">Get a Free
+            Quote</a>
+        </div>
+
       </div>
-    </div>
 
-    <!-- COLUMN 2 – QUICK LINKS -->
-    <div class="footer-col">
-      <h3 class="footer-title">Quick Links</h3>
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-    </div>
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2025 Easein Studio. All rights reserved.</p>
+        <p>Designed by RBP Digital 360</p>
+      </div>
 
-    <!-- COLUMN 3 – CONTACT -->
-    <div class="footer-col">
-      <h3 class="footer-title">Let’s Talk</h3>
+    </footer>
 
-      <p class="footer-contact"><strong>Location:</strong> India</p>
-      <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
-      <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
-
-      <a href="#contact" class="footer-cta">Get a Free Quote</a>
-    </div>
-
-  </div>
-
-  <!-- Bottom Bar -->
-  <div class="footer-bottom">
-    <p>© 2025 Easein Studio. All rights reserved.</p>
-    <p>Designed by RBP Digital 360</p>
-  </div>
-
-</footer>
-
-  </main>
-
-  <script src="portfolio.js"></script>
+    <script src="app.js"></script>
+    <script src="popup.js"></script>
+    <script src="portfolio.js"></script>
 </body>
+
 </html>

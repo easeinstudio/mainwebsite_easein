@@ -66,127 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ----------------------------
-     NAVBAR SCROLL LINKS
-  ---------------------------- */
-  document.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
-      if (href && href.startsWith("#")) {
-        e.preventDefault();
-        smoothScrollTo(href);
-        hideMobileMenu();
-      }
-    });
-  });
-
-  document.querySelectorAll(".mobile-link").forEach((link) => {
-    link.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
-      hideMobileMenu();
-      if (href && href.startsWith("#")) {
-        e.preventDefault();
-        setTimeout(() => smoothScrollTo(href), 180);
-      }
-    });
-  });
-
-  /* ----------------------------
-     DESKTOP DROPDOWNS (hover with 1s grace)
-  ---------------------------- */
-  const desktopDropdowns = document.querySelectorAll(".dropdown");
-  desktopDropdowns.forEach((drop) => {
-    const menu = drop.querySelector(".dropdown-menu");
-    if (!menu) return;
-
-    let openTime = 0;
-    let closeTimeout = null;
-
-    drop.addEventListener("mouseenter", () => {
-      clearTimeout(closeTimeout);
-      openTime = Date.now();
-      drop.classList.add("open");
-    });
-
-    drop.addEventListener("mouseleave", () => {
-      const elapsed = Date.now() - openTime;
-      if (elapsed >= 1000) {
-        drop.classList.remove("open");
-      } else {
-        closeTimeout = setTimeout(() => drop.classList.remove("open"), 1000 - elapsed);
-      }
-    });
-
-    menu.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => drop.classList.remove("open"))
-    );
-  });
-
-  /* ----------------------------
-     MOBILE MENU
-  ---------------------------- */
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const mobileClose = document.getElementById("mobileClose");
-
-  function showMobileMenu() {
-    if (!mobileMenu) return;
-    mobileMenu.classList.add("show");
-    document.body.style.overflow = "hidden";
-  }
-
-  function hideMobileMenu() {
-    if (!mobileMenu) return;
-    mobileMenu.classList.remove("show");
-    document.body.style.overflow = "";
-  }
-
-  // expose for scroll helpers
-  window.hideMobileMenu = hideMobileMenu;
-
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener("click", () => {
-      if (mobileMenu.classList.contains("show")) {
-        hideMobileMenu();
-      } else {
-        showMobileMenu();
-      }
-    });
-  }
-
-  if (mobileClose) {
-    mobileClose.addEventListener("click", hideMobileMenu);
-  }
-
-  if (mobileMenu) {
-    mobileMenu.addEventListener("click", (e) => {
-      if (e.target === mobileMenu) hideMobileMenu();
-    });
-  }
-
-  // Mobile accordion inside menu
-  document.querySelectorAll(".mobile-accordion .accordion-toggle").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const panel = btn.nextElementSibling;
-      if (!panel) return;
-      panel.classList.toggle("show");
-      btn.setAttribute(
-        "aria-expanded",
-        panel.classList.contains("show") ? "true" : "false"
-      );
-    });
-  });
-
-  // Touch “hover” for mobile dropdown links
-  document.querySelectorAll(".accordion-panel a").forEach((link) => {
-    link.addEventListener("touchstart", () => {
-      document.querySelectorAll(".accordion-panel a").forEach((l) =>
-        l.classList.remove("touch-hover")
-      );
-      link.classList.add("touch-hover");
-      setTimeout(() => link.classList.remove("touch-hover"), 500);
-    });
-  });
+  
 
   /* ============================================================
      PORTFOLIO-SPECIFIC LOGIC
@@ -330,11 +210,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const progress = scrollY / triggerHeight;
         const scale = 1 - progress * 0.1; // 1 → 0.9
         const opacity = 1 - progress * 0.6; // 1 → 0.4
-        const blur = progress * 10; // 0 → 10px
+        // const blur = progress * 10; // 0 → 10px
 
         heroVideoContainer.style.transform = `scale(${scale})`;
         heroVideoContainer.style.opacity = `${opacity}`;
-        heroVideoContainer.style.filter = `blur(${blur}px)`;
+        // heroVideoContainer.style.filter = `blur(${blur}px)`;
       }
     });
   }
