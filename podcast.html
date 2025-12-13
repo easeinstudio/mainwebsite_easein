@@ -4,7 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
   <title>AI-Generated Videos | Easein Studio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="popup.css">
@@ -30,7 +33,15 @@
         <li class="dropdown">
           <a class="nav-link" href="#services">Services ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <!-- <li><a href="ai-videos.html">AI-Generated Videos</a></li> -->
+            <li class="dropdown-sub">
+              <a href="ai-videos.html" class="sub-toggle">AI-Generated Videos ▾</a>
+
+              <ul class="dropdown-sub-menu">
+                <li><a href="reels.html">Reels</a></li>
+                <li><a href="influencer.html">Influencer</a></li>
+              </ul>
+            </li>
             <li><a href="ad.html">Ads</a></li>
             <li><a href="ugc.html">UGC Videos</a></li>
             <li><a href="brand.html">Brand Videos</a></li>
@@ -82,7 +93,15 @@
         <li class="mobile-accordion">
           <button class="accordion-toggle">Services ▾</button>
           <ul class="accordion-panel">
-            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <!-- <li><a href="ai-videos.html">AI-Generated Videos</a></li> -->
+            <li class="dropdown-sub">
+              <a href="ai-videos.html" class="sub-toggle">AI-Generated Videos ▾</a>
+
+              <ul class="dropdown-sub-menu">
+                <li><a href="reels.html">Reels</a></li>
+                <li><a href="influencer.html">Influencer</a></li>
+              </ul>
+            </li>
             <li><a href="ad.html">Ads</a></li>
             <li><a href="ugc.html">UGC Videos</a></li>
             <li><a href="brand.html">Brand Videos</a></li>
@@ -111,16 +130,16 @@
     </div>
   </div>
   <!-- Ghost Parallax Text (reusing global ghost styles & JS) -->
-  <div class="ghost-text">EASEIN STUDIO</div>
-  <div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
-
-    <div class="popup-container">
-      <div class="popup-content contact-form-card">
-
-        <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
-          <i class="fas fa-times"></i>
-        </button>
+<div class="ghost-text">EASEIN STUDIO</div>
+<div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
+  
+  <div class="popup-container">
+    <div class="popup-content contact-form-card">
+      
+      <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
+        <i class="fas fa-times"></i>
+      </button>
 
         <div class="popup-header">
           <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
@@ -201,9 +220,9 @@
           <div class="orbit-ring orbit-ring-1"></div>
           <div class="orbit-ring orbit-ring-2"></div>
 
-          <div class="orbit-core">
-            <span>Podcast</span>
-          </div>
+        <div class="orbit-core">
+          <span style="font-size: 14px;" >Podcast</span>
+        </div>
 
           <div class="orbit-node orbit-node-1">Podcasters</div>
           <div class="orbit-node orbit-node-2">Thought Leaders </div>
@@ -273,10 +292,10 @@
           <!-- vertical data beam -->
           <div class="ai-core-beam"></div>
 
-          <!-- pulsing core -->
-          <div class="ai-core-node">
-            <span>Podcast</span>
-          </div>
+        <!-- pulsing core -->
+        <div class="ai-core-node">
+          <span>Podcast</span>
+        </div>
 
           <!-- orbit rings -->
           <div class="ai-core-ring ai-core-ring-1"></div>
@@ -289,44 +308,44 @@
         </div>
       </div>
 
-      <!-- RIGHT: PROCESS -->
-      <div class="ai-col ai-col-right">
-        <h2 class="service-section-title">Process</h2>
-        <p class="service-section-sub">
-          A simple, transparent pipeline — with AI where it helps and humans where it matters.
-        </p>
+    <!-- RIGHT: PROCESS -->
+    <div class="ai-col ai-col-right">
+      <h2 class="service-section-title">Process</h2>
+      <p class="service-section-sub">
+        A simple, transparent pipeline — with AI where it helps and humans where it matters.
+      </p>
 
-        <ol class="ai-process-list">
-          <li class="ai-process-step">
-            <div class="ai-step-badge">01</div>
-            <div class="ai-step-body">
-              <h3>Brief &amp; Script</h3>
-              <p>We start with your objective, audience, and key message — then shape that into a clear script.</p>
-            </div>
-          </li>
-          <li class="ai-process-step">
-            <div class="ai-step-badge">02</div>
-            <div class="ai-step-body">
-              <h3>AI Draft Generation</h3>
-              <p>We generate AI-based visuals, avatars, or scenes to match the script and visual direction.</p>
-            </div>
-          </li>
-          <li class="ai-process-step">
-            <div class="ai-step-badge">03</div>
-            <div class="ai-step-body">
-              <h3>Human Edit &amp; Polish</h3>
-              <p>Our editors refine pacing, transitions, graphics, and audio for a natural, human feel.</p>
-            </div>
-          </li>
-          <li class="ai-process-step">
-            <div class="ai-step-badge">04</div>
-            <div class="ai-step-body">
-              <h3>Final Delivery</h3>
-              <p>We export platform-ready versions and deliver in your required formats and aspect ratios.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
+      <ol class="ai-process-list">
+        <li class="ai-process-step">
+          <div class="ai-step-badge">01</div>
+          <div class="ai-step-body">
+            <h3>Brief &amp; Script</h3>
+            <p>We start with your objective, audience, and key message — then shape that into a clear script.</p>
+          </div>
+        </li>
+        <li class="ai-process-step">
+          <div class="ai-step-badge">02</div>
+          <div class="ai-step-body">
+            <h3>AI Draft Generation</h3>
+            <p>We generate AI-based visuals, avatars, or scenes to match the script and visual direction.</p>
+          </div>
+        </li>
+        <li class="ai-process-step">
+          <div class="ai-step-badge">03</div>
+          <div class="ai-step-body">
+            <h3>Human Edit &amp; Polish</h3>
+            <p>Our editors refine pacing, transitions, graphics, and audio for a natural, human feel.</p>
+          </div>
+        </li>
+        <li class="ai-process-step">
+          <div class="ai-step-badge">04</div>
+          <div class="ai-step-body">
+            <h3>Final Delivery</h3>
+            <p>We export platform-ready versions and deliver in your required formats and aspect ratios.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
 
     </div>
   </section>
@@ -345,30 +364,29 @@
     <section class="why-ai-section">
       <div class="why-ai-inner">
 
-        <h2 class="why-ai-title">Why Choose AI Videos from <span class="highlight-cyan gradient-text ">Easein
-            Studio</span></h2>
+    <h2 class="why-ai-title">Why Choose AI Videos from <span class="highlight-cyan gradient-text ">Easein Studio</span></h2>
 
-        <div class="why-ai-list">
-          <div class="why-ai-card">
-            <span class="icon">⚡</span>
-            <p>Save up to 70% production time</p>
-          </div>
+    <div class="why-ai-list">
+      <div class="why-ai-card">
+        <span class="icon">➦</span>
+        <p>Save up to 70% production time</p>
+      </div>
 
-          <div class="why-ai-card">
-            <span class="icon">📈</span>
-            <p>Scale your content output affordably</p>
-          </div>
+      <div class="why-ai-card">
+        <span class="icon">➦</span>
+        <p>Scale your content output affordably</p>
+      </div>
 
-          <div class="why-ai-card">
-            <span class="icon">✨</span>
-            <p>Combine AI precision with human creativity</p>
-          </div>
+      <div class="why-ai-card">
+        <span class="icon">➦</span>
+        <p>Combine AI precision with human creativity</p>
+      </div>
 
-          <div class="why-ai-card">
-            <span class="icon">🚀</span>
-            <p>Perfect for brands experimenting with automation</p>
-          </div>
-        </div>
+      <div class="why-ai-card">
+        <span class="icon">➦</span>
+        <p>Perfect for brands experimenting with automation</p>
+      </div>
+    </div>
 
       </div>
     </section>
@@ -378,13 +396,13 @@
       <!-- full-width background band -->
       <div class="ai-showcase-bg-band"></div>
 
-      <div class="ai-showcase-inner">
-        <div class="service-section-header ai-showcase-header">
-          <h2 class="service-section-title">Sample Work Showcase</h2>
-          <p class="service-section-sub">
-            Featured AI-powered videos — from explainers to short-form ads.
-          </p>
-        </div>
+  <div class="ai-showcase-inner">
+    <div class="service-section-header ai-showcase-header">
+      <h2 class="service-section-title">Sample Work Showcase</h2>
+      <p class="service-section-sub">
+        Featured AI-powered videos — from explainers to short-form ads.
+      </p>
+    </div>
 
         <div class="ai-showcase-window">
           <div class="ai-showcase-track">
@@ -459,20 +477,20 @@
           </div>
         </div>
 
-        <div class="ai-showcase-cta">
-          <a href="/portfolio#ai-videos" class="ai-showcase-btn">View More Samples in Portfolio</a>
-        </div>
-      </div>
-    </section>
-    <!-- ===================== CTA BANNER ===================== -->
-    <section class="cta-banner">
-      <!-- Neon Strip -->
-      <div class="cta-neon-strip"></div>
-      <div class="cta-particles"></div>
-      <div class="cta-content">
-        <h2 class="cta-title">Ready to Scale Your Content with AI?</h2>
-        <p class="cta-sub">Let’s build it.</p>
-        <a href="javascript:void(0)" class="btn-primary open-quote-popup" onclick="openQuoteModal()">
+    <div class="ai-showcase-cta">
+      <a href="/portfolio#ai-videos" class="ai-showcase-btn">View More Samples in Portfolio</a>
+    </div>
+  </div>
+</section>
+<!-- ===================== CTA BANNER ===================== -->
+<section class="cta-banner">
+  <!-- Neon Strip -->
+  <div class="cta-neon-strip"></div>
+  <div class="cta-particles"></div>
+  <div class="cta-content">
+    <h2 class="cta-title">Ready to Scale Your Content with AI?</h2>
+    <p class="cta-sub">Let’s build it.</p>
+   <a href="javascript:void(0)" class="btn-primary open-quote-popup" onclick="openQuoteModal()">
           Request an AI Video
         </a>
       </div>

@@ -92,6 +92,44 @@ desktopDropdowns.forEach((drop) => {
 });
 
 /* ----------------------------
+   SUB-DROPDOWN TOGGLE (DESKTOP + MOBILE)
+---------------------------- */
+document.querySelectorAll(".dropdown-sub").forEach((item) => {
+  const link = item.querySelector(".sub-toggle");
+  const submenu = item.querySelector(".dropdown-sub-menu");
+
+  let tappedOnce = false;
+
+  link.addEventListener("click", function (e) {
+    // MOBILE LOGIC
+    if (window.innerWidth <= 900) {
+      if (!item.classList.contains("show")) {
+        // FIRST TAP → open submenu only
+        e.preventDefault();
+        item.classList.add("show");
+        tappedOnce = true;
+
+        // Reset tap after 700ms
+        setTimeout(() => (tappedOnce = false), 700);
+      } else {
+        // SECOND TAP → go to page
+        // NO preventDefault → normal navigation
+        item.classList.remove("show");
+      }
+    }
+  });
+
+  // Desktop hover logic (unchanged)
+  item.addEventListener("mouseenter", () => {
+    if (window.innerWidth >= 900) item.classList.add("show");
+  });
+
+  item.addEventListener("mouseleave", () => {
+    if (window.innerWidth >= 900) item.classList.remove("show");
+  });
+});
+
+/* ----------------------------
    MOBILE MENU
 ---------------------------- */
 const hamburger = document.getElementById("hamburger");
@@ -418,10 +456,10 @@ document.addEventListener("keydown", (e) => {
     card.addEventListener('mousemove', (e)=>{
       const px = (e.clientX - (rectCache.l + rectCache.w/2)) / (rectCache.w/2);
       const py = (e.clientY - (rectCache.t + rectCache.h/2)) / (rectCache.h/2);
-      const rotateX = (-py * 6).toFixed(2);
-      const rotateY = (px * 6).toFixed(2);
-      const translateZ = 6;
-      card.style.transform = `perspective(800px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+      // const rotateX = (-py * 6).toFixed(2);
+      // const rotateY = (px * 6).toFixed(2);
+      // const translateZ = 6;
+      // card.style.transform = `perspective(800px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
       card.style.boxShadow = `0 18px 50px rgba(0,200,255,0.08)`;
     });
     card.addEventListener('mouseleave', ()=>{
