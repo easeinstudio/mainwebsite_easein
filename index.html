@@ -1,17 +1,17 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <!-- hi am debajit -->
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="stylesheet"
- href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <title>Easein Studio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="popup.css">
 </head>
+
 <body>
 
   <!-- Cursor Glow (hidden on mobile via JS) -->
@@ -28,11 +28,21 @@
       <ul class="nav-links">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About Us</a></li>
-        
+
         <li class="dropdown">
           <a class="nav-link" href="#services">Services ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <!-- <li><a href="ai-videos.html">AI-Generated Videos</a></li> -->
+            <li class="dropdown-sub">
+              <a href="ai-videos.html" class="sub-toggle">AI-Generated Videos ▾</a>
+
+              <ul class="dropdown-sub-menu">
+                <li><a href="reels.html">Reels</a></li>
+                <li><a href="influencer.html">Influencer</a></li>
+              </ul>
+            </li>
+
+
             <li><a href="ad.html">Ads</a></li>
             <li><a href="ugc.html">UGC Videos</a></li>
             <li><a href="brand.html">Brand Videos</a></li>
@@ -44,7 +54,7 @@
         <li class="dropdown">
           <a class="nav-link" href="#portfolio">Portfolio ▾</a>
           <ul class="dropdown-menu">
-           <li><a href="portfolio.html">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html">AI-Generated Videos</a></li>
             <li><a href="portfolio.html">Ads</a></li>
             <li><a href="portfolio.html">UGC Videos</a></li>
             <li><a href="portfolio.html">Brand Videos</a></li>
@@ -85,6 +95,18 @@
           <button class="accordion-toggle">Services ▾</button>
           <ul class="accordion-panel">
             <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="index.html">AI-Reels</a></li>
+            <li><a href="podcast.html">AI-Influencers</a></li>
+            <!-- <li class="dropdown-sub">
+              <a href="" class="sub-toggle">AI-Generated Videos ▾</a>
+
+              <ul class="dropdown-sub-menu">
+                <li><a href="reels.html">Reels</a></li>
+                <li><a href="influencer.html">Influencer</a></li>
+              </ul>
+            </li> -->
+
+
             <li><a href="ad.html">Ads</a></li>
             <li><a href="ugc.html">UGC Videos</a></li>
             <li><a href="brand.html">Brand Videos</a></li>
@@ -113,563 +135,582 @@
     </div>
   </div>
 
-   <!-- ===================== HERO SECTION ===================== -->
-<!-- ===================== HERO SECTION ===================== -->
-<section id="home" class="hero">
+  <!-- ===================== HERO SECTION ===================== -->
+  <!-- ===================== HERO SECTION ===================== -->
+  <section id="home" class="hero">
 
-  <!-- Parallax Lens Image -->
-  <div class="lens-layer">
-    <img src="cam1.png" alt="Camera Lens" class="lens-img" />
+    <!-- Parallax Lens Image -->
+    <div class="lens-layer">
+      <img src="cam1.png" alt="Camera Lens" class="lens-img" />
+    </div>
+
+    <!-- Ghost Parallax Text -->
+    <div class="ghost-text">EASEIN STUDIO</div>
+
+    <!-- Background Layers -->
+    <div class="hero-bg-layer layer-1"></div>
+    <div class="hero-bg-layer layer-2"></div>
+    <div class="hero-bg-glow"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Turning Ideas Into <br>
+        <span class="gradient-text">Captivating Videos.</span>
+      </h1>
+
+      <p class="hero-subtext">
+        From AI-generated visuals to ad films and podcasts — Easein Studio creates
+        videos that tell stories, connect with audiences, and help brands grow.
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary open-quote-popup" onclick="openQuoteModal()">Get a Free Quote</a>
+
+
+        <a href="#portfolio" class="btn-secondary">View Our Work</a>
+      </div>
+    </div>
+  </section>
+  <div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
+
+    <div class="popup-container">
+      <div class="popup-content contact-form-card">
+
+        <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="popup-header">
+          <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
+          <p class="contact-subtext">Tell us what you need, and we'll get back to you with ideas, timelines, and a
+            quote.</p>
+        </div>
+
+        <form id="easein-contact-form" class="contact-form" enctype="multipart/form-data">
+
+          <div class="form-group">
+            <label for="pop-name">Name<span>*</span></label>
+            <input type="text" id="pop-name" name="name" required placeholder="Your full name" />
+          </div>
+
+          <div class="form-group">
+            <label for="pop-email">Email<span>*</span></label>
+            <input type="email" id="pop-email" name="email" required placeholder="you@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="pop-phone">Phone<span>*</span></label>
+            <input type="tel" id="pop-phone" name="phone" required placeholder="+91 - 98765 43210" />
+          </div>
+
+          <div class="form-group">
+            <label for="pop-videoType">Type of Video<span>*</span></label>
+            <select id="pop-videoType" name="video_type" required>
+              <option value="" disabled selected>Select a video type</option>
+              <option value="ai">AI-Generated Video</option>
+              <option value="podcast">Podcast Video</option>
+              <option value="sports-news">Sports & News Video</option>
+              <option value="political">Political Campaign Video</option>
+              <option value="ads-pvc">Advertisement & PVC Video</option>
+              <option value="motion-graphics">Motion Graphics</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="pop-projectDetails">Project Details<span>*</span></label>
+            <textarea id="pop-projectDetails" name="project_details" rows="4" required
+              placeholder="Tell us about your idea, goals, style preference, deadlines, etc."></textarea>
+          </div>
+
+
+
+          <button type="submit" class="contact-submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
   </div>
 
-  <!-- Ghost Parallax Text -->
-  <div class="ghost-text">EASEIN STUDIO</div>
+  <section class="brand-reel">
+    <div class="brand-reel-inner">
 
-  <!-- Background Layers -->
-  <div class="hero-bg-layer layer-1"></div>
-  <div class="hero-bg-layer layer-2"></div>
-  <div class="hero-bg-glow"></div>
-
-  <div class="hero-content">
-    <h1 class="hero-title">
-      Turning Ideas Into <br>
-      <span class="gradient-text">Captivating Videos.</span>
-    </h1>
-
-    <p class="hero-subtext">
-      From AI-generated visuals to ad films and podcasts — Easein Studio creates
-      videos that tell stories, connect with audiences, and help brands grow.
-    </p>
-<div class="hero-cta">
-  <a href="#contact" class="btn-primary open-quote-popup"  onclick="openQuoteModal()" >Get a Free Quote</a>
-
-  
-  <a href="#portfolio" class="btn-secondary">View Our Work</a>
-</div>
-  </div>
-</section>
-<div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
-  
-  <div class="popup-container">
-    <div class="popup-content contact-form-card">
-      
-      <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
-        <i class="fas fa-times"></i>
-      </button>
-
-      <div class="popup-header">
-        <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
-        <p class="contact-subtext">Tell us what you need, and we'll get back to you with ideas, timelines, and a quote.</p>
+      <!-- LEFT TEXT -->
+      <div class="brand-reel-left">
+        <h3 class="brand-reel-kicker">Our Work In Motion</h3>
+        <h2 class="brand-reel-title">Watch Our Creative Output</h2>
+        <p class="brand-reel-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil iste ratione adipisci!
+        </p>
       </div>
 
-      <form id="easein-contact-form" class="contact-form" enctype="multipart/form-data">
-        
-        <div class="form-group">
-          <label for="pop-name">Name<span>*</span></label>
-          <input type="text" id="pop-name" name="name" required placeholder="Your full name" />
+
+      <!-- RIGHT VIDEO -->
+      <div class="brand-reel-right">
+        <div class="brand-reel-screen">
+          <video autoplay muted loop playsinline class="brand-reel-video">
+            <source
+              src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765136053/EaseinStudio_Brand_position_website_hero_banner_video_gspmre_1_kowydf.mp4">
+          </video>
         </div>
-
-        <div class="form-group">
-          <label for="pop-email">Email<span>*</span></label>
-          <input type="email" id="pop-email" name="email" required placeholder="you@example.com" />
-        </div>
-
-        <div class="form-group">
-          <label for="pop-phone">Phone<span>*</span></label>
-          <input type="tel" id="pop-phone" name="phone" required placeholder="+91 - 98765 43210" />
-        </div>
-
-        <div class="form-group">
-          <label for="pop-videoType">Type of Video<span>*</span></label>
-          <select id="pop-videoType" name="video_type" required>
-            <option value="" disabled selected>Select a video type</option>
-            <option value="ai">AI-Generated Video</option>
-            <option value="podcast">Podcast Video</option>
-            <option value="sports-news">Sports & News Video</option>
-            <option value="political">Political Campaign Video</option>
-            <option value="ads-pvc">Advertisement & PVC Video</option>
-            <option value="motion-graphics">Motion Graphics</option>
-            <option value="other">Other / Not Sure</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="pop-projectDetails">Project Details<span>*</span></label>
-          <textarea id="pop-projectDetails" name="project_details" rows="4" required placeholder="Tell us about your idea, goals, style preference, deadlines, etc."></textarea>
-        </div>
-
-        
-
-        <button type="submit" class="contact-submit-btn">Submit</button>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<section class="brand-reel">
-  <div class="brand-reel-inner">
+  <!-- ========================= WHY CHOOSE - HOLOGRAM PANELS ========================= -->
+  <section id="why" class="why-section hologram-section">
 
-    <!-- LEFT TEXT -->
-    <div class="brand-reel-left">
-      <h3 class="brand-reel-kicker">Our Work In Motion</h3>
-      <h2 class="brand-reel-title">Watch Our Creative Output</h2>
-      <p class="brand-reel-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil iste ratione adipisci!
+    <!-- subtle hologram texture (uses uploaded image) -->
+    <div class="holo-texture" aria-hidden="true"></div>
+
+    <!-- floating orbs (AI particles) -->
+    <div class="holo-orbs" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="why-container">
+      <h2 class="why-title">Why Choose <span class="highlight-cyan gradient-text ">Easein Studio</span></h2>
+
+      <p class="why-desc">
+        We’re not just editors — we’re storytellers who understand the power of visuals.
+        Our team works closely with you to turn raw ideas into videos that leave a mark.
       </p>
-    </div>
- 
 
-    <!-- RIGHT VIDEO -->
-    <div class="brand-reel-right">
-      <div class="brand-reel-screen">
-        <video autoplay muted loop playsinline class="brand-reel-video">
-          <source src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765136053/EaseinStudio_Brand_position_website_hero_banner_video_gspmre_1_kowydf.mp4">
+      <div class="why-grid">
+
+        <article class="why-card" data-tilt>
+          <div class="card-icon">🎯</div>
+          <h3 class="card-title">Custom videos for every niche</h3>
+          <p class="card-desc">Tailored storytelling that fits your audience, platform and goals.</p>
+        </article>
+
+        <article class="why-card" data-tilt>
+          <div class="card-icon">⚡</div>
+          <h3 class="card-title">Fast turnaround with quality</h3>
+          <p class="card-desc">Accelerated AI-assisted workflows without compromising craft.</p>
+        </article>
+
+        <article class="why-card" data-tilt>
+          <div class="card-icon">🎬</div>
+          <h3 class="card-title">Script to final cut — all in one place</h3>
+          <p class="card-desc">We handle concept, script, edit and delivery end-to-end.</p>
+        </article>
+
+        <article class="why-card" data-tilt>
+          <div class="card-icon">🤖</div>
+          <h3 class="card-title">Modern editing tools & AI integration</h3>
+          <p class="card-desc">AI generation, voice, and motion pipelines to scale your content.</p>
+        </article>
+
+        <article class="why-card" data-tilt>
+          <div class="card-icon">📞</div>
+          <h3 class="card-title">Clear communication and support</h3>
+          <p class="card-desc">Dedicated contact, revisions and on-time delivery.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+  <!-- ========================= END WHY CHOOSE ========================= -->
+  <!-- ===================== OUR PROCESS SECTION ===================== -->
+  <section id="process" class="process-section">
+    <div class="process-grid">
+
+      <!-- LEFT AI BEAM -->
+      <div class="process-left">
+        <div class="process-beam">
+          <div class="beam-core"></div>
+          <div class="beam-glow"></div>
+          <div class="beam-reflection"></div>
+          <div class="beam-actors"></div>
+        </div>
+      </div>
+
+      <!-- CENTER — CARDS -->
+      <div class="process-center">
+
+        <h2 class="process-heading">How <span class="gradient-text ">We Work</span></h2>
+        <p class="process-split-sub">
+          From idea to delivery — a smooth, AI-enhanced production pipeline.
+        </p>
+
+        <div class="process-steps">
+
+          <div class="process-step">
+            <h3>1. Share your idea</h3>
+            <p>Tell us your story or goal — we understand your vision deeply.</p>
+          </div>
+
+          <div class="process-step">
+            <h3>2. We plan & script</h3>
+            <p>Creative concepts shaped with clarity for your audience.</p>
+          </div>
+
+          <div class="process-step">
+            <h3>3. Edit & review</h3>
+            <p>Collaboration with revisions until everything is perfect.</p>
+          </div>
+
+          <div class="process-step">
+            <h3>4. Deliver your video</h3>
+            <p>Final polished output delivered on time, ready to publish.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT — AI BRAIN -->
+      <div class="process-right">
+        <img src="cam led.png" class="ai-brain" alt="AI Brain" />
+      </div>
+
+    </div>
+  </section>
+  <!-- ===================== OUR SERVICES – AI FUTURISTIC LAB ===================== -->
+  <section id="services" class="services-matrix-section">
+
+    <!-- DYNAMIC BACKGROUND LAYERS -->
+    <div class="matrix-bg"></div>
+    <div class="matrix-grid"></div>
+    <canvas id="codeRain"></canvas>
+
+    <!-- REAL BACKGROUND IMAGE -->
+    <div class="services-bg-img"></div>
+
+    <div class="services-matrix-inner">
+
+      <!-- HEADER -->
+      <div class="services-matrix-header">
+        <h2 class="services-matrix-title">Our Services</h2>
+        <p class="services-matrix-sub">
+          We create all types of videos — from digital campaigns to podcasts and motion graphics.
+        </p>
+      </div>
+
+      <!-- SERVICE CARDS -->
+      <div class="services-matrix-grid">
+
+        <a href="ai-videos.html" class="matrix-card" style="text-decoration: none;" data-url="/services/ai-videos.html">
+          <h3>AI Generated Video Creation</h3>
+          <p>Transform your ideas into AI-powered visual stories.</p>
+          <h5 class="click-btn">Click ></h5>
+        </a>
+
+        <a href="ad.html" class="matrix-card" style="text-decoration: none;" data-url="/services/ads.html">
+          <h3>Ads</h3>
+          <p>Creative videos that drive conversions.</p>
+          <h5 class="click-btn">Click ></h5>
+        </a>
+
+        <a href="ugc.html" class="matrix-card" style="text-decoration: none;" data-url="/services/ugc.html">
+          <h3>UGC Videos</h3>
+          <p>Consumer feedback for brand authenticity.</p>
+          <h5 class="click-btn">Click ></h5>
+        </a>
+
+        <a href="brand.html" class="matrix-card" style="text-decoration: none;" data-url="/services/brand-videos.html">
+          <h3>Brand Videos</h3>
+          <p>Enhancing your brand identity.</p>
+          <h5 class="click-btn">Click ></h5>
+        </a>
+
+        <a href="podcast.html" class="matrix-card" style="text-decoration: none;" data-url="/services/podcast.html">
+          <h3>Podcast Production</h3>
+          <p>Clean, professional, and engaging podcast videos.</p>
+          <h5 class="click-btn">Click ></h5>
+        </a>
+
+        <a href="motion.html" class="matrix-card" style="text-decoration: none;"
+          data-url="/services/motion-graphics.html">
+          <h3>Motion Graphics</h3>
+          <p>Sleek animations that enhance your brand visuals.</p>
+          <h5 class="click-btn">Click ></h5>
+        </a>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="services-matrix-cta">
+        <a href="/services" class="matrix-btn">Explore Services</a>
+      </div>
+
+    </div>
+  </section>
+  <!-- ===================== OUR WORK SECTION ===================== -->
+  <section id="work" class="work-section">
+    <div class="work-inner">
+
+      <!-- Header -->
+      <div class="work-header">
+        <h2 class="work-kicker">Our Work</h2>
+        <p class="work-heading">Watch how brands brought their stories to life.</p>
+      </div>
+
+      <!-- ===== DESKTOP / TABLET: 3D RING + PODIUM ===== -->
+      <div class="work-stage-desktop">
+
+        <!-- 3D Ring of Thumbnails -->
+        <div class="work-slider" style="--quantity: 8">
+
+          <button class="work-item" style="--position: 1"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271584/Red_Bull_jbw5qf.mp4">
+            <img src="Screenshot 2025-12-09 230307.png" alt="AI Generated Video">
+            <span class="work-play">▶</span>
+          </button>
+
+          <button class="work-item" style="--position: 2"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765202908/Jaganath_Yatra_2025_xhu9bg.mp4">
+            <img src="jagarnath.png" alt="Ads Video">
+            <span class="work-play">▶</span>
+          </button>
+
+          <button class="work-item" style="--position: 3"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765203014/Ambhuwachi_Mela_2025_y7tucx.mp4">
+            <img src="kamakhya.png" alt="UGC Video">
+            <span class="work-play">▶</span>
+          </button>
+
+          <button class="work-item" style="--position: 4"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271570/income_tax_animation_Video_s9gdzi.mp4">
+            <img src="india.png" alt="Brand Video">
+            <span class="work-play">▶</span>
+          </button>
+
+          <button class="work-item" style="--position: 5"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271587/NTPC_Reel_01_o3nrzb.mp4">
+            <img src="ntpc.png" alt="Podcast Production">
+            <span class="work-play">▶</span>
+          </button>
+
+          <button class="work-item" style="--position: 6"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271578/Lays_isrmhj.mp4">
+            <img src="lays.png" alt="Sports Edit">
+            <span class="work-play">▶</span>
+          </button>
+
+          <button class="work-item" style="--position: 7"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271394/Hoichoi_Short_film_Purpose_chandra_Narayan_Thapa_1_xwauuo.mp4">
+            <img src="indiagate.png" alt="Political Campaign Video">
+            <span class="work-play">▶</span>
+          </button>
+
+          <button class="work-item" style="--position: 8"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271588/VID_20250617_060151_646_bsl_xjhfvx.mp4">
+            <img src="thumsup.png" alt="Motion Graphics">
+            <span class="work-play">▶</span>
+          </button>
+
+        </div>
+
+        <!-- Podium in the center -->
+        <div class="work-podium">
+          <!-- 🔧 Change src to your podium image file -->
+          <img src="podium-logo.png" alt="Easein Studio Podium" class="work-podium-img">
+          <div class="work-podium-glow"></div>
+        </div>
+      </div>
+
+      <!-- ===== MOBILE: PODIUM BG + HORIZONTAL CAROUSEL ===== -->
+      <div class="work-stage-mobile">
+        <div class="work-mobile-overlay"></div>
+
+        <div class="work-mobile-carousel">
+          <button class="work-mobile-card"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271588/VID_20250617_060151_646_bsl_xjhfvx.mp4">
+            <img src="thumsup.png" alt="AI Generated Video">
+            <div class="work-mobile-meta">
+          </button>
+
+          <button class="work-mobile-card"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271565/Budweiser_magnum_beer_qjtsyh.mp4">
+            <img src="Budweiser magnum beer.png" alt="Ads Video">
+          </button>
+
+          <button class="work-mobile-card"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271573/Maggi_euvyu7.mp4">
+            <img src="maggie.png" alt="UGC Video">
+          </button>
+
+          <button class="work-mobile-card"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271585/KFC_ejly7f.mp4">
+            <img src="kfc.png" alt="Brand Video">
+          </button>
+
+          <button class="work-mobile-card"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271584/Red_Bull_jbw5qf.mp4">
+            <img src="Screenshot 2025-12-09 230307.png" alt="Podcast Production">
+          </button>
+
+          <button class="work-mobile-card"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271578/Lays_isrmhj.mp4">
+            <img src="lays.png" alt="Sports Edit">
+          </button>
+
+          <button class="work-mobile-card"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271587/NTPC_Reel_01_o3nrzb.mp4">
+            <img src="ntpc.png" alt="Political Campaign">
+          </button>
+
+          <button class="work-mobile-card"
+            data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271570/income_tax_animation_Video_s9gdzi.mp4">
+            <img src="indiagate.png" alt="Motion Graphics">
+          </button>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="work-cta-wrap">
+        <a href="portfolio.html" class="work-cta-btn">View Full Portfolio</a>
+      </div>
+
+    </div>
+
+    <!--harshek-->
+    <!-- ===================== VIDEO MODAL ===================== -->
+    <div id="videoModal" class="video-modal">
+      <div class="video-modal-backdrop"></div>
+
+      <div class="video-modal-box">
+        <!-- <video id="workVideoPlayer" controls playsinline></video> -->
+        <video id="workVideoPlayer" controls playsinline controlsList="nodownload noplaybackrate">
         </video>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ========================= WHY CHOOSE - HOLOGRAM PANELS ========================= -->
-<section id="why" class="why-section hologram-section">
+    <!--harshek end-->
+  </section>
+  <!-- ===================== CTA BANNER ===================== -->
+  <section class="cta-banner">
 
-  <!-- subtle hologram texture (uses uploaded image) -->
-  <div class="holo-texture" aria-hidden="true"></div>
+    <!-- Ghost Background Text -->
+    <div class="cta-ghost-text">EASEIN STUDIO</div>
 
-  <!-- floating orbs (AI particles) -->
-  <div class="holo-orbs" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
+    <!-- Neon Strip -->
+    <div class="cta-neon-strip"></div>
 
-  <div class="why-container">
-    <h2 class="why-title">Why Choose <span class="highlight-cyan gradient-text ">Easein Studio</span></h2>
+    <!-- Floating Particles -->
+    <div class="cta-particles"></div>
 
-    <p class="why-desc">
-      We’re not just editors — we’re storytellers who understand the power of visuals.
-      Our team works closely with you to turn raw ideas into videos that leave a mark.
-    </p>
-
-    <div class="why-grid">
-
-      <article class="why-card" data-tilt>
-        <div class="card-icon">🎯</div>
-        <h3 class="card-title">Custom videos for every niche</h3>
-        <p class="card-desc">Tailored storytelling that fits your audience, platform and goals.</p>
-      </article>
-
-      <article class="why-card" data-tilt>
-        <div class="card-icon">⚡</div>
-        <h3 class="card-title">Fast turnaround with quality</h3>
-        <p class="card-desc">Accelerated AI-assisted workflows without compromising craft.</p>
-      </article>
-
-      <article class="why-card" data-tilt>
-        <div class="card-icon">🎬</div>
-        <h3 class="card-title">Script to final cut — all in one place</h3>
-        <p class="card-desc">We handle concept, script, edit and delivery end-to-end.</p>
-      </article>
-
-      <article class="why-card" data-tilt>
-        <div class="card-icon">🤖</div>
-        <h3 class="card-title">Modern editing tools & AI integration</h3>
-        <p class="card-desc">AI generation, voice, and motion pipelines to scale your content.</p>
-      </article>
-
-      <article class="why-card" data-tilt>
-        <div class="card-icon">📞</div>
-        <h3 class="card-title">Clear communication and support</h3>
-        <p class="card-desc">Dedicated contact, revisions and on-time delivery.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-<!-- ========================= END WHY CHOOSE ========================= -->
-<!-- ===================== OUR PROCESS SECTION ===================== -->
-<section id="process" class="process-section">
-  <div class="process-grid">
-
-    <!-- LEFT AI BEAM -->
-    <div class="process-left">
-      <div class="process-beam">
-        <div class="beam-core"></div>
-        <div class="beam-glow"></div>
-        <div class="beam-reflection"></div>
-        <div class="beam-actors"></div>
-      </div>
+    <!-- Foreground Content -->
+    <div class="cta-content">
+      <h2 class="cta-title">Have a video idea in mind?</h2>
+      <p class="cta-sub">Let’s bring it to life.</p>
+      <a href="#contact" class="btn-primary open-quote-popup" onclick="openQuoteModal()">Let’s Talk</a>
     </div>
 
-    <!-- CENTER — CARDS -->
-    <div class="process-center">
+  </section>
+  <!-- ===================== FAQ SECTION ===================== -->
+  <section class="faq-section">
 
-      <h2 class="process-heading">How <span class="gradient-text ">We Work</span></h2>
-      <p class="process-split-sub">
-        From idea to delivery — a smooth, AI-enhanced production pipeline.
-      </p>
+    <!-- Abstract AI Waves -->
+    <div class="faq-wave faq-wave--bottom"></div>
+    <div class="faq-wave faq-wave--top"></div>
 
-      <div class="process-steps">
+    <h2 class="faq-heading">Got Questions? We’ve Got Answers.</h2>
 
-        <div class="process-step">
-          <h3>1. Share your idea</h3>
-          <p>Tell us your story or goal — we understand your vision deeply.</p>
+    <div class="faq-container">
+
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How long does a project take?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Depends on the type of video — most projects are delivered within 5–10 days.
+          </p>
         </div>
+      </div>
 
-        <div class="process-step">
-          <h3>2. We plan & script</h3>
-          <p>Creative concepts shaped with clarity for your audience.</p>
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can you edit my existing footage?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, you can share your raw clips or references — we’ll handle the rest.
+          </p>
         </div>
+      </div>
 
-        <div class="process-step">
-          <h3>3. Edit & review</h3>
-          <p>Collaboration with revisions until everything is perfect.</p>
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do you offer voiceovers or subtitles?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Absolutely. We can add both in multiple languages.
+          </p>
         </div>
-
-        <div class="process-step">
-          <h3>4. Deliver your video</h3>
-          <p>Final polished output delivered on time, ready to publish.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- RIGHT — AI BRAIN -->
-    <div class="process-right">
-      <img src="cam led.png" class="ai-brain" alt="AI Brain" />
-    </div>
-
-  </div>
-</section>
-<!-- ===================== OUR SERVICES – AI FUTURISTIC LAB ===================== -->
-<section id="services" class="services-matrix-section">
-
-  <!-- DYNAMIC BACKGROUND LAYERS -->
-  <div class="matrix-bg"></div>
-  <div class="matrix-grid"></div>
-  <canvas id="codeRain"></canvas>
-
-  <!-- REAL BACKGROUND IMAGE -->
-  <div class="services-bg-img"></div>
-
-  <div class="services-matrix-inner">
-
-    <!-- HEADER -->
-    <div class="services-matrix-header">
-      <h2 class="services-matrix-title">Our Services</h2>
-      <p class="services-matrix-sub">
-        We create all types of videos — from digital campaigns to podcasts and motion graphics.
-      </p>
-    </div>
-
-    <!-- SERVICE CARDS -->
-    <div class="services-matrix-grid">
-
-      <a href="ai-videos.html" class="matrix-card" style="text-decoration: none;" data-url="/services/ai-videos.html">
-        <h3>AI Generated Video Creation</h3>
-        <p>Transform your ideas into AI-powered visual stories.</p>
-        <h5 class="click-btn">Click ></h5>
-      </a>
-
-      <a href="ad.html" class="matrix-card" style="text-decoration: none;" data-url="/services/ads.html">
-        <h3>Ads</h3>
-        <p>Creative videos that drive conversions.</p>
-        <h5 class="click-btn">Click ></h5>
-      </a>
-
-      <a href="ugc.html" class="matrix-card" style="text-decoration: none;" data-url="/services/ugc.html">
-        <h3>UGC Videos</h3>
-        <p>Consumer feedback for brand authenticity.</p>
-        <h5 class="click-btn">Click ></h5>
-      </a>
-
-      <a href="brand.html" class="matrix-card" style="text-decoration: none;" data-url="/services/brand-videos.html">
-        <h3>Brand Videos</h3>
-        <p>Enhancing your brand identity.</p>
-        <h5 class="click-btn">Click ></h5>
-      </a>
-
-      <a href="podcast.html" class="matrix-card" style="text-decoration: none;" data-url="/services/podcast.html">
-        <h3>Podcast Production</h3>
-        <p>Clean, professional, and engaging podcast videos.</p>
-        <h5 class="click-btn">Click ></h5>
-      </a>
-
-      <a href="motion.html" class="matrix-card" style="text-decoration: none;" data-url="/services/motion-graphics.html">
-        <h3>Motion Graphics</h3>
-        <p>Sleek animations that enhance your brand visuals.</p>
-        <h5 class="click-btn">Click ></h5>
-      </a>
-
-    </div>
-
-    <!-- CTA -->
-    <div class="services-matrix-cta">
-      <a href="/services" class="matrix-btn">Explore Services</a>
-    </div>
-
-  </div>
-</section>
-<!-- ===================== OUR WORK SECTION ===================== -->
-<section id="work" class="work-section">
-  <div class="work-inner">
-
-    <!-- Header -->
-    <div class="work-header">
-      <h2 class="work-kicker">Our Work</h2>
-      <p class="work-heading">Watch how brands brought their stories to life.</p>
-    </div>
-
-    <!-- ===== DESKTOP / TABLET: 3D RING + PODIUM ===== -->
-    <div class="work-stage-desktop">
-
-      <!-- 3D Ring of Thumbnails -->
-      <div class="work-slider" style="--quantity: 8">
-
-        <button class="work-item" style="--position: 1" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271584/Red_Bull_jbw5qf.mp4">
-          <img src="Screenshot 2025-12-09 230307.png" alt="AI Generated Video">
-          <span class="work-play">▶</span>
-        </button>
-
-        <button class="work-item" style="--position: 2" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765202908/Jaganath_Yatra_2025_xhu9bg.mp4">
-          <img src="jagarnath.png" alt="Ads Video">
-          <span class="work-play">▶</span>
-        </button>
-
-        <button class="work-item" style="--position: 3" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765203014/Ambhuwachi_Mela_2025_y7tucx.mp4">
-          <img src="kamakhya.png" alt="UGC Video">
-          <span class="work-play">▶</span>
-        </button>
-
-        <button class="work-item" style="--position: 4" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271570/income_tax_animation_Video_s9gdzi.mp4">
-          <img src="india.png" alt="Brand Video">
-          <span class="work-play">▶</span>
-        </button>
-
-        <button class="work-item" style="--position: 5" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271587/NTPC_Reel_01_o3nrzb.mp4">
-          <img src="ntpc.png" alt="Podcast Production">
-          <span class="work-play">▶</span>
-        </button>
-
-        <button class="work-item" style="--position: 6" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271578/Lays_isrmhj.mp4">
-          <img src="lays.png" alt="Sports Edit">
-          <span class="work-play">▶</span>
-        </button>
-
-        <button class="work-item" style="--position: 7" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271394/Hoichoi_Short_film_Purpose_chandra_Narayan_Thapa_1_xwauuo.mp4">
-          <img src="indiagate.png" alt="Political Campaign Video">
-          <span class="work-play">▶</span>
-        </button>
-
-        <button class="work-item" style="--position: 8" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271588/VID_20250617_060151_646_bsl_xjhfvx.mp4">
-          <img src="thumsup.png" alt="Motion Graphics">
-          <span class="work-play">▶</span>
-        </button>
-
       </div>
 
-      <!-- Podium in the center -->
-      <div class="work-podium">
-        <!-- 🔧 Change src to your podium image file -->
-        <img src="podium-logo.png" alt="Easein Studio Podium" class="work-podium-img">
-        <div class="work-podium-glow"></div>
-      </div>
     </div>
+  </section>
 
-    <!-- ===== MOBILE: PODIUM BG + HORIZONTAL CAROUSEL ===== -->
-    <div class="work-stage-mobile">
-      <div class="work-mobile-overlay"></div>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
 
-      <div class="work-mobile-carousel">
-        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271588/VID_20250617_060151_646_bsl_xjhfvx.mp4">
-          <img src="thumsup.png" alt="AI Generated Video">
-          <div class="work-mobile-meta">
-        </button>
+    <div class="footer-container">
 
-        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271565/Budweiser_magnum_beer_qjtsyh.mp4">
-          <img src="Budweiser magnum beer.png" alt="Ads Video">
-        </button>
+      <!-- COLUMN 1 – ABOUT -->
+      <div class="footer-col">
+        <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
 
-        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271573/Maggi_euvyu7.mp4">
-          <img src="maggie.png" alt="UGC Video">
-        </button>
-
-        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271585/KFC_ejly7f.mp4">
-          <img src="kfc.png" alt="Brand Video">
-        </button>
-
-        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271584/Red_Bull_jbw5qf.mp4">
-          <img src="Screenshot 2025-12-09 230307.png" alt="Podcast Production">
-        </button>
-
-        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271578/Lays_isrmhj.mp4">
-          <img src="lays.png" alt="Sports Edit">
-        </button>
-
-        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271587/NTPC_Reel_01_o3nrzb.mp4">
-          <img src="ntpc.png" alt="Political Campaign">
-        </button>
-
-        <button class="work-mobile-card" data-video="https://res.cloudinary.com/dleaccjvs/video/upload/v1765271570/income_tax_animation_Video_s9gdzi.mp4">
-          <img src="indiagate.png" alt="Motion Graphics">
-        </button>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <div class="work-cta-wrap">
-      <a href="portfolio.html" class="work-cta-btn">View Full Portfolio</a>
-    </div>
-
-  </div>
-
-  <!--harshek-->
-  <!-- ===================== VIDEO MODAL ===================== -->
-<div id="videoModal" class="video-modal">
-  <div class="video-modal-backdrop"></div>
-  
-  <div class="video-modal-box">
-      <!-- <video id="workVideoPlayer" controls playsinline></video> -->
-       <video id="workVideoPlayer" 
-             controls 
-             playsinline 
-             controlsList="nodownload noplaybackrate">
-      </video>
-  </div>
-</div>
-
-  <!--harshek end-->
-</section>
-<!-- ===================== CTA BANNER ===================== -->
-<section class="cta-banner">
-
-  <!-- Ghost Background Text -->
-  <div class="cta-ghost-text">EASEIN STUDIO</div>
-
-  <!-- Neon Strip -->
-  <div class="cta-neon-strip"></div>
-
-  <!-- Floating Particles -->
-  <div class="cta-particles"></div>
-
-  <!-- Foreground Content -->
-  <div class="cta-content">
-    <h2 class="cta-title">Have a video idea in mind?</h2>
-    <p class="cta-sub">Let’s bring it to life.</p>
-    <a href="#contact" class="btn-primary open-quote-popup"  onclick="openQuoteModal()" >Let’s Talk</a>
-  </div>
-
-</section>
-<!-- ===================== FAQ SECTION ===================== -->
-<section class="faq-section">
-
-   <!-- Abstract AI Waves -->
-  <div class="faq-wave faq-wave--bottom"></div>
-  <div class="faq-wave faq-wave--top"></div>
-
-  <h2 class="faq-heading">Got Questions? We’ve Got Answers.</h2>
-
-  <div class="faq-container">
-
-    <!-- FAQ 1 -->
-    <div class="faq-item">
-      <button class="faq-question">
-        <span>How long does a project take?</span>
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>
-          Depends on the type of video — most projects are delivered within 5–10 days.
+        <p class="footer-about">
+          Easein Studio helps individuals and brands tell their stories through
+          powerful videos. From ads to podcasts, our team brings your ideas to life
+          with creativity and precision.
         </p>
+
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
       </div>
-    </div>
 
-    <!-- FAQ 2 -->
-    <div class="faq-item">
-      <button class="faq-question">
-        <span>Can you edit my existing footage?</span>
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>
-          Yes, you can share your raw clips or references — we’ll handle the rest.
-        </p>
+      <!-- COLUMN 2 – QUICK LINKS -->
+      <div class="footer-col">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
       </div>
-    </div>
 
-    <!-- FAQ 3 -->
-    <div class="faq-item">
-      <button class="faq-question">
-        <span>Do you offer voiceovers or subtitles?</span>
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>
-          Absolutely. We can add both in multiple languages.
-        </p>
+      <!-- COLUMN 3 – CONTACT -->
+      <div class="footer-col">
+        <h3 class="footer-title">Let’s Talk</h3>
+
+        <p class="footer-contact"><strong>Location:</strong> India</p>
+        <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
+        <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
+        <a href="javascript:void(0)" class="footer-cta open-quote-popup" onclick="openQuoteModal()">Get a Free Quote</a>
       </div>
+
     </div>
 
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
-<footer class="footer">
-
-  <div class="footer-container">
-
-    <!-- COLUMN 1 – ABOUT -->
-    <div class="footer-col">
-      <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
-
-      <p class="footer-about">
-        Easein Studio helps individuals and brands tell their stories through 
-        powerful videos. From ads to podcasts, our team brings your ideas to life 
-        with creativity and precision.
-      </p>
-
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-      </div>
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p>© 2025 Easein Studio. All rights reserved.</p>
+      <p>Designed by RBP Digital 360</p>
     </div>
 
-    <!-- COLUMN 2 – QUICK LINKS -->
-    <div class="footer-col">
-      <h3 class="footer-title">Quick Links</h3>
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <!-- COLUMN 3 – CONTACT -->
-    <div class="footer-col">
-      <h3 class="footer-title">Let’s Talk</h3>
-
-      <p class="footer-contact"><strong>Location:</strong> India</p>
-      <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
-      <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
-      <a href="javascript:void(0)" class="footer-cta open-quote-popup" onclick="openQuoteModal()">Get a Free Quote</a>
-    </div>
-
-  </div>
-
-  <!-- Bottom Bar -->
-  <div class="footer-bottom">
-    <p>© 2025 Easein Studio. All rights reserved.</p>
-    <p>Designed by RBP Digital 360</p>
-  </div>
-
-</footer>
+  </footer>
 
   <script src="app.js"></script>
   <script src="popup.js"></script>
 </body>
+
 </html>

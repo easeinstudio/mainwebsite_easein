@@ -146,6 +146,45 @@ document.querySelectorAll(".accordion-panel a").forEach((link) => {
     setTimeout(() => link.classList.remove("touch-hover"), 500);
   });
 });
+/* ----------------------------
+   SUB-DROPDOWN TOGGLE (DESKTOP + MOBILE)
+---------------------------- */
+document.querySelectorAll(".dropdown-sub").forEach((item) => {
+  const link = item.querySelector(".sub-toggle");
+  const submenu = item.querySelector(".dropdown-sub-menu");
+
+  let tappedOnce = false;
+
+  link.addEventListener("click", function (e) {
+    // MOBILE LOGIC
+    if (window.innerWidth <= 900) {
+      if (!item.classList.contains("show")) {
+        // FIRST TAP → open submenu only
+        e.preventDefault();
+        item.classList.add("show");
+        tappedOnce = true;
+
+        // Reset tap after 700ms
+        setTimeout(() => (tappedOnce = false), 700);
+      } else {
+        // SECOND TAP → go to page
+        // NO preventDefault → normal navigation
+        item.classList.remove("show");
+      }
+    }
+  });
+
+  // Desktop hover logic (unchanged)
+  item.addEventListener("mouseenter", () => {
+    if (window.innerWidth >= 900) item.classList.add("show");
+  });
+
+  item.addEventListener("mouseleave", () => {
+    if (window.innerWidth >= 900) item.classList.remove("show");
+  });
+});
+
+
 
 /* ----------------------------
    HERO + PARALLAX ELEMENTS
