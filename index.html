@@ -4,6 +4,8 @@
 
 <head>
   <meta charset="utf-8" />
+  <!-- Favicon -->
+    <link href="easein favion.png" rel="icon">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -29,10 +31,18 @@
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About Us</a></li>
 
+        <!-- SERVICES -->
         <li class="dropdown">
-          <a class="nav-link" href="#services">Services ▾</a>
+          <a class="nav-link" href="#">Services ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li class="dropdown-sub">
+              <a href="ai-videos.html" class="sub-toggle">AI-Generated Videos ▾</a>
+              <ul class="dropdown-sub-menu">
+                <li><a href="reels.html">Reels</a></li>
+                <li><a href="influencer.html">Influencer</a></li>
+              </ul>
+            </li>
+
             <li><a href="ad.html">Ads</a></li>
             <li><a href="ugc.html">UGC Videos</a></li>
             <li><a href="brand.html">Brand Videos</a></li>
@@ -41,8 +51,9 @@
           </ul>
         </li>
 
+        <!-- PORTFOLIO -->
         <li class="dropdown">
-          <a class="nav-link" href="#portfolio">Portfolio ▾</a>
+          <a class="nav-link" href="#">Portfolio ▾</a>
           <ul class="dropdown-menu">
             <li><a href="portfolio.html">AI-Generated Videos</a></li>
             <li><a href="portfolio.html">Ads</a></li>
@@ -57,34 +68,29 @@
       </ul>
 
       <!-- HAMBURGER -->
-      <button id="hamburger" class="hamburger" aria-label="Open Menu">
+      <button id="hamburger" class="hamburger">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
-        <span another="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </nav>
   </header>
 
-
-  <!-- ===================== FULL-SCREEN MOBILE MENU ===================== -->
+  <!-- ===================== MOBILE MENU ===================== -->
   <div id="mobileMenu" class="mobile-menu">
-
-    <!-- CLOSE BUTTON -->
     <button id="mobileClose" class="mobile-close">&times;</button>
 
-    <!-- SCROLLABLE MENU CONTENT -->
     <div class="mobile-content">
-
       <ul class="mobile-links">
-
         <li><a href="index.html" class="mobile-link">Home</a></li>
         <li><a href="about.html" class="mobile-link">About Us</a></li>
 
-        <!-- Services Accordion -->
         <li class="mobile-accordion">
           <button class="accordion-toggle">Services ▾</button>
           <ul class="accordion-panel">
             <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="ai-videos.html">AI-Reels</a></li>
+            <li><a href="ai-videos.html">AI-Influencer</a></li>
             <li><a href="ad.html">Ads</a></li>
             <li><a href="ugc.html">UGC Videos</a></li>
             <li><a href="brand.html">Brand Videos</a></li>
@@ -93,7 +99,6 @@
           </ul>
         </li>
 
-        <!-- Portfolio Accordion -->
         <li class="mobile-accordion">
           <button class="accordion-toggle">Portfolio ▾</button>
           <ul class="accordion-panel">
@@ -107,11 +112,10 @@
         </li>
 
         <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
-
       </ul>
-
     </div>
   </div>
+
 
   <!-- ===================== HERO SECTION ===================== -->
   <!-- ===================== HERO SECTION ===================== -->
@@ -143,20 +147,20 @@
       <div class="hero-cta">
         <a href="#contact" class="btn-primary open-quote-popup" onclick="openQuoteModal()">Get a Free Quote</a>
 
-  
-  <a href="#portfolio" class="btn-secondary">View Our Work</a>
-</div>
-  </div>
-</section>
-<div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
-  
-  <div class="popup-container">
-    <div class="popup-content contact-form-card">
-      
-      <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
-        <i class="fas fa-times"></i>
-      </button>
+
+        <a href="#portfolio" class="btn-secondary">View Our Work</a>
+      </div>
+    </div>
+  </section>
+  <div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
+
+    <div class="popup-container">
+      <div class="popup-content contact-form-card">
+
+        <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
+          <i class="fas fa-times"></i>
+        </button>
 
         <div class="popup-header">
           <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
@@ -217,8 +221,7 @@
         <h3 class="brand-reel-kicker">Our Work In Motion</h3>
         <h2 class="brand-reel-title">Watch Our Creative Output</h2>
         <p class="brand-reel-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil iste ratione adipisci!
-        </p>
+          A glimpse into the craft, creativity, and precision behind our work. </p>
       </div>
 
 
@@ -369,47 +372,48 @@
       <!-- SERVICE CARDS -->
       <div class="services-matrix-grid">
 
-      <a href="ai-videos.html" class="matrix-card" style="text-decoration: none;" data-url="/services/ai-videos.html">
-        <h3>AI Generated Video Creation</h3>
-        <p>Transform your ideas into AI-powered visual stories.</p>
-        <h5 class="click-btn">Click ></h5>
-      </a>
+        <a href="ai-videos.html" class="matrix-card" style="text-decoration: none;" data-url="/services/ai-videos.html">
+          <h3>AI Generated Video Creation</h3>
+          <p>Transform your ideas into AI-powered visual stories.</p>
+          <h5 class="click-btn">Click ></h5>
+        </a>
 
-      <a href="ad.html" class="matrix-card" style="text-decoration: none;" data-url="/services/ads.html">
-        <h3>Ads</h3>
-        <p>Creative videos that drive conversions.</p>
-        <h5 class="click-btn">Click ></h5>
-      </a>
+        <a href="ad.html" class="matrix-card" style="text-decoration: none;" data-url="/services/ads.html">
+          <h3>Ads</h3>
+          <p>Creative videos that drive conversions.</p>
+          <h5 class="click-btn">Click ></h5>
+        </a>
 
-      <a href="ugc.html" class="matrix-card" style="text-decoration: none;" data-url="/services/ugc.html">
-        <h3>UGC Videos</h3>
-        <p>Consumer feedback for brand authenticity.</p>
-        <h5 class="click-btn">Click ></h5>
-      </a>
+        <a href="ugc.html" class="matrix-card" style="text-decoration: none;" data-url="/services/ugc.html">
+          <h3>UGC Videos</h3>
+          <p>Consumer feedback for brand authenticity.</p>
+          <h5 class="click-btn">Click ></h5>
+        </a>
 
-      <a href="brand.html" class="matrix-card" style="text-decoration: none;" data-url="/services/brand-videos.html">
-        <h3>Brand Videos</h3>
-        <p>Enhancing your brand identity.</p>
-        <h5 class="click-btn">Click ></h5>
-      </a>
+        <a href="brand.html" class="matrix-card" style="text-decoration: none;" data-url="/services/brand-videos.html">
+          <h3>Brand Videos</h3>
+          <p>Enhancing your brand identity.</p>
+          <h5 class="click-btn">Click ></h5>
+        </a>
 
-      <a href="podcast.html" class="matrix-card" style="text-decoration: none;" data-url="/services/podcast.html">
-        <h3>Podcast Production</h3>
-        <p>Clean, professional, and engaging podcast videos.</p>
-        <h5 class="click-btn">Click ></h5>
-      </a>
+        <a href="podcast.html" class="matrix-card" style="text-decoration: none;" data-url="/services/podcast.html">
+          <h3>Podcast Production</h3>
+          <p>Clean, professional, and engaging podcast videos.</p>
+          <h5 class="click-btn">Click ></h5>
+        </a>
 
-      <a href="motion.html" class="matrix-card" style="text-decoration: none;" data-url="/services/motion-graphics.html">
-        <h3>Motion Graphics</h3>
-        <p>Sleek animations that enhance your brand visuals.</p>
-        <h5 class="click-btn">Click ></h5>
-      </a>
+        <a href="motion.html" class="matrix-card" style="text-decoration: none;"
+          data-url="/services/motion-graphics.html">
+          <h3>Motion Graphics</h3>
+          <p>Sleek animations that enhance your brand visuals.</p>
+          <h5 class="click-btn">Click ></h5>
+        </a>
 
       </div>
 
       <!-- CTA -->
       <div class="services-matrix-cta">
-        <a href="/services" class="matrix-btn">Explore Services</a>
+        <a href="" class="matrix-btn">Explore Services</a>
       </div>
 
     </div>
@@ -681,7 +685,8 @@
     <!-- Bottom Bar -->
     <div class="footer-bottom">
       <p>© 2025 Easein Studio. All rights reserved.</p>
-      <p>Designed by RBP Digital 360</p>
+      <a class="footer-bottom" href="https://rbpdigital360.com/" style="text-decoration:none">Designed by RBP Digital
+        360</a>
     </div>
 
   </footer>

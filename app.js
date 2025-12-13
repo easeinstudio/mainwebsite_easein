@@ -40,186 +40,20 @@ function smoothScrollTo(hash) {
   target.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-/* ----------------------------
-   NAVBAR SCROLL LINKS
----------------------------- */
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", function (e) {
-    const href = this.getAttribute("href");
-    if (href && href.startsWith("#")) {
-      e.preventDefault();
-      smoothScrollTo(href);
-      hideMobileMenu();
-    }
-  });
-});
-
-document.querySelectorAll(".mobile-link").forEach((link) => {
-  link.addEventListener("click", function (e) {
-    const href = this.getAttribute("href");
-    hideMobileMenu();
-    if (href && href.startsWith("#")) {
-      e.preventDefault();
-      setTimeout(() => smoothScrollTo(href), 180);
-    }
-  });
-});
-
-/* ----------------------------
-   DESKTOP DROPDOWN (1s auto-open)
----------------------------- */
-const desktopDropdowns = document.querySelectorAll(".dropdown");
-desktopDropdowns.forEach((drop) => {
-  const menu = drop.querySelector(".dropdown-menu");
-  let openTime = 0,
-    closeTimeout = null;
-
-  drop.addEventListener("mouseenter", () => {
-    clearTimeout(closeTimeout);
-    openTime = Date.now();
-    drop.classList.add("open");
-  });
-
-  drop.addEventListener("mouseleave", () => {
-    const elapsed = Date.now() - openTime;
-    if (elapsed >= 1000) drop.classList.remove("open");
-    else closeTimeout = setTimeout(() => drop.classList.remove("open"), 1000 - elapsed);
-  });
-
-  menu.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => drop.classList.remove("open"))
-  );
-});
-
-/* ----------------------------
-   SUB-DROPDOWN TOGGLE (DESKTOP + MOBILE)
----------------------------- */
-document.querySelectorAll(".dropdown-sub").forEach((item) => {
-  const link = item.querySelector(".sub-toggle");
-  const submenu = item.querySelector(".dropdown-sub-menu");
-
-  let tappedOnce = false;
-
-  link.addEventListener("click", function (e) {
-    // MOBILE LOGIC
-    if (window.innerWidth <= 900) {
-      if (!item.classList.contains("show")) {
-        // FIRST TAP → open submenu only
-        e.preventDefault();
-        item.classList.add("show");
-        tappedOnce = true;
-
-        // Reset tap after 700ms
-        setTimeout(() => (tappedOnce = false), 700);
-      } else {
-        // SECOND TAP → go to page
-        // NO preventDefault → normal navigation
-        item.classList.remove("show");
-      }
-    }
-  });
-
-  // Desktop hover logic (unchanged)
-  item.addEventListener("mouseenter", () => {
-    if (window.innerWidth >= 900) item.classList.add("show");
-  });
-
-  item.addEventListener("mouseleave", () => {
-    if (window.innerWidth >= 900) item.classList.remove("show");
-  });
-});
-
-/* ----------------------------
-   MOBILE MENU
----------------------------- */
+/* ===== MOBILE MENU ===== */
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileClose = document.getElementById("mobileClose");
 
-function showMobileMenu() {
-  mobileMenu.classList.add("show");
-  document.body.style.overflow = "hidden";
-}
-function hideMobileMenu() {
-  mobileMenu.classList.remove("show");
-  document.body.style.overflow = "";
-}
+hamburger.onclick = () => mobileMenu.classList.add("show");
+mobileClose.onclick = () => mobileMenu.classList.remove("show");
 
-if (hamburger)
-  hamburger.addEventListener("click", () =>
-    mobileMenu.classList.contains("show") ? hideMobileMenu() : showMobileMenu()
-  );
-if (mobileClose) mobileClose.addEventListener("click", hideMobileMenu);
-if (mobileMenu)
-  mobileMenu.addEventListener("click", (e) => {
-    if (e.target === mobileMenu) hideMobileMenu();
-  });
-
-/* ----------------------------
-   MOBILE ACCORDION
----------------------------- */
-document.querySelectorAll(".mobile-accordion").forEach((acc) => {
-  const toggle = acc.querySelector(".accordion-toggle");
+/* ===== MOBILE ACCORDION ===== */
+document.querySelectorAll(".mobile-accordion").forEach(acc => {
+  const btn = acc.querySelector(".accordion-toggle");
   const panel = acc.querySelector(".accordion-panel");
 
-  toggle.addEventListener("click", () => {
-    const shown = panel.classList.toggle("show");
-    toggle.setAttribute("aria-expanded", shown);
-  });
-
-  panel.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", hideMobileMenu)
-  );
-});
-
-/* ----------------------------
-   MOBILE HOVER / TOUCH EFFECT FIX
----------------------------- */
-document.querySelectorAll(".accordion-panel a").forEach((link) => {
-  link.addEventListener("touchstart", () => {
-    document.querySelectorAll(".accordion-panel a").forEach((l) =>
-      l.classList.remove("touch-hover")
-    );
-    link.classList.add("touch-hover");
-    setTimeout(() => link.classList.remove("touch-hover"), 500);
-  });
-});
-/* ----------------------------
-   SUB-DROPDOWN TOGGLE (DESKTOP + MOBILE)
----------------------------- */
-document.querySelectorAll(".dropdown-sub").forEach((item) => {
-  const link = item.querySelector(".sub-toggle");
-  const submenu = item.querySelector(".dropdown-sub-menu");
-
-  let tappedOnce = false;
-
-  link.addEventListener("click", function (e) {
-    // MOBILE LOGIC
-    if (window.innerWidth <= 900) {
-      if (!item.classList.contains("show")) {
-        // FIRST TAP → open submenu only
-        e.preventDefault();
-        item.classList.add("show");
-        tappedOnce = true;
-
-        // Reset tap after 700ms
-        setTimeout(() => (tappedOnce = false), 700);
-      } else {
-        // SECOND TAP → go to page
-        // NO preventDefault → normal navigation
-        item.classList.remove("show");
-      }
-    }
-  });
-
-  // Desktop hover logic (unchanged)
-  item.addEventListener("mouseenter", () => {
-    if (window.innerWidth >= 900) item.classList.add("show");
-  });
-
-  item.addEventListener("mouseleave", () => {
-    if (window.innerWidth >= 900) item.classList.remove("show");
-  });
+  btn.onclick = () => panel.classList.toggle("show");
 });
 
 

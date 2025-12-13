@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
+    <!-- Favicon -->
+    <link href="easein favion.png" rel="icon">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <title>Brand Video | Easein Studio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="popup.css">
 </head>
+
 <body>
-<!-- Cursor Glow (hidden on mobile via JS) -->
+  <!-- Cursor Glow (hidden on mobile via JS) -->
   <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div>
 
   <!-- ===================== NAVBAR ===================== -->
@@ -26,7 +27,7 @@
       <ul class="nav-links">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About Us</a></li>
-        
+
         <li class="dropdown">
           <a class="nav-link" href="#services">Services ▾</a>
           <ul class="dropdown-menu">
@@ -50,7 +51,7 @@
         <li class="dropdown">
           <a class="nav-link" href="#portfolio">Portfolio ▾</a>
           <ul class="dropdown-menu">
-           <li><a href="portfolio.html">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html">AI-Generated Videos</a></li>
             <li><a href="portfolio.html">Ads</a></li>
             <li><a href="portfolio.html">UGC Videos</a></li>
             <li><a href="portfolio.html">Brand Videos</a></li>
@@ -90,15 +91,9 @@
         <li class="mobile-accordion">
           <button class="accordion-toggle">Services ▾</button>
           <ul class="accordion-panel">
-            <!-- <li><a href="ai-videos.html">AI-Generated Videos</a></li> -->
-            <li class="dropdown-sub">
-              <a href="ai-videos.html" class="sub-toggle">AI-Generated Videos ▾</a>
-
-              <ul class="dropdown-sub-menu">
-                <li><a href="reels.html">Reels</a></li>
-                <li><a href="influencer.html">Influencer</a></li>
-              </ul>
-            </li>
+            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="ai-videos.html">AI-Reels</a></li>
+            <li><a href="ai-videos.html">AI-Influencer</a></li>
             <li><a href="ad.html">Ads</a></li>
             <li><a href="ugc.html">UGC Videos</a></li>
             <li><a href="brand.html">Brand Videos</a></li>
@@ -127,459 +122,434 @@
     </div>
   </div>
   <!-- Ghost Parallax Text (reusing global ghost styles & JS) -->
-<div class="ghost-text">EASEIN STUDIO</div>
-<div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
-  
-  <div class="popup-container">
-    <div class="popup-content contact-form-card">
-      
-      <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
-        <i class="fas fa-times"></i>
-      </button>
+  <div class="ghost-text">EASEIN STUDIO</div>
+  <div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
 
-      <div class="popup-header">
-        <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
-        <p class="contact-subtext">Tell us what you need, and we'll get back to you with ideas, timelines, and a quote.</p>
+    <div class="popup-container">
+      <div class="popup-content contact-form-card">
+
+        <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="popup-header">
+          <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
+          <p class="contact-subtext">Tell us what you need, and we'll get back to you with ideas, timelines, and a
+            quote.</p>
+        </div>
+
+        <form id="easein-contact-form" class="contact-form" enctype="multipart/form-data">
+
+          <div class="form-group">
+            <label for="pop-name">Name<span>*</span></label>
+            <input type="text" id="pop-name" name="name" required placeholder="Your full name" />
+          </div>
+
+          <div class="form-group">
+            <label for="pop-email">Email<span>*</span></label>
+            <input type="email" id="pop-email" name="email" required placeholder="you@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="pop-phone">Phone<span>*</span></label>
+            <input type="tel" id="pop-phone" name="phone" required placeholder="+91 - 98765 43210" />
+          </div>
+
+          <div class="form-group">
+            <label for="pop-videoType">Type of Video<span>*</span></label>
+            <select id="pop-videoType" name="video_type" required>
+              <option value="" disabled selected>Select a video type</option>
+              <option value="ai">AI-Generated Video</option>
+              <option value="podcast">Podcast Video</option>
+              <option value="sports-news">Sports & News Video</option>
+              <option value="political">Political Campaign Video</option>
+              <option value="ads-pvc">Advertisement & PVC Video</option>
+              <option value="motion-graphics">Motion Graphics</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="pop-projectDetails">Project Details<span>*</span></label>
+            <textarea id="pop-projectDetails" name="project_details" rows="4" required
+              placeholder="Tell us about your idea, goals, style preference, deadlines, etc."></textarea>
+          </div>
+
+          <button type="submit" class="contact-submit-btn">Submit</button>
+        </form>
       </div>
-
-      <form id="easein-contact-form" class="contact-form" enctype="multipart/form-data">
-        
-        <div class="form-group">
-          <label for="pop-name">Name<span>*</span></label>
-          <input type="text" id="pop-name" name="name" required placeholder="Your full name" />
-        </div>
-
-        <div class="form-group">
-          <label for="pop-email">Email<span>*</span></label>
-          <input type="email" id="pop-email" name="email" required placeholder="you@example.com" />
-        </div>
-
-        <div class="form-group">
-          <label for="pop-phone">Phone<span>*</span></label>
-          <input type="tel" id="pop-phone" name="phone" required placeholder="+91 - 98765 43210" />
-        </div>
-
-        <div class="form-group">
-          <label for="pop-videoType">Type of Video<span>*</span></label>
-          <select id="pop-videoType" name="video_type" required>
-            <option value="" disabled selected>Select a video type</option>
-            <option value="ai">AI-Generated Video</option>
-            <option value="podcast">Podcast Video</option>
-            <option value="sports-news">Sports & News Video</option>
-            <option value="political">Political Campaign Video</option>
-            <option value="ads-pvc">Advertisement & PVC Video</option>
-            <option value="motion-graphics">Motion Graphics</option>
-            <option value="other">Other / Not Sure</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="pop-projectDetails">Project Details<span>*</span></label>
-          <textarea id="pop-projectDetails" name="project_details" rows="4" required placeholder="Tell us about your idea, goals, style preference, deadlines, etc."></textarea>
-        </div>
-
-        <button type="submit" class="contact-submit-btn">Submit</button>
-      </form>
     </div>
   </div>
-</div>
 
-<!-- ===================== AI SERVICE HERO ===================== -->
-<section class="service-hero">
-  <div class="service-hero-inner">
-    
-    <!-- LEFT: Text content -->
-    <div class="service-hero-left">
-      <p class="service-pill">Brand Video Creation</p>
-      
-      <h1 class="service-hero-title">
-        Strong, story-driven videos that define
-        <span class="service-hero-highlight">Your Brand.</span>
-      </h1>
+  <!-- ===================== AI SERVICE HERO ===================== -->
+  <section class="service-hero">
+    <div class="service-hero-inner">
 
-      <p class="service-hero-subtext">
-        High-quality brand videos crafted to tell your story, showcase your identity,
-         and connect emotionally with your audience. Designed to elevate your brand presence 
-         across websites, social media, and campaigns.
-      </p>
+      <!-- LEFT: Text content -->
+      <div class="service-hero-left">
+        <p class="service-pill">Brand Video Creation</p>
 
-      <div class="service-hero-cta">
-        <a href="javascript:void(0)" class="btn-primary" onclick="openQuoteModal()">Request a Demo</a>
-        <a href="/portfolio/ai-videos.html" class="btn-secondary">Our Portfolio</a>
-      </div>
-    </div>
+        <h1 class="service-hero-title">
+          Strong, story-driven videos that define
+          <span class="service-hero-highlight">Your Brand.</span>
+        </h1>
 
-    <!-- RIGHT: AI Orbit visual -->
-    <div class="service-hero-right">
-      <div class="service-orbit">
-        <div class="orbit-ring orbit-ring-1"></div>
-        <div class="orbit-ring orbit-ring-2"></div>
-
-        <div class="orbit-core">
-          <span style="font-size: 16px;">BRAND</span>
-        </div>
-
-        <div class="orbit-node orbit-node-1">Brand Films</div>
-        <div class="orbit-node orbit-node-2">Company Promos</div>
-        <div class="orbit-node orbit-node-3">Launch Videos</div>
-        <div class="orbit-node orbit-node-4">Website Hero Videos</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-<!-- ===================== WHAT'S INCLUDED (UPDATED) ===================== -->
-<section class="service-section service-included" id="ai-included">
-  <div class="service-included-inner">
-
-    <!-- LEFT CONTENT -->
-    <div class="included-left">
-      <div class="service-section-header">
-        <h2 class="service-section-title">What’s Included</h2>
-        <p class="service-section-sub">
-         Everything you need to create polished, story-led videos that elevate your brand.
+        <p class="service-hero-subtext">
+          High-quality brand videos crafted to tell your story, showcase your identity,
+          and connect emotionally with your audience. Designed to elevate your brand presence
+          across websites, social media, and campaigns.
         </p>
+
+        <div class="service-hero-cta">
+          <a href="javascript:void(0)" class="btn-primary" onclick="openQuoteModal()">Request a Demo</a>
+          <a href="/portfolio/ai-videos.html" class="btn-secondary">Our Portfolio</a>
+        </div>
       </div>
 
-      <div class="included-list">
-        <div class="included-card"><span>●</span> Concept & script assistance</div>
-        <div class="included-card"><span>●</span> Editing for brand films & promo videos</div>
-        <div class="included-card"><span>●</span> Smooth transitions & cinematic cuts</div>
-        <div class="included-card"><span>●</span> Brand-focused color grading</div>
-        <div class="included-card"><span>●</span> Music, SFX, and typography</div>
-        <div class="included-card"><span>●</span> 2 rounds of revisions</div>
+      <!-- RIGHT: AI Orbit visual -->
+      <div class="service-hero-right">
+        <div class="service-orbit">
+          <div class="orbit-ring orbit-ring-1"></div>
+          <div class="orbit-ring orbit-ring-2"></div>
+
+          <div class="orbit-core">
+            <span style="font-size: 16px;">BRAND</span>
+          </div>
+
+          <div class="orbit-node orbit-node-1">Brand Films</div>
+          <div class="orbit-node orbit-node-2">Company Promos</div>
+          <div class="orbit-node orbit-node-3">Launch Videos</div>
+          <div class="orbit-node orbit-node-4">Website Hero Videos</div>
+        </div>
       </div>
+
     </div>
+  </section>
+  <!-- ===================== WHAT'S INCLUDED (UPDATED) ===================== -->
+  <section class="service-section service-included" id="ai-included">
+    <div class="service-included-inner">
 
-    <!-- RIGHT VISUAL -->
-    <div class="included-right">
-      <div class="included-visual">
-        <img src="head.jpg" class="included-image" alt="AI Module">
-        <div class="included-ring included-ring-1"></div>
-        <div class="included-ring included-ring-2"></div>
-        <div class="included-scan"></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-<!-- ===================== AI SPLIT SECTION (IDEAL + PROCESS) ===================== -->
-<section class="ai-split-section">
-  <div class="ai-split-inner">
-
-    <!-- LEFT: IDEAL FOR -->
-    <div class="ai-col ai-col-left">
-      <h2 class="service-section-title">Ideal For</h2>
-      <p class="service-section-sub">
-        Perfect for businesses that want to communicate their story, mission, or identity with clarity and impact.
-      </p>
-
-      <div class="ai-chip-grid">
-        <span class="ai-chip">Brand Films</span>
-        <span class="ai-chip">Company Promos</span>
-        <span class="ai-chip">Launch Videos</span>
-        <span class="ai-chip">Website Hero Videos</span>
-      </div>
-    </div>
-
-    <!-- MIDDLE: AI CORE ANIMATION -->
-    <div class="ai-col ai-col-middle">
-      <div class="ai-core">
-        <!-- vertical data beam -->
-        <div class="ai-core-beam"></div>
-
-        <!-- pulsing core -->
-        <div class="ai-core-node">
-          <span>BRAND</span>
+      <!-- LEFT CONTENT -->
+      <div class="included-left">
+        <div class="service-section-header">
+          <h2 class="service-section-title">What’s Included</h2>
+          <p class="service-section-sub">
+            Everything you need to create polished, story-led videos that elevate your brand.
+          </p>
         </div>
 
-        <!-- orbit rings -->
-        <div class="ai-core-ring ai-core-ring-1"></div>
-        <div class="ai-core-ring ai-core-ring-2"></div>
-
-        <!-- floating data bits -->
-        <div class="ai-core-dot ai-core-dot-1"></div>
-        <div class="ai-core-dot ai-core-dot-2"></div>
-        <div class="ai-core-dot ai-core-dot-3"></div>
+        <div class="included-list">
+          <div class="included-card"><span>●</span> Concept & script assistance</div>
+          <div class="included-card"><span>●</span> Editing for brand films & promo videos</div>
+          <div class="included-card"><span>●</span> Smooth transitions & cinematic cuts</div>
+          <div class="included-card"><span>●</span> Brand-focused color grading</div>
+          <div class="included-card"><span>●</span> Music, SFX, and typography</div>
+          <div class="included-card"><span>●</span> 2 rounds of revisions</div>
+        </div>
       </div>
+
+      <!-- RIGHT VISUAL -->
+      <div class="included-right">
+        <div class="included-visual">
+          <img src="head.jpg" class="included-image" alt="AI Module">
+          <div class="included-ring included-ring-1"></div>
+          <div class="included-ring included-ring-2"></div>
+          <div class="included-scan"></div>
+        </div>
+      </div>
+
     </div>
+  </section>
+  <!-- ===================== AI SPLIT SECTION (IDEAL + PROCESS) ===================== -->
+  <section class="ai-split-section">
+    <div class="ai-split-inner">
 
-    <!-- RIGHT: PROCESS -->
-    <div class="ai-col ai-col-right">
-      <h2 class="service-section-title">Process</h2>
-      <p class="service-section-sub">
-       A clear, structured workflow that transforms your brand story into a polished, impactful video.
-      </p>
+      <!-- LEFT: IDEAL FOR -->
+      <div class="ai-col ai-col-left">
+        <h2 class="service-section-title">Ideal For</h2>
+        <p class="service-section-sub">
+          Perfect for businesses that want to communicate their story, mission, or identity with clarity and impact.
+        </p>
 
-      <ol class="ai-process-list">
-        <li class="ai-process-step">
-          <div class="ai-step-badge">01</div>
-          <div class="ai-step-body">
-            <h3>Brand briefing</h3>
-            <p>Understand your story, goals, and tone.</p>
-          </div>
-        </li>
-        <li class="ai-process-step">
-          <div class="ai-step-badge">02</div>
-          <div class="ai-step-body">
-            <h3>Script &amp; visual direction</h3>
-            <p>Craft the narrative and define the visual style.</p>
-          </div>
-        </li>
-        <li class="ai-process-step">
-          <div class="ai-step-badge">03</div>
-          <div class="ai-step-body">
-            <h3>Edit & refine</h3>
-            <p>Elevate the footage with pacing, graphics, and polish.</p>
-          </div>
-        </li>
-        <li class="ai-process-step">
-          <div class="ai-step-badge">04</div>
-          <div class="ai-step-body">
-            <h3>Final Delivery</h3>
-            <p>Provide platform-ready brand videos in all formats.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-
-  </div>
-</section>
-<section id="why" class="why-section hologram-section">
-
-  <!-- subtle hologram texture (uses uploaded image) -->
-  <div class="holo-texture" aria-hidden="true"></div>
-
-  <!-- floating orbs (AI particles) -->
-  <div class="holo-orbs" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
-<!-- new section why choose -->
-<section class="why-ai-section">
-  <div class="why-ai-inner">
-
-    <h2 class="why-ai-title">Why Choose Brand Videos from  <span class="highlight-cyan gradient-text ">Easein Studio</span></h2>
-
-    <div class="why-ai-list">
-      <div class="why-ai-card">
-        <span class="icon">➦</span>
-        <p>Professional, cinematic visuals</p>
+        <div class="ai-chip-grid">
+          <span class="ai-chip">Brand Films</span>
+          <span class="ai-chip">Company Promos</span>
+          <span class="ai-chip">Launch Videos</span>
+          <span class="ai-chip">Website Hero Videos</span>
+        </div>
       </div>
 
-      <div class="why-ai-card">
-        <span class="icon">➦</span>
-        <p>Reflects your brand identity clearly</p>
+      <!-- MIDDLE: AI CORE ANIMATION -->
+      <div class="ai-col ai-col-middle">
+        <div class="ai-core">
+          <!-- vertical data beam -->
+          <div class="ai-core-beam"></div>
+
+          <!-- pulsing core -->
+          <div class="ai-core-node">
+            <span>BRAND</span>
+          </div>
+
+          <!-- orbit rings -->
+          <div class="ai-core-ring ai-core-ring-1"></div>
+          <div class="ai-core-ring ai-core-ring-2"></div>
+
+          <!-- floating data bits -->
+          <div class="ai-core-dot ai-core-dot-1"></div>
+          <div class="ai-core-dot ai-core-dot-2"></div>
+          <div class="ai-core-dot ai-core-dot-3"></div>
+        </div>
       </div>
 
-      <div class="why-ai-card">
-        <span class="icon">➦</span>
-        <p>Creates strong emotional connection</p>
-      </div>
+      <!-- RIGHT: PROCESS -->
+      <div class="ai-col ai-col-right">
+        <h2 class="service-section-title">Process</h2>
+        <p class="service-section-sub">
+          A clear, structured workflow that transforms your brand story into a polished, impactful video.
+        </p>
 
-      <div class="why-ai-card">
-        <span class="icon">➦</span>
-        <p>Perfect for product launches & campaigns</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===================== SAMPLE WORK SHOWCASE – AI ===================== -->
-<section class="service-section ai-showcase" id="ai-showcase">
-  <!-- full-width background band -->
-  <div class="ai-showcase-bg-band"></div>
-
-  <div class="ai-showcase-inner">
-    <div class="service-section-header ai-showcase-header">
-      <h2 class="service-section-title">Sample Work Showcase</h2>
-      <p class="service-section-sub">
-        A showcase of story-driven brand films crafted for clarity, emotion, and impact.
-      </p>
-    </div>
-
-    <div class="ai-showcase-window">
-      <div class="ai-showcase-track">
-
-        <!-- CARD 1 -->
-        <div class="ai-showcase-card">
-          <div class="ai-showcase-thumb">
-            <!-- 🔧 replace src & poster with your real files -->
-            <video
-              class="ai-showcase-video"
-              src="ai-video1.mp4"
-              poster="ai-thumb1.jpg"
-              muted
-            ></video>
-            <div class="ai-showcase-overlay">
-              <span>▶</span>
+        <ol class="ai-process-list">
+          <li class="ai-process-step">
+            <div class="ai-step-badge">01</div>
+            <div class="ai-step-body">
+              <h3>Brand briefing</h3>
+              <p>Understand your story, goals, and tone.</p>
             </div>
-          </div>
-          <p class="ai-showcase-caption">video 1</p>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="ai-showcase-card">
-          <div class="ai-showcase-thumb">
-            <video
-              class="ai-showcase-video"
-              src="ai-video2.mp4"
-              poster="ai-thumb2.jpg"
-              muted
-            ></video>
-            <div class="ai-showcase-overlay">
-              <span>▶</span>
+          </li>
+          <li class="ai-process-step">
+            <div class="ai-step-badge">02</div>
+            <div class="ai-step-body">
+              <h3>Script &amp; visual direction</h3>
+              <p>Craft the narrative and define the visual style.</p>
             </div>
-          </div>
-          <p class="ai-showcase-caption">video 2</p>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="ai-showcase-card">
-          <div class="ai-showcase-thumb">
-            <video
-              class="ai-showcase-video"
-              src="ai-video3.mp4"
-              poster="ai-thumb3.jpg"
-              muted
-            ></video>
-            <div class="ai-showcase-overlay">
-              <span>▶</span>
+          </li>
+          <li class="ai-process-step">
+            <div class="ai-step-badge">03</div>
+            <div class="ai-step-body">
+              <h3>Edit & refine</h3>
+              <p>Elevate the footage with pacing, graphics, and polish.</p>
             </div>
-          </div>
-          <p class="ai-showcase-caption">video 3</p>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="ai-showcase-card">
-          <div class="ai-showcase-thumb">
-            <video
-              class="ai-showcase-video"
-              src="ai-video4.mp4"
-              poster="ai-thumb4.jpg"
-              muted
-            ></video>
-            <div class="ai-showcase-overlay">
-              <span>▶</span>
+          </li>
+          <li class="ai-process-step">
+            <div class="ai-step-badge">04</div>
+            <div class="ai-step-body">
+              <h3>Final Delivery</h3>
+              <p>Provide platform-ready brand videos in all formats.</p>
             </div>
-          </div>
-          <p class="ai-showcase-caption">video 4</p>
-        </div>
+          </li>
+        </ol>
+      </div>
 
-        <!-- CARD 5 -->
-        <div class="ai-showcase-card">
-          <div class="ai-showcase-thumb">
-            <video
-              class="ai-showcase-video"
-              src="ai-video5.mp4"
-              poster="ai-thumb5.jpg"
-              muted
-            ></video>
-            <div class="ai-showcase-overlay">
-              <span>▶</span>
-            </div>
-          </div>
-          <p class="ai-showcase-caption">video 5</p>
-        </div>
+    </div>
+  </section>
+  <section id="why" class="why-section hologram-section">
 
-        <!-- CARD 6 -->
-        <div class="ai-showcase-card">
-          <div class="ai-showcase-thumb">
-            <video
-              class="ai-showcase-video"
-              src="ai-video6.mp4"
-              poster="ai-thumb6.jpg"
-              muted
-            ></video>
-            <div class="ai-showcase-overlay">
-              <span>▶</span>
-            </div>
+    <!-- subtle hologram texture (uses uploaded image) -->
+    <div class="holo-texture" aria-hidden="true"></div>
+
+    <!-- floating orbs (AI particles) -->
+    <div class="holo-orbs" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <!-- new section why choose -->
+    <section class="why-ai-section">
+      <div class="why-ai-inner">
+
+        <h2 class="why-ai-title">Why Choose Brand Videos from <span class="highlight-cyan gradient-text ">Easein
+            Studio</span></h2>
+
+        <div class="why-ai-list">
+          <div class="why-ai-card">
+            <span class="icon">➦</span>
+            <p>Professional, cinematic visuals</p>
           </div>
-          <p class="ai-showcase-caption">Video 6</p>
+
+          <div class="why-ai-card">
+            <span class="icon">➦</span>
+            <p>Reflects your brand identity clearly</p>
+          </div>
+
+          <div class="why-ai-card">
+            <span class="icon">➦</span>
+            <p>Creates strong emotional connection</p>
+          </div>
+
+          <div class="why-ai-card">
+            <span class="icon">➦</span>
+            <p>Perfect for product launches & campaigns</p>
+          </div>
         </div>
 
       </div>
-    </div>
+    </section>
 
-    <div class="ai-showcase-cta">
-      <a href="/portfolio#ai-videos" class="ai-showcase-btn">View More Samples in Portfolio</a>
-    </div>
-  </div>
-</section>
-<!-- ===================== CTA BANNER ===================== -->
-<section class="cta-banner">
-  <!-- Neon Strip -->
-  <div class="cta-neon-strip"></div>
-  <div class="cta-particles"></div>
-  <div class="cta-content">
-    <h2 class="cta-title">Want to Tell Your Brand Story Through Video?</h2>
-    <p class="cta-sub">Let’s build it.</p>
-   <a href="javascript:void(0)" class="btn-primary open-quote-popup" onclick="openQuoteModal()">
+    <!-- ===================== SAMPLE WORK SHOWCASE – AI ===================== -->
+    <section class="service-section ai-showcase" id="ai-showcase">
+      <!-- full-width background band -->
+      <div class="ai-showcase-bg-band"></div>
+
+      <div class="ai-showcase-inner">
+        <div class="service-section-header ai-showcase-header">
+          <h2 class="service-section-title">Sample Work Showcase</h2>
+          <p class="service-section-sub">
+            A showcase of story-driven brand films crafted for clarity, emotion, and impact.
+          </p>
+        </div>
+
+        <div class="ai-showcase-window">
+          <div class="ai-showcase-track">
+
+            <!-- CARD 1 -->
+            <div class="ai-showcase-card">
+              <div class="ai-showcase-thumb">
+                <!-- 🔧 replace src & poster with your real files -->
+                <video class="ai-showcase-video" src="ai-video1.mp4" poster="ai-thumb1.jpg" muted></video>
+                <div class="ai-showcase-overlay">
+                  <span>▶</span>
+                </div>
+              </div>
+              <p class="ai-showcase-caption">video 1</p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="ai-showcase-card">
+              <div class="ai-showcase-thumb">
+                <video class="ai-showcase-video" src="ai-video2.mp4" poster="ai-thumb2.jpg" muted></video>
+                <div class="ai-showcase-overlay">
+                  <span>▶</span>
+                </div>
+              </div>
+              <p class="ai-showcase-caption">video 2</p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="ai-showcase-card">
+              <div class="ai-showcase-thumb">
+                <video class="ai-showcase-video" src="ai-video3.mp4" poster="ai-thumb3.jpg" muted></video>
+                <div class="ai-showcase-overlay">
+                  <span>▶</span>
+                </div>
+              </div>
+              <p class="ai-showcase-caption">video 3</p>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="ai-showcase-card">
+              <div class="ai-showcase-thumb">
+                <video class="ai-showcase-video" src="ai-video4.mp4" poster="ai-thumb4.jpg" muted></video>
+                <div class="ai-showcase-overlay">
+                  <span>▶</span>
+                </div>
+              </div>
+              <p class="ai-showcase-caption">video 4</p>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="ai-showcase-card">
+              <div class="ai-showcase-thumb">
+                <video class="ai-showcase-video" src="ai-video5.mp4" poster="ai-thumb5.jpg" muted></video>
+                <div class="ai-showcase-overlay">
+                  <span>▶</span>
+                </div>
+              </div>
+              <p class="ai-showcase-caption">video 5</p>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="ai-showcase-card">
+              <div class="ai-showcase-thumb">
+                <video class="ai-showcase-video" src="ai-video6.mp4" poster="ai-thumb6.jpg" muted></video>
+                <div class="ai-showcase-overlay">
+                  <span>▶</span>
+                </div>
+              </div>
+              <p class="ai-showcase-caption">Video 6</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="ai-showcase-cta">
+          <a href="/portfolio#ai-videos" class="ai-showcase-btn">View More Samples in Portfolio</a>
+        </div>
+      </div>
+    </section>
+    <!-- ===================== CTA BANNER ===================== -->
+    <section class="cta-banner">
+      <!-- Neon Strip -->
+      <div class="cta-neon-strip"></div>
+      <div class="cta-particles"></div>
+      <div class="cta-content">
+        <h2 class="cta-title">Want to Tell Your Brand Story Through Video?</h2>
+        <p class="cta-sub">Let’s build it.</p>
+        <a href="javascript:void(0)" class="btn-primary open-quote-popup" onclick="openQuoteModal()">
           Create My Brand Video
         </a>
-  </div>
-</section>
-  <!-- ===================== FOOTER ===================== -->
-<footer class="footer">
-
-  <div class="footer-container">
-
-    <!-- COLUMN 1 – ABOUT -->
-    <div class="footer-col">
-      <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
-
-      <p class="footer-about">
-        Easein Studio helps individuals and brands tell their stories through 
-        powerful videos. From ads to podcasts, our team brings your ideas to life 
-        with creativity and precision.
-      </p>
-
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
       </div>
-    </div>
+    </section>
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
 
-    <!-- COLUMN 2 – QUICK LINKS -->
-    <div class="footer-col">
-      <h3 class="footer-title">Quick Links</h3>
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-    </div>
+      <div class="footer-container">
 
-    <!-- COLUMN 3 – CONTACT -->
-    <div class="footer-col">
-      <h3 class="footer-title">Let’s Talk</h3>
+        <!-- COLUMN 1 – ABOUT -->
+        <div class="footer-col">
+          <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
 
-      <p class="footer-contact"><strong>Location:</strong> India</p>
-      <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
-      <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
+          <p class="footer-about">
+            Easein Studio helps individuals and brands tell their stories through
+            powerful videos. From ads to podcasts, our team brings your ideas to life
+            with creativity and precision.
+          </p>
 
-      <a href="javascript:void(0)" class="footer-cta" onclick="openQuoteModal()">Get a Free Quote</a>
-    </div>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
 
-  </div>
+        <!-- COLUMN 2 – QUICK LINKS -->
+        <div class="footer-col">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
 
-  <!-- Bottom Bar -->
-  <div class="footer-bottom">
-    <p>© 2025 Easein Studio. All rights reserved.</p>
-    <p>Designed by RBP Digital 360</p>
-  </div>
+        <!-- COLUMN 3 – CONTACT -->
+        <div class="footer-col">
+          <h3 class="footer-title">Let’s Talk</h3>
 
-</footer>
+          <p class="footer-contact"><strong>Location:</strong> India</p>
+          <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
+          <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
 
-  <script src="app.js"></script>
-  <script src="popup.js"></script>
+          <a href="javascript:void(0)" class="footer-cta" onclick="openQuoteModal()">Get a Free Quote</a>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2025 Easein Studio. All rights reserved.</p>
+        <a class="footer-bottom" href="https://rbpdigital360.com/" style="text-decoration:none">Designed by RBP Digital
+          360</a>
+      </div>
+
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="popup.js"></script>
 </body>
+
 </html>
