@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link href="easein favion.png" rel="icon">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>AI Generated Reels | Easein Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+
+  <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="navbar">
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="Easein Studio Logo" class="logo" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About Us</a></li>
+
+        <li class="dropdown">
+          <a class="nav-link" href="#services">Services ▾</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-sub">
+              <a href="ai-videos.html" class="sub-toggle">AI-Generated Videos ▾</a>
+              <ul class="dropdown-sub-menu">
+                <li><a href="reels.html">Reels</a></li>
+                <li><a href="influencer.html">Influencer</a></li>
+              </ul>
+            </li>
+            <li><a href="ad.html">Ads</a></li>
+            <li><a href="ugc.html">UGC Videos</a></li>
+            <li><a href="brand.html">Brand Videos</a></li>
+            <li><a href="podcast.html">Podcast Production</a></li>
+            <li><a href="motion.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="nav-link" href="#portfolio">Portfolio ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="portfolio.html">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html">Ads</a></li>
+            <li><a href="portfolio.html">UGC Videos</a></li>
+            <li><a href="portfolio.html">Brand Videos</a></li>
+            <li><a href="portfolio.html">Podcast Production</a></li>
+            <li><a href="portfolio.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+
+        <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <button id="hamburger" class="hamburger" aria-label="Open Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+  </header>
+
+
+  <div id="mobileMenu" class="mobile-menu">
+    <button id="mobileClose" class="mobile-close">&times;</button>
+    <div class="mobile-content">
+      <ul class="mobile-links">
+        <li><a href="index.html" class="mobile-link">Home</a></li>
+        <li><a href="about.html" class="mobile-link">About Us</a></li>
+        <li class="mobile-accordion">
+          <button class="accordion-toggle">Services ▾</button>
+          <ul class="accordion-panel">
+            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="reels.html">AI-Reels</a></li>
+            <li><a href="influencer.html">AI-Influencer</a></li>
+            <li><a href="ad.html">Ads</a></li>
+            <li><a href="ugc.html">UGC Videos</a></li>
+            <li><a href="brand.html">Brand Videos</a></li>
+            <li><a href="podcast.html">Podcast Production</a></li>
+            <li><a href="motion.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+        <li class="mobile-accordion">
+          <button class="accordion-toggle">Portfolio ▾</button>
+          <ul class="accordion-panel">
+            <li><a href="portfolio.html">AI-Generated Videos</a></li>
+            <li><a href="portfolio.html">Ads</a></li>
+            <li><a href="portfolio.html">UGC Videos</a></li>
+            <li><a href="portfolio.html">Brand Videos</a></li>
+            <li><a href="portfolio.html">Podcast Production</a></li>
+            <li><a href="portfolio.html">Motion Graphics</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ghost-text">EASEIN STUDIO</div>
+  <div class="ghost-text">EASEIN STUDIO</div>
+
+  <div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
+    <div class="popup-container">
+      <div class="popup-content contact-form-card">
+        <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="popup-header">
+          <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
+          <p class="contact-subtext">Tell us what you need, and we'll get back to you with ideas, timelines, and a
+            quote.</p>
+        </div>
+        <form id="easein-contact-form" class="contact-form" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="pop-name">Name<span>*</span></label>
+            <input type="text" id="pop-name" name="name" required placeholder="Your full name" />
+          </div>
+          <div class="form-group">
+            <label for="pop-email">Email<span>*</span></label>
+            <input type="email" id="pop-email" name="email" required placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="pop-phone">Phone<span>*</span></label>
+            <input type="tel" id="pop-phone" name="phone" required placeholder="+91 - 98765 43210" />
+          </div>
+          <div class="form-group">
+            <label for="pop-videoType">Type of Video<span>*</span></label>
+            <select id="pop-videoType" name="video_type" required>
+              <option value="" disabled selected>Select a video type</option>
+              <option value="ai">AI-Generated Video</option>
+              <option value="reels">AI Reels</option>
+              <option value="podcast">Podcast Video</option>
+              <option value="ads-pvc">Advertisement & PVC Video</option>
+              <option value="motion-graphics">Motion Graphics</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pop-projectDetails">Project Details<span>*</span></label>
+            <textarea id="pop-projectDetails" name="project_details" rows="4" required
+              placeholder="Tell us about your idea, goals, style preference, deadlines, etc."></textarea>
+          </div>
+          <button type="submit" class="contact-submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <section class="service-hero">
+    <div class="service-hero-inner">
+
+      <div class="service-hero-left">
+        <p class="service-pill">AI Generated Reels</p>
+
+        <h1 class="service-hero-title">
+          Short-form videos made
+          <span class="service-hero-highlight">faster & smarter.</span>
+        </h1>
+
+        <p class="service-hero-subtext">
+          Our AI Generated Reels are designed for Instagram, TikTok, and Shorts — combining AI visuals,
+          voiceovers, and human editing to deliver scroll-stopping content at scale.
+        </p>
+
+        <div class="service-hero-cta">
+          <a href="javascript:void(0)" class="btn-primary open-quote-popup" onclick="openQuoteModal()">
+            Request AI Generated Reels
+          </a>
+          <a href="#ai-showcase" class="btn-secondary">View Samples</a>
+        </div>
+      </div>
+
+      <div class="service-hero-right">
+        <div class="service-orbit">
+          <div class="orbit-ring orbit-ring-1"></div>
+          <div class="orbit-ring orbit-ring-2"></div>
+
+          <div class="orbit-core">
+            <i class="fas fa-clapperboard" style="font-size: 1.8rem;"></i>
+          </div>
+
+          <div class="orbit-node orbit-node-1">Instagram</div>
+          <div class="orbit-node orbit-node-2">TikTok</div>
+          <div class="orbit-node orbit-node-3">Shorts</div>
+          <div class="orbit-node orbit-node-4">Ads</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="service-section service-included" id="ai-included">
+    <div class="service-included-inner">
+
+      <div class="included-left">
+        <div class="service-section-header">
+          <h2 class="service-section-title">What’s Included</h2>
+          <p class="service-section-sub">
+            Everything you need for consistent, high-performing short-form content.
+          </p>
+        </div>
+
+        <div class="included-list">
+          <div class="included-card"><span>●</span> Reel concept & hook writing</div>
+          <div class="included-card"><span>●</span> AI-generated visuals or scenes</div>
+          <div class="included-card"><span>●</span> AI or human voiceover</div>
+          <div class="included-card"><span>●</span> Trend-based edits & transitions</div>
+          <div class="included-card"><span>●</span> Captions, branding & music</div>
+          <div class="included-card"><span>●</span> 2 rounds of revisions</div>
+        </div>
+      </div>
+
+      <div class="included-right">
+        <div class="included-visual">
+          <img src="head.jpg" class="included-image" alt="Reels Production">
+          <div class="included-ring included-ring-1"></div>
+          <div class="included-ring included-ring-2"></div>
+          <div class="included-scan"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="ai-split-section">
+    <div class="ai-split-inner">
+
+      <div class="ai-col ai-col-left">
+        <h2 class="service-section-title">Ideal For</h2>
+        <p class="service-section-sub">
+          Designed for platforms that demand speed and engagement.
+        </p>
+
+        <div class="ai-chip-grid">
+          <span class="ai-chip">Instagram Reels</span>
+          <span class="ai-chip">TikTok Videos</span>
+          <span class="ai-chip">YouTube Shorts</span>
+          <span class="ai-chip">Social Ads</span>
+          <span class="ai-chip">Content Series</span>
+        </div>
+      </div>
+
+      <div class="ai-col ai-col-middle">
+        <div class="ai-core">
+          <div class="ai-core-beam"></div>
+
+          <div class="ai-core-node">
+            <i class="fas fa-fire" style="font-size: 1.8rem;"></i>
+          </div>
+
+          <div class="ai-core-ring ai-core-ring-1"></div>
+          <div class="ai-core-ring ai-core-ring-2"></div>
+
+          <div class="ai-core-dot ai-core-dot-1"></div>
+          <div class="ai-core-dot ai-core-dot-2"></div>
+          <div class="ai-core-dot ai-core-dot-3"></div>
+        </div>
+      </div>
+
+      <div class="ai-col ai-col-right">
+        <h2 class="service-section-title">Process</h2>
+        <p class="service-section-sub">
+          From viral concept to posted reel in four simple steps.
+        </p>
+
+        <ol class="ai-process-list">
+          <li class="ai-process-step">
+            <div class="ai-step-badge">01</div>
+            <div class="ai-step-body">
+              <h3>Content Brief & Goal Setting</h3>
+              <p>We define the hook, platform, and outcome for maximum engagement.</p>
+            </div>
+          </li>
+          <li class="ai-process-step">
+            <div class="ai-step-badge">02</div>
+            <div class="ai-step-body">
+              <h3>AI Reel Draft Creation</h3>
+              <p>AI generates high-quality visuals, scenes, or narration based on the concept.</p>
+            </div>
+          </li>
+          <li class="ai-process-step">
+            <div class="ai-step-badge">03</div>
+            <div class="ai-step-body">
+              <h3>Human Edit & Optimization</h3>
+              <p>Our editors add trends, captions, perfect pacing, and final polish.</p>
+            </div>
+          </li>
+          <li class="ai-process-step">
+            <div class="ai-step-badge">04</div>
+            <div class="ai-step-body">
+              <h3>Final Reel Delivery</h3>
+              <p>You receive platform-ready reels optimized for algorithm performance.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="why" class="why-section hologram-section">
+
+    <div class="holo-texture" aria-hidden="true"></div>
+
+    <div class="holo-orbs" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <section class="why-ai-section">
+      <div class="why-ai-inner">
+
+        <h2 class="why-ai-title">Why Choose AI Reels from <span class="highlight-cyan gradient-text">Easein
+            Studio</span></h2>
+
+        <div class="why-ai-list">
+          <div class="why-ai-card">
+            <span class="icon">➦</span>
+            <p>Create more reels in less time</p>
+          </div>
+
+          <div class="why-ai-card">
+            <span class="icon">➦</span>
+            <p>Cost-effective for regular posting</p>
+          </div>
+
+          <div class="why-ai-card">
+            <span class="icon">➦</span>
+            <p>Optimized for social algorithms</p>
+          </div>
+
+          <div class="why-ai-card">
+            <span class="icon">➦</span>
+            <p>Perfect for brands scaling content fast</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="service-section ai-showcase" id="ai-showcase">
+      <div class="ai-showcase-bg-band"></div>
+
+      <div class="ai-showcase-inner">
+        <div class="service-section-header ai-showcase-header">
+          <h2 class="service-section-title">Sample Work Showcase</h2>
+          <p class="service-section-sub">
+            Featured Short-Form Projects
+          </p>
+        </div>
+
+        <div class="ai-showcase-window">
+          <div class="ai-showcase-track">
+
+            <div class="ai-showcase-card">
+              <div class="ai-showcase-thumb">
+                <video class="ai-showcase-video" src="reel1.mp4" poster="reel-thumb1.jpg" muted></video>
+                <div class="ai-showcase-overlay">
+                  <span>▶</span>
+                </div>
+              </div>
+              <p class="ai-showcase-caption">Reel Sample 1</p>
+            </div>
+
+            <div class="ai-showcase-card">
+              <div class="ai-showcase-thumb">
+                <video class="ai-showcase-video" src="reel2.mp4" poster="reel-thumb2.jpg" muted></video>
+                <div class="ai-showcase-overlay">
+                  <span>▶</span>
+                </div>
+              </div>
+              <p class="ai-showcase-caption">Viral Hook Sample</p>
+            </div>
+
+            <div class="ai-showcase-card">
+              <div class="ai-showcase-thumb">
+                <video class="ai-showcase-video" src="reel3.mp4" poster="reel-thumb3.jpg" muted></video>
+                <div class="ai-showcase-overlay">
+                  <span>▶</span>
+                </div>
+              </div>
+              <p class="ai-showcase-caption">TikTok Trend</p>
+            </div>
+
+            <div class="ai-showcase-card">
+              <div class="ai-showcase-thumb">
+                <video class="ai-showcase-video" src="reel4.mp4" poster="reel-thumb4.jpg" muted></video>
+                <div class="ai-showcase-overlay">
+                  <span>▶</span>
+                </div>
+              </div>
+              <p class="ai-showcase-caption">Shorts Explainer</p>
+            </div>
+
+            <div class="ai-showcase-card">
+              <div class="ai-showcase-thumb">
+                <video class="ai-showcase-video" src="reel5.mp4" poster="reel-thumb5.jpg" muted></video>
+                <div class="ai-showcase-overlay">
+                  <span>▶</span>
+                </div>
+              </div>
+              <p class="ai-showcase-caption">Product Reel</p>
+            </div>
+
+            <div class="ai-showcase-card">
+              <div class="ai-showcase-thumb">
+                <video class="ai-showcase-video" src="reel6.mp4" poster="reel-thumb6.jpg" muted></video>
+                <div class="ai-showcase-overlay">
+                  <span>▶</span>
+                </div>
+              </div>
+              <p class="ai-showcase-caption">Brand Story</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="ai-showcase-cta">
+          <a href="portfolio.html" class="ai-showcase-btn">View More Samples in Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="cta-neon-strip"></div>
+      <div class="cta-particles"></div>
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Scale Your Reels with AI?</h2>
+        <p class="cta-sub">Let's make you go viral.</p>
+        <a href="javascript:void(0)" class="btn-primary open-quote-popup" onclick="openQuoteModal()">
+          Request AI Generated Reels
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+
+        <div class="footer-col">
+          <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
+          <p class="footer-about">
+            Easein Studio helps individuals and brands tell their stories through
+            powerful videos. From ads to podcasts, our team brings your ideas to life
+            with creativity and precision.
+          </p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/easeinstudio_official?igsh=Y3I4dDVuZGFhdXdv" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1C6FYE3xjG/" aria-label="Facebook"><i
+                class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Let’s Talk</h3>
+          <p class="footer-contact"><strong>Location:</strong> India</p>
+          <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
+          <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
+          <a href="javascript:void(0)" class="footer-cta open-quote-popup" onclick="openQuoteModal()">Get a Free
+            Quote</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Easein Studio. All rights reserved.</p>
+        <a class="footer-bottom-link" href="https://rbpdigital360.com/" style="text-decoration:none; color:inherit;">Designed by RBP
+          Digital 360</a>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
