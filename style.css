@@ -4220,3 +4220,97 @@ footer.footer {
 .service-page.service-ai {
   padding-bottom: 0;
 }
+
+
+/* ================= VIDEO MODAL ================= */
+.ai-showcase-image{
+  height: 170px;
+  width: 250px;
+}
+.ai-video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+}
+
+.ai-video-modal.active {
+  display: block;
+}
+
+.ai-video-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.ai-video-modal-content {
+  position: relative;
+  max-width: 900px;
+  width: 92%;
+  margin: 6vh auto;
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.9);
+}
+
+.ai-video-modal video {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+}
+
+.ai-video-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* ================= MOBILE FULLSCREEN VIDEO MODAL ================= */
+
+@media (max-width: 768px) {
+  .ai-video-modal-content {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+.ai-showcase-image{
+  height: 170px;
+  width: 310px;
+}
+  .ai-video-modal video {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    max-width: 100vw;
+    object-fit: contain; /* default for landscape */
+  }
+
+  /* Portrait / reels video */
+  .ai-video-modal video.portrait {
+    object-fit: cover;
+  }
+
+  .ai-video-close {
+    top: 14px;
+    right: 14px;
+    font-size: 22px;
+    padding: 8px 12px;
+  }
+}

@@ -679,7 +679,7 @@ backdrop.addEventListener("click", () => {
   const track = document.querySelector('.ai-showcase-track');
   if (!track) return;
 
-  const STEP_DELAY = 4500; // ms between slides
+  const STEP_DELAY = 3500; // ms between slides
   let currentIndex = 0;
   let visibleCount = getVisibleCount();
   let autoplayId = null;
@@ -783,4 +783,45 @@ backdrop.addEventListener("click", () => {
     windowEl.addEventListener('mouseenter', stopAutoplay);
     windowEl.addEventListener('mouseleave', startAutoplay);
   }
+})();
+
+
+/* ==========================================================
+   AI SHOWCASE – MODAL VIDEO PLAYER (CDN)
+========================================================== */
+(function () {
+  const modal = document.getElementById('aiVideoModal');
+  const modalVideo = document.getElementById('aiModalVideo');
+  const closeBtn = modal.querySelector('.ai-video-close');
+  const backdrop = modal.querySelector('.ai-video-backdrop');
+
+  // Open modal
+  document.querySelectorAll('.ai-showcase-thumb').forEach(card => {
+    card.addEventListener('click', () => {
+      const videoSrc = card.dataset.video;
+      if (!videoSrc) return;
+
+      modalVideo.src = videoSrc;
+      modal.classList.add('active');
+      modalVideo.play().catch(() => {});
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modalVideo.pause();
+    modalVideo.src = '';
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+
+  // ESC key support
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
 })();

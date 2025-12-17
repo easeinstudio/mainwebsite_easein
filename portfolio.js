@@ -181,6 +181,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const cards1 = document.querySelectorAll(".video-card1");
+
+cards1.forEach((card) => {
+  const video = card.querySelector("video");
+
+  // Hover preview
+  card.addEventListener("mouseenter", () => {
+    if (video) {
+      video.muted = true;
+      video.play().catch(() => {});
+    }
+  });
+
+  // Restore poster on unhover
+  card.addEventListener("mouseleave", () => {
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+      video.load(); // forces poster back
+    }
+  });
+
+  // Click opens lightbox
+  card.addEventListener("click", () => {
+    openLightbox(card);
+  });
+});
+
   /* ----------------------------
      4. HERO FILTER PILLS (Smooth Scroll)
   ---------------------------- */

@@ -197,6 +197,8 @@ body {
 }
 
 .carousel-track {
+  overflow-x: auto;          /* keep scroll */
+  scrollbar-width: none;     /* Firefox */
   display: flex;
   gap: 20px;
   overflow-x: auto;
@@ -316,6 +318,96 @@ body {
 
 /* Show Play Button on Hover */
 .video-card:hover .video-meta::after {
+  opacity: 1;
+  transform: scale(1);
+  color: var(--accent-cyan);
+}
+/*another landscape variant*/
+/* ================= VIDEO CARDS (REELS STYLE) ================= */
+
+.video-card1 {
+  aspect-ratio: 16 / 9;   /* LANDSCAPE */
+  width: 400px;           /* or auto in flex/grid */
+  max-width: 100%;
+  height: 250px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+}
+
+
+/* Hover Effect: Lift & Glow */
+.video-card1:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 15px 40px rgba(0, 240, 255, 0.15);
+}
+
+.thumb-wrapper1 {
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+}
+
+.thumb-wrapper1 video,
+.thumb-wrapper1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* display: block; */
+}
+
+/* Hide Default Overlay Elements from HTML to clean it up via CSS */
+.thumb-overlay1 { display: none; } 
+
+/* RE-STYLE .video-meta TO BE THE OVERLAY */
+.video-meta1 {
+  padding: 40px 16px 16px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.9) 0%,
+    rgba(0,0,0,0.5) 45%,
+    transparent 100%
+  );
+}
+
+
+.video-meta1 h3 {
+  font-size: 16px;
+  margin: 0 0 6px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  color: #fff;
+}
+
+.video-meta1 p {
+  font-size: 13px;
+  margin: 0;
+  opacity: 0.8;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+/* Add a fake play button icon via CSS */
+.video-meta1::after {
+  content: "play_circle";
+  font-family: "Material Symbols Rounded";
+  position: absolute;
+  top: 20px; /* Positioned within the gradient area */
+  right: 15px;
+  font-size: 32px;
+  color: rgba(255,255,255,0.8);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Show Play Button on Hover */
+.video-card1:hover .video-meta1::after {
   opacity: 1;
   transform: scale(1);
   color: var(--accent-cyan);
@@ -452,3 +544,19 @@ body {
 .has-error .error-msg { display: flex; }
 .has-error .video-status-layer { opacity: 1; background: #000; }
 .has-error { border: 1px solid rgba(255, 77, 77, 0.4) !important; }
+
+.thumb-wrapper1 {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* LANDSCAPE */
+  background: #000;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.thumb-wrapper1 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
