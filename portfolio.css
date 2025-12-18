@@ -126,7 +126,7 @@ body {
   opacity: 0; 
   transform: scale(0.95) translateY(20px);
   animation: heroIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-  animation-delay: 0.2s; /* Wait slightly for text to start */
+  animation-delay: 0.4s; /* Wait slightly for text to start */
   
   /* ENSURE SMOOTH SCROLL TRANSFORMS */
   will-change: transform, opacity, filter;
