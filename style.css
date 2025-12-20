@@ -420,8 +420,8 @@ body {
 .hero-title {
   font-size: 54px;
   font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -1px;
+  line-height: 1.4;
+  /* letter-spacing: -1px; */
   margin-bottom: 14px;
 }
 
