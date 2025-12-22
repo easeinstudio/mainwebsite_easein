@@ -313,3 +313,44 @@ cards1.forEach((card) => {
     }
   });
 });
+
+/* ===== INFINITE AUTO SCROLL (LEFT ONLY) ===== */
+document.querySelectorAll(".portfolio-carousel1").forEach(carousel => {
+  const track = carousel.querySelector(".carousel-track");
+  if (!track) return;
+
+  let isPaused = false;
+  const SPEED = 3; // adjust speed here
+
+  // Duplicate cards once (for seamless loop)
+  if (!track.dataset.cloned) {
+    track.innerHTML += track.innerHTML;
+    track.dataset.cloned = "true";
+  }
+
+  // Start from middle to avoid jump
+  track.scrollLeft = track.scrollWidth / 4;
+
+  function autoScroll() {
+    if (!isPaused) {
+      track.scrollLeft += SPEED;
+
+      // Reset position when reaching end
+      if (track.scrollLeft >= track.scrollWidth / 2) {
+        track.scrollLeft = 0;
+      }
+    }
+    requestAnimationFrame(autoScroll);
+  }
+
+  // Pause on hover
+  carousel.addEventListener("mouseenter", () => {
+    isPaused = true;
+  });
+
+  carousel.addEventListener("mouseleave", () => {
+    isPaused = false;
+  });
+
+  autoScroll();
+});
