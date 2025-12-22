@@ -225,6 +225,30 @@ document.addEventListener("keydown", (e) => {
     hideMobileMenu();
   }
 });
+
+/* ================= AI SUB SERVICES JS ================= */
+(function () {
+  // card click navigation
+  document.querySelectorAll(".ai-sub-card").forEach(card => {
+    const url = card.getAttribute("data-url");
+    if (!url) return;
+
+    card.addEventListener("click", () => {
+      window.location.href = url;
+    });
+  });
+
+  // ghost parallax
+  const ghost = document.querySelector(".ai-subservices-ghost");
+  if (!ghost) return;
+
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY * 0.12;
+    ghost.style.transform =
+      `translate(-50%, calc(-50% + ${y}px))`;
+  }, { passive: true });
+})();
+
 /* ================= Hologram Section JS ================= */
 
 /* micro-orb floating */

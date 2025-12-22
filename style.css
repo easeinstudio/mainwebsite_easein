@@ -3150,6 +3150,120 @@ footer.footer * {
     align-items: flex-start;
   }
 }
+/* ================= AI SUB SERVICES ================= */
+
+.ai-subservices-section {
+  position: relative;
+  padding: 100px 20px 120px;
+  overflow: hidden;
+}
+
+/* ghost background text */
+.ai-subservices-ghost {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(80px, 14vw, 220px);
+  font-weight: 800;
+  letter-spacing: 12px;
+  color: rgba(0, 234, 255, 0.04);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* layout */
+.ai-subservices-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* card */
+.ai-sub-card {
+  background: linear-gradient(
+    145deg,
+    rgba(3, 20, 30, 0.92),
+    rgba(0, 10, 16, 0.96)
+  );
+  border: 1px solid rgba(0, 234, 255, 0.15);
+  border-radius: 22px;
+  padding: 46px 38px;
+  cursor: pointer;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(18px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow layer */
+.ai-sub-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(0, 234, 255, 0.25),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+/* hover */
+.ai-sub-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 90px rgba(0, 234, 255, 0.18);
+}
+.ai-sub-card:hover::before {
+  opacity: 1;
+}
+
+/* text */
+.ai-sub-card h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #eaffff;
+}
+
+.ai-sub-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #bfeff7;
+  max-width: 420px;
+  margin-bottom: 28px;
+}
+
+/* CTA */
+.ai-sub-cta {
+  background: linear-gradient(135deg, #00eaff, #00b4d8);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #00191f;
+  cursor: pointer;
+  box-shadow: 0 0 22px rgba(0, 234, 255, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ai-sub-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(0, 234, 255, 0.55);
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .ai-subservices-container {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ===================== WHAT'S INCLUDED ===================== */
 
@@ -4122,6 +4236,11 @@ footer.footer * {
 .ai-showcase-cta {
   margin-top: 28px;
   text-align: center;
+}
+.click-safe {
+  position: relative;
+  z-index: 999;
+  pointer-events: auto;
 }
 
 .ai-showcase-btn {
