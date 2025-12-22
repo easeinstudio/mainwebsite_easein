@@ -849,3 +849,12 @@ backdrop.addEventListener("click", () => {
     }
   });
 })();
+/* ===============================
+   SUCCESS ROCKET TRIGGER
+================================ */
+document.addEventListener('form:success', () => {
+  const rocket = document.getElementById('successRocket');
+  if (rocket) {
+    rocket.classList.add('show');
+  }
+});

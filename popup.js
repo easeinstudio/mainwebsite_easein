@@ -1,7 +1,7 @@
 
   // Safe popup handlers — query DOM when needed and guard against missing elements.
   (function() {
-    'use strict';
+    
 
     function openQuoteModal() {
       const modal = document.getElementById('quote-popup');
@@ -63,11 +63,73 @@
         .then(response => response.json())
         .then(data => {
           if (data && data.success) {
-            // Success: Alert user, reset form, close modal
-            alert('Thank you! Your message has been sent successfully.');
-            form.reset();
-            closeQuoteModal();
-          } else {
+  const overlay = document.getElementById('successOverlay');
+  const plane = document.getElementById('paperPlane');
+  const text  = document.getElementById('successText');
+
+  document.body.style.overflow = 'hidden';
+  overlay.style.display = 'flex';
+
+  // Start position (center)
+  let x = window.innerWidth / 2 - 40;
+  let y = window.innerHeight / 2 - 40;
+
+  plane.style.transform = `translate(${x}px, ${y}px) rotate(0deg)`;
+  plane.style.opacity = '1';
+
+  // Random floating movement
+  let steps = 0;
+  const floatInterval = setInterval(() => {
+    steps++;
+
+    x += (Math.random() - 0.5) * 120;
+    y += (Math.random() - 0.5) * 80;
+
+    const rot = (Math.random() - 0.5) * 40;
+
+    plane.animate(
+      [
+        { transform: plane.style.transform },
+        { transform: `translate(${x}px, ${y}px) rotate(${rot}deg)` }
+      ],
+      { duration: 450, easing: 'ease-in-out', fill: 'forwards' }
+    );
+
+    plane.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg)`;
+
+    if (steps >= 6) {
+      clearInterval(floatInterval);
+
+      // Fly away
+      plane.animate(
+        [
+          { transform: plane.style.transform, opacity: 1 },
+          { transform: `translate(${x + 300}px, ${y - 500}px) rotate(60deg)`, opacity: 0 }
+        ],
+        { duration: 900, easing: 'ease-in', fill: 'forwards' }
+      );
+
+      // Show success text
+      setTimeout(() => {
+        text.animate(
+          [
+            { opacity: 0, transform: 'translateY(10px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+          ],
+          { duration: 500, easing: 'ease-out', fill: 'forwards' }
+        );
+      }, 600);
+
+      // Redirect
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 2000);
+    }
+  }, 350);
+
+  return;
+}
+ else {
             // Validation Error (from PHP)
             alert('Error: ' + ((data && data.message) || 'Unknown error occurred.'));
             if (data && data.errors) console.error('Validation errors:', data.errors);

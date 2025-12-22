@@ -2,6 +2,7 @@
    NAVBAR + MOBILE MENU + BEAM CURSOR (Contact Page Safe Version)
    Fully wrapped in DOMContentLoaded so elements always exist.
 ============================================================ */
+console.log('SUBMIT HANDLER FIRED');
 
 document.addEventListener("DOMContentLoaded", () => {
   /* ----------------------------
@@ -248,7 +249,13 @@ document.addEventListener("mousemove", (e) => {
       interval = setInterval(rotateCards, 4000);
     });
   }
-
+/* --------------------------------
+   INIT CALLS (THIS IS REQUIRED)
+-------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+  initFormSubmit();
+  initStackReel();
+});
   /* --------------------------------
      11. INIT ALL ON DOM READY
   -------------------------------- */

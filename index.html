@@ -116,8 +116,6 @@
     </div>
   </div>
 
-
-  <!-- ===================== HERO SECTION ===================== -->
   <!-- ===================== HERO SECTION ===================== -->
   <section id="home" class="hero">
 
@@ -690,6 +688,45 @@
     </div>
 
   </footer>
+<div id="successOverlay" style="
+  position:fixed;
+  inset:0;
+  background:#020b10;
+  display:none;
+  z-index:999999;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+">
+
+  <!-- Paper Plane -->
+  <img
+    id="paperPlane"
+    src="paper-plane.png"
+    alt="Paper Plane"
+    style="
+      width:80px;
+      position:absolute;
+      will-change: transform, opacity;
+    "
+  />
+
+  <!-- Success Text -->
+  <h2
+    id="successText"
+    style="
+      opacity:0;
+      margin-top:120px;
+      color:#cfffff;
+      font-size:28px;
+      letter-spacing:0.5px;
+      font-weight:600;
+    "
+  >
+    Submitted Successfully
+  </h2>
+
+</div>
 
   <script src="app.js"></script>
   <script src="popup.js"></script>
