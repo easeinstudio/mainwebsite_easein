@@ -192,65 +192,65 @@
     </section> 
     <!--POP UP FORM-->
     <div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
-      <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
+    <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
 
-      <div class="popup-container">
-        <div class="popup-content contact-form-card">
+    <div class="popup-container">
+      <div class="popup-content contact-form-card">
 
-          <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
-            <i class="fas fa-times"></i>
-          </button>
+        <button class="popup-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
+          <i class="fas fa-times"></i>
+        </button>
 
-          <div class="popup-header">
-            <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
-            <p class="contact-subtext">Tell us what you need, and we'll get back to you with ideas, timelines, and a
-              quote.</p>
+        <div class="popup-header">
+          <h2 class="contact-heading">Initialize Your <span class="text-accent">High-Fidelity Infrastructure</span></h2>
+          <p class="contact-subtext">Provide your project parameters, and our lead architects will deliver a strategic roadmap, 
+            timeline, and technical quote.</p>
+        </div>
+
+        <form id="easein-contact-form" class="contact-form" enctype="multipart/form-data">
+
+          <div class="form-group">
+            <label for="pop-name">Full Name<span>*</span></label>
+            <input type="text" id="pop-name" name="name" required placeholder="Your full name" />
           </div>
 
-          <form id="easein-contact-form" class="contact-form" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="pop-email">Email<span>*</span></label>
+            <input type="email" id="pop-email" name="email" required placeholder="you@example.com" />
+          </div>
 
-            <div class="form-group">
-              <label for="pop-name">Name<span>*</span></label>
-              <input type="text" id="pop-name" name="name" required placeholder="Your full name" />
-            </div>
+          <div class="form-group">
+            <label for="pop-phone">Contact Number<span>*</span></label>
+            <input type="tel" id="pop-phone" name="phone" required placeholder="+91 - 98765 43210" />
+          </div>
 
-            <div class="form-group">
-              <label for="pop-email">Email<span>*</span></label>
-              <input type="email" id="pop-email" name="email" required placeholder="you@example.com" />
-            </div>
+          <div class="form-group">
+            <label for="pop-videoType">Primary Vertical Selection<span>*</span></label>
+            <select id="pop-videoType" name="video_type" required>
+              <option value="" disabled selected>Select Vertical</option>
+              <option value="ai">AI Video Synthesis</option>
+              <option value="ads">Performance Ads</option>
+              <option value="ugc">Authentic UGC Systems</option>
+              <option value="brand">Identity Films</option>
+              <option value="podcast">Podcast Distribution</option>
+              <option value="motion-graphics">Motion Graphics</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
 
-            <div class="form-group">
-              <label for="pop-phone">Phone<span>*</span></label>
-              <input type="tel" id="pop-phone" name="phone" required placeholder="+91 - 98765 43210" />
-            </div>
-
-            <div class="form-group">
-              <label for="pop-videoType">Type of Video<span>*</span></label>
-              <select id="pop-videoType" name="video_type" required>
-                <option value="" disabled selected>Select a video type</option>
-                <option value="ai">AI-Generated Video</option>
-                <option value="podcast">Podcast Video</option>
-                <option value="sports-news">Sports & News Video</option>
-                <option value="political">Political Campaign Video</option>
-                <option value="ads-pvc">Advertisement & PVC Video</option>
-                <option value="motion-graphics">Motion Graphics</option>
-                <option value="other">Other / Not Sure</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="pop-projectDetails">Project Details<span>*</span></label>
-              <textarea id="pop-projectDetails" name="project_details" rows="4" required
-                placeholder="Tell us about your idea, goals, style preference, deadlines, etc."></textarea>
-            </div>
+          <div class="form-group">
+            <label for="pop-projectDetails">Project Details<span>*</span></label>
+            <textarea id="pop-projectDetails" name="project_details" rows="4" required
+              placeholder="Tell us about your idea, goals, style preference, deadlines, etc."></textarea>
+          </div>
 
 
 
-            <button type="submit" class="contact-submit-btn">Submit</button>
-          </form>
-        </div>
+          <button type="submit" class="contact-submit-btn">Submit</button>
+        </form>
       </div>
     </div>
+  </div>
 
     <!-- VISION & MISSION -->
     <section class="about-mission" id="vision-mission">
