@@ -27,13 +27,13 @@
 <body>
 
   <!-- Cursor Glow (hidden on mobile via JS) -->
-  <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div>
+  <!-- <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div> -->
 
   <!-- ===================== NAVBAR ===================== -->
   <header class="header">
     <nav class="navbar">
       <a class="brand" href="index.html">
-        <img src="https://res.cloudinary.com/dleaccjvs/image/upload/v1766430925/easein_studio_final_logo_vtmu0i.png" alt="Easein Studio Logo" class="logo" />
+        <img src="logo.png" alt="Easein Studio Logo" class="logo" />
       </a>
 
       <!-- DESKTOP NAV -->
@@ -41,43 +41,44 @@
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About Us</a></li>
 
+        <!-- SERVICES -->
         <li class="dropdown">
-          <a class="nav-link" href="#services">Services ▾</a>
+          <a class="nav-link" href="#">Services ▾</a>
           <ul class="dropdown-menu">
-            <!-- <li><a href="ai-videos.html">AI-Generated Videos</a></li> -->
             <li class="dropdown-sub">
-              <a href="ai-videos.html" class="sub-toggle">AI-Generated Videos ▾</a>
-
+              <a href="ai-videos.html" class="sub-toggle">AI Video Synthesis</a>
               <ul class="dropdown-sub-menu">
                 <li><a href="ai_reels.html">Reels</a></li>
                 <li><a href="ai_influencer.html">Influencer</a></li>
               </ul>
             </li>
-            <li><a href="ad.html">Ads</a></li>
-            <li><a href="ugc.html">UGC Videos</a></li>
-            <li><a href="brand.html">Brand Videos</a></li>
-            <li><a href="podcast.html">Podcast Production</a></li>
+
+            <li><a href="ad.html">Performance Ads</a></li>
+            <li><a href="ugc.html">Authentic UGC Systems</a></li>
+            <li><a href="brand.html">Identity Films</a></li>
+            <li><a href="podcast.html">Podcast Distribution</a></li>
             <li><a href="motion.html">Motion Graphics</a></li>
           </ul>
         </li>
 
+        <!-- PORTFOLIO -->
         <li class="dropdown">
-          <a class="nav-link" href="portfolio.html">Portfolio ▾</a>
-
+          <a class="nav-link" href="#">Portfolio ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="portfolio.html#ai-videos">AI-Generated Videos</a></li>
-            <li><a href="portfolio.html#ads">Ads</a></li>
-            <li><a href="portfolio.html#ugc">UGC Videos</a></li>
-            <li><a href="portfolio.html#brand-videos">Brand Videos</a></li>
-            <li><a href="portfolio.html#podcast">Podcast Production</a></li>
-            <li><a href="portfolio.html#motion-graphics">Motion Graphics</a></li>
+            <li><a href="portfolio.html">AI Video Synthesis</a></li>
+            <li><a href="portfolio.html">Performance Ads</a></li>
+            <li><a href="portfolio.html">Authentic UGC Systems</a></li>
+            <li><a href="portfolio.html">Identity Films</a></li>
+            <li><a href="portfolio.html">Podcast Distribution</a></li>
+            <li><a href="portfolio.html">Motion Graphics</a></li>
           </ul>
         </li>
+
         <li><a class="nav-link" href="contact.html">Contact Us</a></li>
       </ul>
 
       <!-- HAMBURGER -->
-      <button id="hamburger" class="hamburger" aria-label="Open Menu">
+      <button id="hamburger" class="hamburger">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -86,51 +87,43 @@
   </header>
 
 
-  <!-- ===================== FULL-SCREEN MOBILE MENU ===================== -->
+  <!-- ===================== MOBILE MENU ===================== -->
   <div id="mobileMenu" class="mobile-menu">
-
-    <!-- CLOSE BUTTON -->
     <button id="mobileClose" class="mobile-close">&times;</button>
 
-    <!-- SCROLLABLE MENU CONTENT -->
     <div class="mobile-content">
-
       <ul class="mobile-links">
-
         <li><a href="index.html" class="mobile-link">Home</a></li>
         <li><a href="about.html" class="mobile-link">About Us</a></li>
 
-        <!-- Services Accordion -->
         <li class="mobile-accordion">
           <button class="accordion-toggle">Services ▾</button>
           <ul class="accordion-panel">
-            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="ai-videos.html">AI Video Synthesis</a></li>
             <li><a href="ai_reels.html">AI-Reels</a></li>
             <li><a href="ai_influencer.html">AI-Influencer</a></li>
-            <li><a href="ad.html">Ads</a></li>
-            <li><a href="ugc.html">UGC Videos</a></li>
-            <li><a href="brand.html">Brand Videos</a></li>
-            <li><a href="podcast.html">Podcast Production</a></li>
+            <li><a href="ad.html">Performance Ads</a></li>
+            <li><a href="ugc.html">Authentic UGC Systems</a></li>
+            <li><a href="brand.html">Identity Films</a></li>
+            <li><a href="podcast.html">Podcast Distribution</a></li>
             <li><a href="motion.html">Motion Graphics</a></li>
           </ul>
         </li>
 
-        <!-- Portfolio Accordion -->
         <li class="mobile-accordion">
           <button class="accordion-toggle">Portfolio ▾</button>
           <ul class="accordion-panel">
-            <li><a href="portfolio.html#ai-videos">AI-Generated Videos</a></li>
-            <li><a href="portfolio.html#ads">Ads</a></li>
-            <li><a href="portfolio.html#ugc">UGC Videos</a></li>
-            <li><a href="portfolio.html#podcast">Podcast Production</a></li>
-            <li><a href="portfolio.html#motion-graphics">Motion Graphics</a></li>
+            <li><a href="portfolio.html">AI Video Synthesis</a></li>
+            <li><a href="portfolio.html">Performance Ads</a></li>
+            <li><a href="portfolio.html">Authentic UGC Systems</a></li>
+            <li><a href="portfolio.html">Identity Films</a></li>
+            <li><a href="portfolio.html">Podcast Distribution</a></li>
+            <li><a href="portfolio.html">Motion Graphics</a></li>
           </ul>
         </li>
 
         <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
-
       </ul>
-
     </div>
   </div>
 
@@ -170,18 +163,18 @@
             </div>
 
             <div class="form-group">
-              <label for="pop-videoType">Type of Video<span>*</span></label>
-              <select id="pop-videoType" name="video_type" required>
-                <option value="" disabled selected>Select a video type</option>
-                <option value="ai">AI-Generated Video</option>
-                <option value="podcast">Podcast Video</option>
-                <option value="sports-news">Sports & News Video</option>
-                <option value="political">Political Campaign Video</option>
-                <option value="ads-pvc">Advertisement & PVC Video</option>
-                <option value="motion-graphics">Motion Graphics</option>
-                <option value="other">Other / Not Sure</option>
-              </select>
-            </div>
+            <label for="pop-videoType">Type of Video<span>*</span></label>
+            <select id="pop-videoType" name="video_type" required>
+              <option value="" disabled selected>Select a video type</option>
+              <option value="ai">AI Video Synthesis</option>
+              <option value="ads">Performance Ads</option>
+              <option value="ugc">Authentic UGC Systems</option>
+              <option value="brand">Identity Films</option>
+              <option value="podcast">Podcast Distribution</option>
+              <option value="motion-graphics">Motion Graphics</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
 
             <div class="form-group">
               <label for="pop-projectDetails">Project Details<span>*</span></label>
@@ -214,19 +207,22 @@
           <div class="hero-pills">
             <button class="pill" type="button" data-target="#ai-videos">
               <span class="material-symbols-rounded">auto_awesome_motion</span>
-              AI Generated
+              AI Video Synthesis
             </button>
             <button class="pill" type="button" data-target="#ads">
               <span class="material-symbols-rounded">ads_click</span>
-              Ads
+              Performance Ads
             </button>
             <button class="pill" type="button" data-target="#ugc">
               <span class="material-symbols-rounded">smartphone</span>
-              UGC Videos
+             Authentic UGC Systems
             </button>
+            <button class="pill" type="button" data-target="#ai-videos">
+              <span class="material-symbols-rounded">check_circle</span>
+              Identity Films
             <button class="pill" type="button" data-target="#podcast">
               <span class="material-symbols-rounded">mic</span>
-              Podcast Production
+              Podcast Distribution
             </button>
             <button class="pill" type="button" data-target="#motion-graphics">
               <span class="material-symbols-rounded">animation</span>
@@ -255,7 +251,7 @@
       <div class="section-header">
         <div>
           <p class="section-tag">AI GENERATED</p>
-          <h2>AI Generated Videos</h2>
+          <h2>AI Video Synthesis</h2>
         </div>
         <p class="section-desc">Smart content powered by AI creativity.</p>
       </div>
@@ -332,7 +328,7 @@
       <div class="section-header">
         <div>
           <p class="section-tag">COMMERCIALS</p>
-          <h2>Ads</h2>
+          <h2>Performance Ads</h2>
         </div>
         <p class="section-desc">Creative stories designed to sell.</p>
       </div>
@@ -466,7 +462,7 @@
       <div class="section-header">
         <div>
           <p class="section-tag">UGC</p>
-          <h2>UGC Videos</h2>
+          <h2>Authentic UGC Systems</h2>
         </div>
         <p class="section-desc">Authentic content that builds trust.</p>
       </div>
@@ -522,7 +518,7 @@
       <div class="section-header">
         <div>
           <p class="section-tag">PODCAST</p>
-          <h2>Podcast Production</h2>
+          <h2>Podcast Distribution</h2>
         </div>
         <p class="section-desc">Bringing voices to life through visuals.</p>
       </div>
@@ -796,22 +792,21 @@
         </button> -->
       </div>
     </section>
-    <!-- ===================== FOOTER ===================== -->
+     <!-- ===================== FOOTER ===================== -->
     <footer class="footer">
 
       <div class="footer-container">
 
         <!-- COLUMN 1 – ABOUT -->
         <div class="footer-col">
-          <img src="https://res.cloudinary.com/dleaccjvs/image/upload/v1766430925/easein_studio_final_logo_vtmu0i.png" class="footer-logo" alt="Easein Studio Logo" />
+          <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
 
           <p class="footer-about">
-            Easein Studio helps individuals and brands tell their stories through
-            powerful videos. From ads to podcasts, our team brings your ideas to life
-            with creativity and precision.
+            Easein Studio engineers high-performance visual assets that empower global brands to command their narrative. 
+            Through our neural-hybrid production engine, we synthesize raw concepts into cinematic reality with absolute precision.
           </p>
 
-         <div class="footer-social">
+          <div class="footer-social">
           <a href="https://www.instagram.com/easeinstudio_official?igsh=Y3I4dDVuZGFhdXdv" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
               class="fab fa-instagram"></i></a>
           <a href="https://www.facebook.com/share/1C6FYE3xjG/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
@@ -829,7 +824,7 @@
           <li><a href="about.html">About Us</a></li>
           <li><a href="ai-videos.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
@@ -840,8 +835,8 @@
           <p class="footer-contact"><strong>Location:</strong> India</p>
           <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
           <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
-          <a href="javascript:void(0)" class="footer-cta open-quote-popup" onclick="openQuoteModal()">Get a Free
-            Quote</a>
+
+          <a href="#contact" class="footer-cta">Request Strategic Quote</a>
         </div>
 
       </div>

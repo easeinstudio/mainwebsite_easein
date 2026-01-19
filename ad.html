@@ -14,13 +14,13 @@
 
 <body>
   <!-- Cursor Glow (hidden on mobile via JS) -->
-  <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div>
+  <!-- <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div> -->
 
-  <!-- ===================== NAVBAR ===================== -->
+ <!-- ===================== NAVBAR ===================== -->
   <header class="header">
     <nav class="navbar">
       <a class="brand" href="index.html">
-        <img src="https://res.cloudinary.com/dleaccjvs/image/upload/v1766430925/easein_studio_final_logo_vtmu0i.png" alt="Easein Studio Logo" class="logo" />
+        <img src="logo.png" alt="Easein Studio Logo" class="logo" />
       </a>
 
       <!-- DESKTOP NAV -->
@@ -28,34 +28,35 @@
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About Us</a></li>
 
+        <!-- SERVICES -->
         <li class="dropdown">
-          <a class="nav-link" href="#services">Services ▾</a>
+          <a class="nav-link" href="#">Services ▾</a>
           <ul class="dropdown-menu">
-            <!-- <li><a href="ai-videos.html">AI-Generated Videos</a></li> -->
             <li class="dropdown-sub">
-              <a href="ai-videos.html" class="sub-toggle">AI-Generated Videos ▾</a>
-
+              <a href="ai-videos.html" class="sub-toggle">AI Video Synthesis</a>
               <ul class="dropdown-sub-menu">
                 <li><a href="ai_reels.html">Reels</a></li>
                 <li><a href="ai_influencer.html">Influencer</a></li>
               </ul>
             </li>
-            <li><a href="ad.html">Ads</a></li>
-            <li><a href="ugc.html">UGC Videos</a></li>
-            <li><a href="brand.html">Brand Videos</a></li>
-            <li><a href="podcast.html">Podcast Production</a></li>
+
+            <li><a href="ad.html">Performance Ads</a></li>
+            <li><a href="ugc.html">Authentic UGC Systems</a></li>
+            <li><a href="brand.html">Identity Films</a></li>
+            <li><a href="podcast.html">Podcast Distribution</a></li>
             <li><a href="motion.html">Motion Graphics</a></li>
           </ul>
         </li>
 
+        <!-- PORTFOLIO -->
         <li class="dropdown">
-          <a class="nav-link" href="#portfolio">Portfolio ▾</a>
+          <a class="nav-link" href="#">Portfolio ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="portfolio.html">AI-Generated Videos</a></li>
-            <li><a href="portfolio.html">Ads</a></li>
-            <li><a href="portfolio.html">UGC Videos</a></li>
-            <li><a href="portfolio.html">Brand Videos</a></li>
-            <li><a href="portfolio.html">Podcast Production</a></li>
+            <li><a href="portfolio.html">AI Video Synthesis</a></li>
+            <li><a href="portfolio.html">Performance Ads</a></li>
+            <li><a href="portfolio.html">Authentic UGC Systems</a></li>
+            <li><a href="portfolio.html">Identity Films</a></li>
+            <li><a href="portfolio.html">Podcast Distribution</a></li>
             <li><a href="portfolio.html">Motion Graphics</a></li>
           </ul>
         </li>
@@ -64,65 +65,58 @@
       </ul>
 
       <!-- HAMBURGER -->
-      <button id="hamburger" class="hamburger" aria-label="Open Menu">
+      <button id="hamburger" class="hamburger">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
-        <span another="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </nav>
   </header>
 
-
-  <!-- ===================== FULL-SCREEN MOBILE MENU ===================== -->
+  <!-- ===================== MOBILE MENU ===================== -->
   <div id="mobileMenu" class="mobile-menu">
-
-    <!-- CLOSE BUTTON -->
     <button id="mobileClose" class="mobile-close">&times;</button>
 
-    <!-- SCROLLABLE MENU CONTENT -->
     <div class="mobile-content">
-
       <ul class="mobile-links">
-
         <li><a href="index.html" class="mobile-link">Home</a></li>
         <li><a href="about.html" class="mobile-link">About Us</a></li>
 
-        <!-- Services Accordion -->
         <li class="mobile-accordion">
           <button class="accordion-toggle">Services ▾</button>
           <ul class="accordion-panel">
-            <li><a href="ai-videos.html">AI-Generated Videos</a></li>
+            <li><a href="ai-videos.html">AI Video Synthesis</a></li>
             <li><a href="ai_reels.html">AI-Reels</a></li>
             <li><a href="ai_influencer.html">AI-Influencer</a></li>
-            <li><a href="ad.html">Ads</a></li>
-            <li><a href="ugc.html">UGC Videos</a></li>
-            <li><a href="brand.html">Brand Videos</a></li>
-            <li><a href="podcast.html">Podcast Production</a></li>
+            <li><a href="ad.html">Performance Ads</a></li>
+            <li><a href="ugc.html">Authentic UGC Systems</a></li>
+            <li><a href="brand.html">Identity Films</a></li>
+            <li><a href="podcast.html">Podcast Distribution</a></li>
             <li><a href="motion.html">Motion Graphics</a></li>
           </ul>
         </li>
 
-        <!-- Portfolio Accordion -->
         <li class="mobile-accordion">
           <button class="accordion-toggle">Portfolio ▾</button>
           <ul class="accordion-panel">
-            <li><a href="portfolio.html">AI-Generated Videos</a></li>
-            <li><a href="portfolio.html">Ads</a></li>
-            <li><a href="portfolio.html">UGC Videos</a></li>
-            <li><a href="portfolio.html">Brand Videos</a></li>
-            <li><a href="portfolio.html">Podcast Production</a></li>
+            <li><a href="portfolio.html">AI Video Synthesis</a></li>
+            <li><a href="portfolio.html">Performance Ads</a></li>
+            <li><a href="portfolio.html">Authentic UGC Systems</a></li>
+            <li><a href="portfolio.html">Identity Films</a></li>
+            <li><a href="portfolio.html">Podcast Distribution</a></li>
             <li><a href="portfolio.html">Motion Graphics</a></li>
           </ul>
         </li>
 
         <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
-
       </ul>
-
     </div>
   </div>
+
   <!-- Ghost Parallax Text (reusing global ghost styles & JS) -->
   <div class="ghost-text">EASEIN STUDIO</div>
+
+  <!-- ===================== REQUEST A QUOTE POPUP FORM ===================== -->
   <div id="quote-popup" class="popup-overlay" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="popup-backdrop" onclick="closeQuoteModal()"></div>
 
@@ -134,15 +128,15 @@
         </button>
 
         <div class="popup-header">
-          <h2 class="contact-heading">Let's Create Something <span class="text-accent">Amazing Together.</span></h2>
-          <p class="contact-subtext">Tell us what you need, and we'll get back to you with ideas, timelines, and a
-            quote.</p>
+          <h2 class="contact-heading">Initialize Your <span class="text-accent">High-Fidelity Infrastructure</span></h2>
+          <p class="contact-subtext">Provide your project parameters, and our lead architects will deliver a strategic roadmap, 
+            timeline, and technical quote.</p>
         </div>
 
         <form id="easein-contact-form" class="contact-form" enctype="multipart/form-data">
 
           <div class="form-group">
-            <label for="pop-name">Name<span>*</span></label>
+            <label for="pop-name">Full Name<span>*</span></label>
             <input type="text" id="pop-name" name="name" required placeholder="Your full name" />
           </div>
 
@@ -152,19 +146,19 @@
           </div>
 
           <div class="form-group">
-            <label for="pop-phone">Phone<span>*</span></label>
+            <label for="pop-phone">Contact Number<span>*</span></label>
             <input type="tel" id="pop-phone" name="phone" required placeholder="+91 - 98765 43210" />
           </div>
 
           <div class="form-group">
-            <label for="pop-videoType">Type of Video<span>*</span></label>
+            <label for="pop-videoType">Primary Vertical Selection<span>*</span></label>
             <select id="pop-videoType" name="video_type" required>
-              <option value="" disabled selected>Select a video type</option>
-              <option value="ai">AI-Generated Video</option>
-              <option value="podcast">Podcast Video</option>
-              <option value="sports-news">Sports & News Video</option>
-              <option value="political">Political Campaign Video</option>
-              <option value="ads-pvc">Advertisement & PVC Video</option>
+              <option value="" disabled selected>Select Vertical</option>
+              <option value="ai">AI Video Synthesis</option>
+              <option value="ads">Performance Ads</option>
+              <option value="ugc">Authentic UGC Systems</option>
+              <option value="brand">Identity Films</option>
+              <option value="podcast">Podcast Distribution</option>
               <option value="motion-graphics">Motion Graphics</option>
               <option value="other">Other / Not Sure</option>
             </select>
@@ -190,22 +184,23 @@
 
       <!-- LEFT: Text content -->
       <div class="service-hero-left">
-        <p class="service-pill">Advertisements</p>
+        <p class="service-pill">High-Performance Ad Synthesis</p>
 
         <h1 class="service-hero-title">
-          Creative Contents for your Brand
-          <span class="service-hero-highlight">Advertisements</span>
+          Architecting Visual Dominance for
+          <span class="service-hero-highlight">Global Brands </span>
         </h1>
 
         <p class="service-hero-subtext">
-          High-impact, story-driven ads built to perform on every platform — YouTube, Instagram, Facebook, or OTT
+          Deploy high-impact, narrative-driven visual assets engineered for absolute performance across YouTube, Social Meta, and OTT 
+          infrastructures. We transform brand objectives into cinematic conversion engines that command attention and drive measurable growth.
         </p>
 
         <div class="service-hero-cta">
           <a href="javascript:void(0)" class="btn-primary open-quote-popup" onclick="openQuoteModal()">
-            Request a Demo
+            Initialize Project
           </a>
-          <a href="portfolio.html" class="btn-secondary">Our Portfolio</a>
+          <a href="portfolio.html" class="btn-secondary">The Portfolio</a>
         </div>
       </div>
 
@@ -219,10 +214,10 @@
             <span style="font-size: 18px;">ADs</span>
           </div>
 
-          <div class="orbit-node orbit-node-1">Ecommerce</div>
-          <div class="orbit-node orbit-node-2">Product Launches</div>
-          <div class="orbit-node orbit-node-3">Brand Campaigns</div>
-          <div class="orbit-node orbit-node-4">Agencies</div>
+          <div class="orbit-node orbit-node-1">E-commerce Synthesis</div>
+          <div class="orbit-node orbit-node-2">Product Launch Architecture</div>
+          <div class="orbit-node orbit-node-3">Enterprise Brand Campaigns</div>
+          <div class="orbit-node orbit-node-4">Agency-Scale Infrastructure</div>
         </div>
       </div>
 
@@ -235,18 +230,18 @@
       <!-- LEFT CONTENT -->
       <div class="included-left">
         <div class="service-section-header">
-          <h2 class="service-section-title">What’s Included</h2>
+          <h2 class="service-section-title">Asset Specifications</h2>
           <p class="service-section-sub">
-            All the essentials to turn your message into high-performing, scroll-stopping video ads
+            Everything required to transform a strategic message into high-velocity, high-performing video infrastructure.
           </p>
         </div>
 
         <div class="included-list">
-          <div class="included-card"><span>●</span> Script & Storyboard (optional)</div>
-          <div class="included-card"><span>●</span> 6s/15s/30s ad versions</div>
-          <div class="included-card"><span>●</span> Voiceover, music, and color grade</div>
-          <div class="included-card"><span>●</span> Platform-specific optimization</div>
-          <div class="included-card"><span>●</span> 2 rounds of revisions</div>
+          <div class="included-card"><span>●</span> Narrative Architecture & Storyboarding</div>
+          <div class="included-card"><span>●</span> Multi-Format Synthesis (06s/15s/30s)</div>
+          <div class="included-card"><span>●</span> Neural Voiceover & Chromatic Calibration</div>
+          <div class="included-card"><span>●</span> Algorithmic Platform Optimization</div>
+          <div class="included-card"><span>●</span> Precision Refinement Cycles</div>
         </div>
       </div>
 
@@ -268,16 +263,16 @@
 
       <!-- LEFT: IDEAL FOR -->
       <div class="ai-col ai-col-left">
-        <h2 class="service-section-title">Ideal For</h2>
+        <h2 class="service-section-title">Strategic Deployment</h2>
         <p class="service-section-sub">
-          Perfect for brands that need fast, high-impact ads optimized for attention and conversions.
+          Engineered for brands requiring high-velocity, high-impact assets optimized for attention and conversion.
         </p>
 
         <div class="ai-chip-grid">
-          <span class="ai-chip">Ecommerce</span>
-          <span class="ai-chip">Product Launches </span>
-          <span class="ai-chip">Brand Campaigns </span>
-          <span class="ai-chip">Agencies</span>
+          <span class="ai-chip">E-commerce Performance Modules</span>
+          <span class="ai-chip">Technical Product Launch Synthesis </span>
+          <span class="ai-chip">Global Brand Dominance Campaigns </span>
+          <span class="ai-chip">High-Volume Agency Support</span>
         </div>
       </div>
 
@@ -305,38 +300,38 @@
 
       <!-- RIGHT: PROCESS -->
       <div class="ai-col ai-col-right">
-        <h2 class="service-section-title">Process</h2>
+        <h2 class="service-section-title">The Execution Pipeline</h2>
         <p class="service-section-sub">
-          A fast, streamlined workflow that turns your ideas into high-performing, platform-ready video ads.
+          A systematic, high-precision workflow that transforms raw concepts into platform-ready conversion engines.
         </p>
 
         <ol class="ai-process-list">
           <li class="ai-process-step">
             <div class="ai-step-badge">01</div>
             <div class="ai-step-body">
-              <h3>Goal &amp; Audience Brief</h3>
-              <p>Define the objective, target viewer, and core ad message.</p>
+              <h3>Strategic Briefing</h3>
+              <p>We define the core objective, demographic profile, and narrative hook for maximum resonance.</p>
             </div>
           </li>
           <li class="ai-process-step">
             <div class="ai-step-badge">02</div>
             <div class="ai-step-body">
-              <h3>Script & Storyboard</h3>
-              <p>Shape the idea into a clear script with visual direction.</p>
+              <h3>Narrative Architecture</h3>
+              <p>Shaping the core concept into a high-authority script with clear visual direction.</p>
             </div>
           </li>
           <li class="ai-process-step">
             <div class="ai-step-badge">03</div>
             <div class="ai-step-body">
-              <h3>Edit &amp; Refine</h3>
-              <p>Craft the ad with sharp pacing, graphics, and performance-focused polish.</p>
+              <h3>Cinematic Calibration</h3>
+              <p>Crafting the asset with high-velocity pacing, motion graphics, and performance-focused refinement.</p>
             </div>
           </li>
           <li class="ai-process-step">
             <div class="ai-step-badge">04</div>
             <div class="ai-step-body">
-              <h3>Deliver ad Assets</h3>
-              <p>Export final ads in all required formats and platform-specific ratios.</p>
+              <h3>Asset Deployment</h3>
+              <p>Final export of cinematic assets in all required technical formats and algorithmic aspect ratios.</p>
             </div>
           </li>
         </ol>
@@ -359,28 +354,31 @@
     <section class="why-ai-section">
       <div class="why-ai-inner">
 
-        <h2 class="why-ai-title">Why Choose <span class="highlight-cyan gradient-text ">Easein
-            Studio</span></h2>
+        <h2 class="why-ai-title">Strategic Advantages</h2>
 
         <div class="why-ai-list">
           <div class="why-ai-card">
             <span class="icon">➦</span>
-            <p>Data-driven editing approach</p>
+            <h2>Data-Driven Cinematic Editing</h2>
+            <p>Every cut is engineered based on performance metrics to maximize audience retention.</p>
           </div>
 
           <div class="why-ai-card">
             <span class="icon">➦</span>
-            <p>Crisp visuals that grab attention</p>
+            <h2>High-Fidelity Visual Authority</h2>
+            <p>Crisp, studio-grade visuals designed to establish immediate brand leadership.</p>
           </div>
 
           <div class="why-ai-card">
             <span class="icon">➦</span>
-            <p>Consistent brand storytelling</p>
+            <h2>Unified Brand Sovereignty</h2>
+            <p>Ensuring absolute narrative consistency across every platform and campaign.</p>
           </div>
 
           <div class="why-ai-card">
             <span class="icon">➦</span>
-            <p>Built for high-performing ad results</p>
+            <h2>Algorithmic Dominance Architecture</h2>
+            <p>Built specifically to exploit platform mechanics and deliver high-performing results.</p>
           </div>
         </div>
 
@@ -395,9 +393,10 @@
 
       <div class="ai-showcase-inner">
         <div class="service-section-header ai-showcase-header">
-          <h2 class="service-section-title">Sample Work Showcase</h2>
+          <h2 class="service-section-title">Market-Dominating Performance Showcase</h2>
           <p class="service-section-sub">
-            Featured AI-powered videos — from explainers to short-form ads.
+            A gallery of high-fidelity assets engineered to command the algorithm—ranging from technical 
+           neural explainers to high-velocity social performance ads.
           </p>
         </div>
         <div class="video-modal-backdrop"></div>
@@ -559,8 +558,8 @@
       <div class="cta-neon-strip"></div>
       <div class="cta-particles"></div>
       <div class="cta-content">
-        <h2 class="cta-title">Ready to Launch Your Ad Video?</h2>
-        <p class="cta-sub">Let’s build it.</p>
+        <h2 class="cta-title">Ready to Initialize Your Ad Infrastructure?</h2>
+        <p class="cta-sub">Let’s architect your next conversion engine.</p>
         <a href="javascript:void(0)" class="btn-primary open-quote-popup" onclick="openQuoteModal()">
           Start My Ad Project
         </a>
@@ -573,15 +572,14 @@
 
         <!-- COLUMN 1 – ABOUT -->
         <div class="footer-col">
-          <img src="https://res.cloudinary.com/dleaccjvs/image/upload/v1766430925/easein_studio_final_logo_vtmu0i.png" class="footer-logo" alt="Easein Studio Logo" />
+          <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
 
           <p class="footer-about">
-            Easein Studio helps individuals and brands tell their stories through
-            powerful videos. From ads to podcasts, our team brings your ideas to life
-            with creativity and precision.
+            Easein Studio engineers high-performance visual assets that empower global brands to command their narrative. 
+            Through our neural-hybrid production engine, we synthesize raw concepts into cinematic reality with absolute precision.
           </p>
 
-         <div class="footer-social">
+          <div class="footer-social">
           <a href="https://www.instagram.com/easeinstudio_official?igsh=Y3I4dDVuZGFhdXdv" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
               class="fab fa-instagram"></i></a>
           <a href="https://www.facebook.com/share/1C6FYE3xjG/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
@@ -592,7 +590,7 @@
         </div>
 
         <!-- COLUMN 2 – QUICK LINKS -->
-        <div class="footer-col">
+         <div class="footer-col">
         <h3 class="footer-title">Quick Links</h3>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
@@ -611,8 +609,7 @@
           <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
           <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
 
-          <a href="javascript:void(0)" class="footer-cta open-quote-popup" onclick="openQuoteModal()">Get a Free
-            Quote</a>
+          <a href="#contact" class="footer-cta">Request Strategic Quote</a>
         </div>
 
       </div>

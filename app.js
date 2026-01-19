@@ -13,23 +13,23 @@ const isMobile = /Android|iPhone|iPad|iPod|Windows Phone|webOS|BlackBerry/i.test
 /* ----------------------------
    BEAM CURSOR (DESKTOP ONLY)
 ---------------------------- */
-if (!isMobile) {
-  const beam = document.getElementById("beamCursor");
-  if (beam) {
-    document.addEventListener("mousemove", (e) => {
-      beam.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-    document.addEventListener("mousedown", () => {
-      beam.style.transform += " scale(0.86)";
-    });
-    document.addEventListener("mouseup", () => {
-      beam.style.transform = beam.style.transform.replace(" scale(0.86)", "");
-    });
-  }
-} else {
-  const beam = document.getElementById("beamCursor");
-  if (beam) beam.style.display = "none";
-}
+// if (!isMobile) {
+//   const beam = document.getElementById("beamCursor");
+//   if (beam) {
+//     document.addEventListener("mousemove", (e) => {
+//       beam.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+//     });
+//     document.addEventListener("mousedown", () => {
+//       beam.style.transform += " scale(0.86)";
+//     });
+//     document.addEventListener("mouseup", () => {
+//       beam.style.transform = beam.style.transform.replace(" scale(0.86)", "");
+//     });
+//   }
+// } else {
+//   const beam = document.getElementById("beamCursor");
+//   if (beam) beam.style.display = "none";
+// }
 
 /* ----------------------------
    SMOOTH SCROLL HELPER
