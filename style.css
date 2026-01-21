@@ -1933,21 +1933,23 @@ body {
   border: 1px solid rgba(0, 255, 255, 0.28);
   overflow: hidden;
   cursor: pointer;
-  padding: 8px;
+  /* padding: 8px; */
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  /* gap: 8px; */
+  
 }
 
 .work-mobile-card img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 12px;
+  /* border-radius: 12px; */
+  border-radius: 0;
 }
 
 .work-mobile-meta {
-  padding: 2px 4px 4px;
+  padding: 0px 0px;
 }
 
 .work-mobile-meta p {
@@ -4338,8 +4340,10 @@ footer.footer {
 
 /* ================= VIDEO MODAL ================= */
 .ai-showcase-image {
-  height: 170px;
-  width: 250px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block; /* 🔥 THIS FIXES THE GAP */
 }
 
 .ai-video-modal {
