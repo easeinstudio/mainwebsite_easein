@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="utf-8" />
-  <!-- Favicon -->
   <link href="easein favion.png" rel="icon">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -22,28 +21,33 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="popup.css" />
   <link rel="stylesheet" href="portfolio.css" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* This ensures the section title is not hidden behind the fixed navbar when scrolling */
+    section[id] {
+      scroll-margin-top: 100px; /* Adjust this value based on your navbar height */
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- Cursor Glow (hidden on mobile via JS) -->
-  <!-- <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div> -->
-
-  <!-- ===================== NAVBAR ===================== -->
   <header class="header">
     <nav class="navbar">
       <a class="brand" href="index.html">
         <img src="logo.png" alt="Easein Studio Logo" class="logo" />
       </a>
 
-      <!-- DESKTOP NAV -->
       <ul class="nav-links">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="about.html">About Us</a></li>
 
-        <!-- SERVICES -->
         <li class="dropdown">
-          <a class="nav-link" href="#">Services ▾</a>
+          <a class="nav-link" href="">Services ▾</a>
           <ul class="dropdown-menu">
             <li class="dropdown-sub">
               <a href="ai-videos.html" class="sub-toggle">AI Video Synthesis</a>
@@ -61,23 +65,21 @@
           </ul>
         </li>
 
-        <!-- PORTFOLIO -->
         <li class="dropdown">
-          <a class="nav-link" href="#">Portfolio ▾</a>
+          <a class="nav-link" href="">Portfolio ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="portfolio.html">AI Video Synthesis</a></li>
-            <li><a href="portfolio.html">Performance Ads</a></li>
-            <li><a href="portfolio.html">Authentic UGC Systems</a></li>
-            <li><a href="portfolio.html">Identity Films</a></li>
-            <li><a href="portfolio.html">Podcast Distribution</a></li>
-            <li><a href="portfolio.html">Motion Graphics</a></li>
+            <li><a href="#ai-videos">AI Video Synthesis</a></li>
+            <li><a href="#ads">Performance Ads</a></li>
+            <li><a href="#ugc">Authentic UGC Systems</a></li>
+            <li><a href="#ai-videos">Identity Films</a></li> 
+            <li><a href="#podcast">Podcast Distribution</a></li>
+            <li><a href="#motion-graphics">Motion Graphics</a></li>
           </ul>
         </li>
 
         <li><a class="nav-link" href="contact.html">Contact Us</a></li>
       </ul>
 
-      <!-- HAMBURGER -->
       <button id="hamburger" class="hamburger">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -87,7 +89,6 @@
   </header>
 
 
-  <!-- ===================== MOBILE MENU ===================== -->
   <div id="mobileMenu" class="mobile-menu">
     <button id="mobileClose" class="mobile-close">&times;</button>
 
@@ -113,12 +114,12 @@
         <li class="mobile-accordion">
           <button class="accordion-toggle">Portfolio ▾</button>
           <ul class="accordion-panel">
-            <li><a href="portfolio.html">AI Video Synthesis</a></li>
-            <li><a href="portfolio.html">Performance Ads</a></li>
-            <li><a href="portfolio.html">Authentic UGC Systems</a></li>
-            <li><a href="portfolio.html">Identity Films</a></li>
-            <li><a href="portfolio.html">Podcast Distribution</a></li>
-            <li><a href="portfolio.html">Motion Graphics</a></li>
+            <li><a href="#ai-videos" onclick="document.getElementById('mobileMenu').classList.remove('active')">AI Video Synthesis</a></li>
+            <li><a href="#ads" onclick="document.getElementById('mobileMenu').classList.remove('active')">Performance Ads</a></li>
+            <li><a href="#ugc" onclick="document.getElementById('mobileMenu').classList.remove('active')">Authentic UGC Systems</a></li>
+            <li><a href="#ai-videos" onclick="document.getElementById('mobileMenu').classList.remove('active')">Identity Films</a></li>
+            <li><a href="#podcast" onclick="document.getElementById('mobileMenu').classList.remove('active')">Podcast Distribution</a></li>
+            <li><a href="#motion-graphics" onclick="document.getElementById('mobileMenu').classList.remove('active')">Motion Graphics</a></li>
           </ul>
         </li>
 
@@ -812,6 +813,53 @@
     <script src="app.js"></script>
     <script src="popup.js"></script>
     <script src="portfolio.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        
+        // ---------------------------------------------------------
+        // 1. CAROUSEL LOGIC (Your existing code)
+        // ---------------------------------------------------------
+        const carousels = document.querySelectorAll('.portfolio-carousel1, .portfolio-carousel'); // Added support for both classes
+  
+        carousels.forEach(carousel => {
+          const track = carousel.querySelector('.carousel-track');
+          const nextBtn = carousel.querySelector('.carousel-btn.next');
+          const prevBtn = carousel.querySelector('.carousel-btn.prev');
+  
+          if (track) {
+            if (nextBtn) {
+              nextBtn.addEventListener('click', () => {
+                track.scrollBy({ left: 340, behavior: 'smooth' });
+              });
+            }
+            if (prevBtn) {
+              prevBtn.addEventListener('click', () => {
+                track.scrollBy({ left: -340, behavior: 'smooth' });
+              });
+            }
+          }
+        });
+  
+        // ---------------------------------------------------------
+        // 2. MOBILE MENU FIX (New Code)
+        // ---------------------------------------------------------
+        const mobileLinks = document.querySelectorAll('#mobileMenu a'); // Select all links in mobile menu
+        const closeBtn = document.getElementById('mobileClose'); // Select the close button
+  
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            // If the close button exists, "click" it programmatically
+            if (closeBtn) {
+              closeBtn.click(); 
+            } else {
+              // Fallback if close button isn't found
+              document.getElementById('mobileMenu').classList.remove('active');
+            }
+          });
+        });
+  
+      });
+    </script>
 </body>
 
 </html>
