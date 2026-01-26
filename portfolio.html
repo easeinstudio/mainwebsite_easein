@@ -29,7 +29,7 @@
   <!-- Cursor Glow (hidden on mobile via JS) -->
   <!-- <div id="beamCursor" class="beam-cursor" aria-hidden="true"></div> -->
 
- <!-- ===================== NAVBAR ===================== -->
+  <!-- ===================== NAVBAR ===================== -->
   <header class="header">
     <nav class="navbar">
       <a class="brand" href="index.html">
@@ -163,18 +163,18 @@
             </div>
 
             <div class="form-group">
-            <label for="pop-videoType">Type of Video<span>*</span></label>
-            <select id="pop-videoType" name="video_type" required>
-              <option value="" disabled selected>Select a video type</option>
-              <option value="ai">AI Video Synthesis</option>
-              <option value="ads">Performance Ads</option>
-              <option value="ugc">Authentic UGC Systems</option>
-              <option value="brand">Identity Films</option>
-              <option value="podcast">Podcast Distribution</option>
-              <option value="motion-graphics">Motion Graphics</option>
-              <option value="other">Other / Not Sure</option>
-            </select>
-          </div>
+              <label for="pop-videoType">Type of Video<span>*</span></label>
+              <select id="pop-videoType" name="video_type" required>
+                <option value="" disabled selected>Select a video type</option>
+                <option value="ai">AI Video Synthesis</option>
+                <option value="ads">Performance Ads</option>
+                <option value="ugc">Authentic UGC Systems</option>
+                <option value="brand">Identity Films</option>
+                <option value="podcast">Podcast Distribution</option>
+                <option value="motion-graphics">Motion Graphics</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
 
             <div class="form-group">
               <label for="pop-projectDetails">Project Details<span>*</span></label>
@@ -196,10 +196,10 @@
         <div class="portfolio-hero-text">
           <p class="hero-tag">Portfolio Synthesis</p>
           <h1 class="hero-heading">
-            A Portfolio of  <span class="accent">Market-Dominating Media</span> 
+            A Portfolio of <span class="accent">Market-Dominating Media</span>
           </h1>
           <p class="hero-sub">
-            Explore the high-fidelity assets engineered to establish authority and drive conversion through 
+            Explore the high-fidelity assets engineered to establish authority and drive conversion through
             our neural-hybrid production engine.
           </p>
 
@@ -214,19 +214,19 @@
             </button>
             <button class="pill" type="button" data-target="#ugc">
               <span class="material-symbols-rounded">smartphone</span>
-             Authentic UGC Systems
+              Authentic UGC Systems
             </button>
             <button class="pill" type="button" data-target="#ai-videos">
               <span class="material-symbols-rounded">check_circle</span>
               Identity Films
-            <button class="pill" type="button" data-target="#podcast">
-              <span class="material-symbols-rounded">mic</span>
-              Podcast Distribution
-            </button>
-            <button class="pill" type="button" data-target="#motion-graphics">
-              <span class="material-symbols-rounded">animation</span>
-              Motion Graphics
-            </button>
+              <button class="pill" type="button" data-target="#podcast">
+                <span class="material-symbols-rounded">mic</span>
+                Podcast Distribution
+              </button>
+              <button class="pill" type="button" data-target="#motion-graphics">
+                <span class="material-symbols-rounded">animation</span>
+                Motion Graphics
+              </button>
           </div>
         </div>
 
@@ -261,8 +261,10 @@
         </button>
 
         <div class="carousel-track">
+
           <article class="video-card">
-            <div class="thumb-wrapper">
+            <div class="thumb-wrapper" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dnsv6pdqf/video/upload/v1768992815/Ambhuwachi_Mela_2025_kwpcqk.mp4">
               <video src="https://res.cloudinary.com/dnsv6pdqf/video/upload/v1768992815/Ambhuwachi_Mela_2025_kwpcqk.mp4"
                 muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
@@ -280,7 +282,8 @@
           </article>
 
           <article class="video-card">
-            <div class="thumb-wrapper">
+            <div class="thumb-wrapper" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dnsv6pdqf/video/upload/v1768992807/Jab_Tu_Sajan_fqc7mp.mp4">
               <video src="https://res.cloudinary.com/dnsv6pdqf/video/upload/v1768992807/Jab_Tu_Sajan_fqc7mp.mp4" muted
                 loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
@@ -298,7 +301,8 @@
           </article>
 
           <article class="video-card">
-            <div class="thumb-wrapper">
+            <div class="thumb-wrapper" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dnsv6pdqf/video/upload/v1768992817/Jaganath_Yatra_2025_s0vm8k.mp4">
               <video src="https://res.cloudinary.com/dnsv6pdqf/video/upload/v1768992817/Jaganath_Yatra_2025_s0vm8k.mp4"
                 muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
@@ -323,6 +327,15 @@
       </div>
     </section>
 
+    <div class="ai-video-modal" id="aiVideoModal">
+      <div class="ai-video-backdrop"></div>
+      <div class="ai-video-modal-content">
+        <button class="ai-video-close">✕</button>
+        <video id="aiModalVideo" controls playsinline controlsList="nodownload noplaybackrate"></video>
+      </div>
+    </div>
+
+
     <section class="portfolio-section" id="ads">
       <div class="section-header">
         <div>
@@ -338,8 +351,10 @@
         </button>
 
         <div class="carousel-track">
+
           <article class="video-card">
-            <div class="thumb-wrapper">
+            <div class="thumb-wrapper" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1768993299/Budweiser_magnum_beer_xlmik7.mp4">
               <video
                 src="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1768993299/Budweiser_magnum_beer_xlmik7.mp4"
                 muted loop playsinline preload="metadata"></video>
@@ -358,8 +373,9 @@
           </article>
 
           <article class="video-card">
-            <div class="thumb-wrapper">
-              <video src="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1768993299/Red_Bull_sqodwf.mp4 " muted loop
+            <div class="thumb-wrapper" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1768993299/Red_Bull_sqodwf.mp4">
+              <video src="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1768993299/Red_Bull_sqodwf.mp4" muted loop
                 playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
@@ -376,7 +392,8 @@
           </article>
 
           <article class="video-card">
-            <div class="thumb-wrapper">
+            <div class="thumb-wrapper" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1768993306/Cadbury_dairy_milk_dra5ez.mp4">
               <video src="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1768993306/Cadbury_dairy_milk_dra5ez.mp4"
                 muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
@@ -392,30 +409,10 @@
               <p>Warm, story-first edit focused on emotion and brand recall.</p>
             </div>
           </article>
-          <!-- <article class="video-card">
-            <div class="thumb-wrapper">
-              <video
-                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1764853866/KFC_raaeur.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-              ></video>
-              <div class="thumb-overlay">
-                <button class="play-btn" aria-label="Play video" type="button">
-                  <span class="material-symbols-rounded">play_arrow</span>
-                </button>
-                <span class="badge">Brand</span>
-                <span class="duration">0:32</span>
-              </div>
-            </div>
-            <div class="video-meta">
-              <h3>Cadbury Dairy Milk</h3>
-              <p>Warm, story-first edit focused on emotion and brand recall.</p>
-            </div>
-          </article> -->
+
           <article class="video-card">
-            <div class="thumb-wrapper">
+            <div class="thumb-wrapper" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1768993286/Maggi_l6libh.mp4">
               <video src="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1768993286/Maggi_l6libh.mp4" muted loop
                 playsinline preload="metadata"></video>
               <div class="thumb-overlay">
@@ -431,8 +428,10 @@
               <p>Short, punchy vertical edit made for reels and social media engagement.</p>
             </div>
           </article>
+
           <article class="video-card">
-            <div class="thumb-wrapper">
+            <div class="thumb-wrapper" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1768993308/KFC_jfpaf0.mp4">
               <video src="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1768993308/KFC_jfpaf0.mp4" muted loop
                 playsinline preload="metadata"></video>
               <div class="thumb-overlay">
@@ -472,8 +471,9 @@
         </button>
 
         <div class="carousel-track">
+
           <article class="video-card">
-            <div class="thumb-wrapper">
+            <div class="thumb-wrapper" style="cursor: pointer;" data-video="">
               <video src="" muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
@@ -490,7 +490,7 @@
           </article>
 
           <article class="video-card">
-            <div class="thumb-wrapper">
+            <div class="thumb-wrapper" style="cursor: pointer;" data-video="">
               <video src="" muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
@@ -505,6 +505,7 @@
               <p></p>
             </div>
           </article>
+
         </div>
 
         <button class="carousel-btn next" aria-label="Next">
@@ -522,66 +523,22 @@
         <p class="section-desc">High-authority media production for multi-channel distribution.</p>
       </div>
 
-      <div class="portfolio-carousel1" data-carousel="podcast">
-        <!-- <button class="carousel-btn prev" aria-label="Previous">
+      <div class="portfolio-carousel1" data-carousel="podcast" style="position: relative;">
+        
+        <button class="carousel-btn prev" aria-label="Previous" 
+          style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10;">
           <span class="material-symbols-rounded">chevron_left</span>
-        </button> -->
+        </button>
 
         <div class="carousel-track">
-          <article class="video-card1">
-            <div class="thumb-wrapper1">
-              <video src="https://res.cloudinary.com/dbf0f85bw/video/upload/v1768992238/IMG_2911_1_1_tepybt.mp4"
-                poster="https://res.cloudinary.com/dbf0f85bw/image/upload/v1768992349/Screenshot_2025-12-17_194121_hmhztl.png" muted loop
-                playsinline preload="metadata">
-              </video>
-              <!-- <video src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765980247/IMG_2911_1_nu5pt7.mp4" muted
-                loop playsinline preload="metadata"></video> -->
-              <div class="thumb-overlay1">
-                <button class="play-btn" type="button" aria-label="Play video">
-                  <span class="material-symbols-rounded">play_arrow</span>
-                </button>
-                <span class="badge">Testimonial</span>
-                <span class="duration">0:45</span>
-              </div>
-            </div>
-            <div class="video-meta1">
-              <h3>Coming Soon</h3>
-              <p></p>
-            </div>
-          </article>
-          <article class="video-card1">
-            <div class="thumb-wrapper1">
-              <video src="https://res.cloudinary.com/dbf0f85bw/video/upload/v1768992304/Intro_Final_Draft_1_lqkdwp.mp4"
-                poster="https://res.cloudinary.com/dbf0f85bw/image/upload/v1768992349/Screenshot_2025-12-17_194037_z13ddn.png" muted loop
-                playsinline preload="metadata">
-              </video>
-              <!-- <video src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765980285/Intro_Final_Draft_oj5kkw.mp4"
-                muted loop playsinline preload="metadata"></video> -->
-              <div class="thumb-overlay1">
-                <button class="play-btn" type="button" aria-label="Play video">
-                  <span class="material-symbols-rounded">play_arrow</span>
-                </button>
-                <span class="badge">Testimonial</span>
-                <span class="duration">0:45</span>
-              </div>
-            </div>
-            <div class="video-meta1">
-              <h3>Coming Soon</h3>
-              <p></p>
-            </div>
-          </article>
-          <article class="video-card1">
-            <div class="thumb-wrapper1">
-              <video src="https://res.cloudinary.com/dbf0f85bw/video/upload/v1768992301/Dr_Raj_Gopal_First_Cut_1_i__1_1_ndy7if.mp4"
-                poster="https://res.cloudinary.com/dbf0f85bw/image/upload/v1768992349/Screenshot_2025-12-17_194242_cbxkny.png" muted loop
-                playsinline preload="metadata">
-              </video>
 
-              <!-- <video
-                src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765980207/Dr_Raj_Gopal_First_Cut_1_i__1_dolsmj.mp4"
+          <article class="video-card1">
+            <div class="thumb-wrapper1" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dbf0f85bw/video/upload/v1768992238/IMG_2911_1_1_tepybt.mp4">
+              <video src="https://res.cloudinary.com/dbf0f85bw/video/upload/v1768992238/IMG_2911_1_1_tepybt.mp4"
+                poster="https://res.cloudinary.com/dbf0f85bw/image/upload/v1768992349/Screenshot_2025-12-17_194121_hmhztl.png"
                 muted loop playsinline preload="metadata">
-                poster="https://res.cloudinary.com/dleaccjvs/image/upload/v1765980793/Screenshot_2025-12-17_194121_i4t8of.png">
-              </video> -->
+              </video>
               <div class="thumb-overlay1">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -595,10 +552,15 @@
               <p></p>
             </div>
           </article>
-          <!-- <article class="video-card">
-            <div class="thumb-wrapper">
-              <video src="" muted loop playsinline preload="metadata"></video>
-              <div class="thumb-overlay">
+
+          <article class="video-card1">
+            <div class="thumb-wrapper1" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dbf0f85bw/video/upload/v1768992304/Intro_Final_Draft_1_lqkdwp.mp4">
+              <video src="https://res.cloudinary.com/dbf0f85bw/video/upload/v1768992304/Intro_Final_Draft_1_lqkdwp.mp4"
+                poster="https://res.cloudinary.com/dbf0f85bw/image/upload/v1768992349/Screenshot_2025-12-17_194037_z13ddn.png"
+                muted loop playsinline preload="metadata">
+              </video>
+              <div class="thumb-overlay1">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
                 </button>
@@ -606,15 +568,21 @@
                 <span class="duration">0:45</span>
               </div>
             </div>
-            <div class="video-meta">
+            <div class="video-meta1">
               <h3>Coming Soon</h3>
               <p></p>
             </div>
           </article>
-          <article class="video-card">
-            <div class="thumb-wrapper">
-              <video src="" muted loop playsinline preload="metadata"></video>
-              <div class="thumb-overlay">
+
+          <article class="video-card1">
+            <div class="thumb-wrapper1" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dbf0f85bw/video/upload/v1768992301/Dr_Raj_Gopal_First_Cut_1_i__1_1_ndy7if.mp4">
+              <video
+                src="https://res.cloudinary.com/dbf0f85bw/video/upload/v1768992301/Dr_Raj_Gopal_First_Cut_1_i__1_1_ndy7if.mp4"
+                poster="https://res.cloudinary.com/dbf0f85bw/image/upload/v1768992349/Screenshot_2025-12-17_194242_cbxkny.png"
+                muted loop playsinline preload="metadata">
+              </video>
+              <div class="thumb-overlay1">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
                 </button>
@@ -622,17 +590,19 @@
                 <span class="duration">0:45</span>
               </div>
             </div>
-            <div class="video-meta">
+            <div class="video-meta1">
               <h3>Coming Soon</h3>
               <p></p>
             </div>
-          </article> -->
+          </article>
 
         </div>
 
-        <!-- <button class="carousel-btn next" aria-label="Next">
+        <button class="carousel-btn next" aria-label="Next"
+           style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10;">
           <span class="material-symbols-rounded">chevron_right</span>
-        </button> -->
+        </button>
+
       </div>
     </section>
 
@@ -646,71 +616,22 @@
         <p class="section-desc">Dynamic motion graphics designed to explain complex systems.</p>
       </div>
 
-      <div class="portfolio-carousel1" data-carousel="motion">
-        <!-- <button class="carousel-btn prev" aria-label="Previous">
+      <div class="portfolio-carousel1" data-carousel="motion" style="position: relative;">
+
+        <button class="carousel-btn prev" aria-label="Previous"
+          style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10;">
           <span class="material-symbols-rounded">chevron_left</span>
-        </button> -->
+        </button>
 
-        <!-- <div class="carousel-track">
-          <article class="video-card">
-            <div class="thumb-wrapper">
-              <video src="" muted loop playsinline preload="metadata"></video>
-              <div class="thumb-overlay">
-                <button class="play-btn" type="button" aria-label="Play video">
-                  <span class="material-symbols-rounded">play_arrow</span>
-                </button>
-                <span class="badge">Testimonial</span>
-                <span class="duration">0:45</span>
-              </div>
-            </div>
-            <div class="video-meta">
-              <h3>Coming Soon</h3>
-              <p></p>
-            </div>
-          </article>
-          <article class="video-card">
-            <div class="thumb-wrapper">
-              <video src="" muted loop playsinline preload="metadata"></video>
-              <div class="thumb-overlay">
-                <button class="play-btn" type="button" aria-label="Play video">
-                  <span class="material-symbols-rounded">play_arrow</span>
-                </button>
-                <span class="badge">Testimonial</span>
-                <span class="duration">0:45</span>
-              </div>
-            </div>
-            <div class="video-meta">
-              <h3>Coming Soon</h3>
-              <p></p>
-            </div>
-          </article>
-          <article class="video-card">
-            <div class="thumb-wrapper">
-              <video src="" muted loop playsinline preload="metadata"></video>
-              <div class="thumb-overlay">
-                <button class="play-btn" type="button" aria-label="Play video">
-                  <span class="material-symbols-rounded">play_arrow</span>
-                </button>
-                <span class="badge">Testimonial</span>
-                <span class="duration">0:45</span>
-              </div>
-            </div>
-            <div class="video-meta">
-              <h3>Coming Soon</h3>
-              <p></p>
-            </div>
-          </article>
+        <div class="carousel-track">
 
-        </div> -->
-         <div class="carousel-track">
           <article class="video-card1">
-            <div class="thumb-wrapper1">
+            <div class="thumb-wrapper1" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dzechiwas/video/upload/v1768992489/Income_Tax_Video_1_xdrp1q.mp4">
               <video src="https://res.cloudinary.com/dzechiwas/video/upload/v1768992489/Income_Tax_Video_1_xdrp1q.mp4"
                 poster="https://res.cloudinary.com/dzechiwas/image/upload/v1768992524/incomtax_sg5wwz.png" muted loop
                 playsinline preload="metadata">
               </video>
-              <!-- <video src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765980247/IMG_2911_1_nu5pt7.mp4" muted
-                loop playsinline preload="metadata"></video> -->
               <div class="thumb-overlay1">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -724,14 +645,15 @@
               <p></p>
             </div>
           </article>
+
           <article class="video-card1">
-            <div class="thumb-wrapper1">
-              <video src="https://res.cloudinary.com/dzechiwas/video/upload/v1768992498/aittel_WB_Effies_Award_1_x5ufdz.mp4"
-                poster="https://res.cloudinary.com/dzechiwas/image/upload/v1768995089/airtel-logo-png_seeklogo-556531_hjafqp.png" muted loop
-                playsinline preload="metadata">
+            <div class="thumb-wrapper1" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dzechiwas/video/upload/v1768992498/aittel_WB_Effies_Award_1_x5ufdz.mp4">
+              <video
+                src="https://res.cloudinary.com/dzechiwas/video/upload/v1768992498/aittel_WB_Effies_Award_1_x5ufdz.mp4"
+                poster="https://res.cloudinary.com/dzechiwas/image/upload/v1768995089/airtel-logo-png_seeklogo-556531_hjafqp.png"
+                muted loop playsinline preload="metadata">
               </video>
-              <!-- <video src="https://res.cloudinary.com/dleaccjvs/video/upload/v1765980285/Intro_Final_Draft_oj5kkw.mp4"
-                muted loop playsinline preload="metadata"></video> -->
               <div class="thumb-overlay1">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -745,8 +667,10 @@
               <p></p>
             </div>
           </article>
+
           <article class="video-card1">
-            <div class="thumb-wrapper1">
+            <div class="thumb-wrapper1" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dzechiwas/video/upload/v1768992478/Predator_Energy_1_xfncl0.mp4">
               <video src="https://res.cloudinary.com/dzechiwas/video/upload/v1768992478/Predator_Energy_1_xfncl0.mp4"
                 poster="https://res.cloudinary.com/dzechiwas/image/upload/v1768992523/energy_kzw0db.png" muted loop
                 playsinline preload="metadata">
@@ -764,11 +688,13 @@
               <p></p>
             </div>
           </article>
+
           <article class="video-card1">
-            <div class="thumb-wrapper1">
+            <div class="thumb-wrapper1" style="cursor: pointer;"
+              data-video="https://res.cloudinary.com/dzechiwas/video/upload/v1768992472/PhonePe_1_jfluzt.mp4">
               <video src="https://res.cloudinary.com/dzechiwas/video/upload/v1768992472/PhonePe_1_jfluzt.mp4"
-                poster="https://res.cloudinary.com/dzechiwas/image/upload/v1768994926/PhonePe-Logo_ydg9bd.svg" muted loop
-                playsinline preload="metadata">
+                poster="https://res.cloudinary.com/dzechiwas/image/upload/v1768994926/PhonePe-Logo_ydg9bd.svg" muted
+                loop playsinline preload="metadata">
               </video>
               <div class="thumb-overlay1">
                 <button class="play-btn" type="button" aria-label="Play video">
@@ -786,12 +712,14 @@
 
         </div>
 
-        <!-- <button class="carousel-btn next" aria-label="Next">
+        <button class="carousel-btn next" aria-label="Next"
+           style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10;">
           <span class="material-symbols-rounded">chevron_right</span>
-        </button> -->
+        </button>
+
       </div>
     </section>
-     <!-- ===================== FOOTER ===================== -->
+    <!-- ===================== FOOTER ===================== -->
     <footer class="footer">
 
       <div class="footer-container">
@@ -801,31 +729,34 @@
           <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
 
           <p class="footer-about">
-            Easein Studio engineers high-performance visual assets that empower global brands to command their narrative. 
-            Through our neural-hybrid production engine, we synthesize raw concepts into cinematic reality with absolute precision.
+            Easein Studio engineers high-performance visual assets that empower global brands to command their
+            narrative.
+            Through our neural-hybrid production engine, we synthesize raw concepts into cinematic reality with absolute
+            precision.
           </p>
 
           <div class="footer-social">
-          <a href="https://www.instagram.com/easeinstudio_official?igsh=Y3I4dDVuZGFhdXdv" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
-              class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/share/1C6FYE3xjG/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a href="" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-        </div>
+            <a href="https://www.instagram.com/easeinstudio_official?igsh=Y3I4dDVuZGFhdXdv" target="_blank"
+              rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1C6FYE3xjG/" target="_blank" rel="noopener noreferrer"
+              aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
 
         <!-- COLUMN 2 – QUICK LINKS -->
-         <div class="footer-col">
-        <h3 class="footer-title">Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="ai-videos.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="ai-videos.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
 
         <!-- COLUMN 3 – CONTACT -->
         <div class="footer-col">
@@ -842,13 +773,42 @@
 
       <!-- Bottom Bar -->
       <div class="footer-bottom">
-      <p>© 2025 Easein Studio. All rights reserved.</p>
-      <a class="footer-bottom" href="https://rbpdigital360.com/" target="_blank" rel="noopener noreferrer" style="text-decoration:none">Designed by RBP Digital
-        360</a>
-    </div>
+        <p>© 2025 Easein Studio. All rights reserved.</p>
+        <a class="footer-bottom" href="https://rbpdigital360.com/" target="_blank" rel="noopener noreferrer"
+          style="text-decoration:none">Designed by RBP Digital
+          360</a>
+      </div>
 
     </footer>
-
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Target only the new class 'portfolio-carousel1'
+        const carousels = document.querySelectorAll('.portfolio-carousel1');
+    
+        carousels.forEach(carousel => {
+          const track = carousel.querySelector('.carousel-track');
+          const nextBtn = carousel.querySelector('.carousel-btn.next');
+          const prevBtn = carousel.querySelector('.carousel-btn.prev');
+    
+          if (track) {
+            // Next Button Click
+            if (nextBtn) {
+              nextBtn.addEventListener('click', () => {
+                // 340px scroll karega (card width + gap ke hisab se adjust karein)
+                track.scrollBy({ left: 340, behavior: 'smooth' });
+              });
+            }
+    
+            // Previous Button Click
+            if (prevBtn) {
+              prevBtn.addEventListener('click', () => {
+                track.scrollBy({ left: -340, behavior: 'smooth' });
+              });
+            }
+          }
+        });
+      });
+    </script>
     <script src="app.js"></script>
     <script src="popup.js"></script>
     <script src="portfolio.js"></script>

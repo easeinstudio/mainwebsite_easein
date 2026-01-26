@@ -1819,6 +1819,7 @@ body {
 
 /* play overlay */
 .work-play {
+  top: 50px;
   position: absolute;
   font-size: 28px;
   color: #eaffff;
@@ -4412,7 +4413,7 @@ footer.footer {
 
   .ai-showcase-image {
     height: 170px;
-    width: 310px;
+    width: 250px;
   }
 
   .ai-video-modal video {

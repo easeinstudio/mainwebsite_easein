@@ -354,3 +354,37 @@ document.querySelectorAll(".portfolio-carousel1").forEach(carousel => {
 
   autoScroll();
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('aiVideoModal');
+  const modalVideo = document.getElementById('aiModalVideo');
+  const closeBtn = document.querySelector('.ai-video-close');
+  const backdrop = document.querySelector('.ai-video-backdrop');
+  
+  // UPDATED SELECTOR: Yeh ab class name par depend nahi karta.
+  // Jahan bhi "data-video" attribute hoga, ye wahan kaam karega.
+  const triggers = document.querySelectorAll('[data-video]');
+
+  // Open Modal Function
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const videoUrl = trigger.getAttribute('data-video');
+      // Check if URL exists and is not empty
+      if(videoUrl && videoUrl.trim() !== "") {
+        modalVideo.src = videoUrl;
+        modal.classList.add('active'); 
+        modalVideo.play();
+      }
+    });
+  });
+
+  // Close Modal Function
+  const closeModal = () => {
+    modal.classList.remove('active');
+    modalVideo.pause();
+    modalVideo.currentTime = 0;
+    modalVideo.src = ""; // Clear source
+  };
+
+  if(closeBtn) closeBtn.addEventListener('click', closeModal);
+  if(backdrop) backdrop.addEventListener('click', closeModal);
+});
