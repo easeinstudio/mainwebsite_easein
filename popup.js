@@ -63,7 +63,9 @@
         .then(response => response.json())
         .then(data => {
           if (data && data.success) {
+            // Success: Alert user, reset form, close modal
             form.reset();
+            closeQuoteModal();
             window.location.href = "success.html";
           } else {
             // Validation Error (from PHP)
