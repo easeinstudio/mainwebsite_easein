@@ -160,7 +160,7 @@ function initFormSubmit() {
       .then((data) => {
         if (data.success) {
           form.reset();
-          showModal(successModal);
+          window.location.href = "success.html";
         } else {
           showError(
             data.message || "Submission failed. Please try again."

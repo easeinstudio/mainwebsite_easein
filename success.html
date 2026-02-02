@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Favicon -->
+    <link href="easein favion.png" rel="icon">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <title>Success | Easein Studio</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .success-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .success-card {
+            background: rgba(10, 25, 30, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            padding: 60px 40px;
+            border-radius: 24px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3),
+                inset 0 0 20px rgba(0, 240, 255, 0.05);
+            animation: cardAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-icon-container {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #00f0ff, #007a8a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 40px;
+            color: #001416;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+            animation: pulseIcon 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseIcon {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+            }
+        }
+
+        .success-icon-container i {
+            animation: drawCheck 0.5s ease-out 0.4s both;
+        }
+
+        @keyframes drawCheck {
+            from {
+                transform: scale(0) rotate(-45deg);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1) rotate(0);
+                opacity: 1;
+            }
+        }
+
+        .success-title {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #00f0ff, #4effdf, #e8ffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .success-message {
+            font-size: 18px;
+            color: #bffcff;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .back-home-btn {
+            display: inline-block;
+            padding: 16px 36px;
+            background: linear-gradient(100deg, #00eaff, #00bcd4);
+            color: #001416;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 12px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.2);
+        }
+
+        .back-home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 240, 255, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* Floating particles background */
+        .particles {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: #00f0ff;
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: floatParticle 10s infinite linear;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.3;
+            }
+
+            90% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translateY(-100vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .success-title {
+                font-size: 32px;
+            }
+
+            .success-message {
+                font-size: 16px;
+            }
+
+            .success-card {
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <header class="header">
+        <nav class="navbar">
+            <a class="brand" href="index.html">
+                <img src="logo.png" alt="Easein Studio Logo" class="logo" />
+            </a>
+
+            <!-- DESKTOP NAV -->
+            <ul class="nav-links">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="about.html">About Us</a></li>
+
+                <!-- SERVICES -->
+                <li class="dropdown">
+                    <a class="nav-link" href="#">Services ▾</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-sub">
+                            <a href="ai-videos.html" class="sub-toggle">AI Video Synthesis</a>
+                            <ul class="dropdown-sub-menu">
+                                <li><a href="ai_reels.html">Reels</a></li>
+                                <li><a href="ai_influencer.html">Influencer</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="ad.html">Performance Ads</a></li>
+                        <li><a href="ugc.html">Authentic UGC Systems</a></li>
+                        <li><a href="brand.html">Identity Films</a></li>
+                        <li><a href="podcast.html">Podcast Distribution</a></li>
+                        <li><a href="motion.html">Motion Graphics</a></li>
+                    </ul>
+                </li>
+
+                <!-- PORTFOLIO -->
+                <li class="dropdown">
+                    <a class="nav-link" href="#">Portfolio ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="portfolio.html">AI Video Synthesis</a></li>
+                        <li><a href="portfolio.html">Performance Ads</a></li>
+                        <li><a href="portfolio.html">Authentic UGC Systems</a></li>
+                        <li><a href="portfolio.html">Identity Films</a></li>
+                        <li><a href="portfolio.html">Podcast Distribution</a></li>
+                        <li><a href="portfolio.html">Motion Graphics</a></li>
+                    </ul>
+                </li>
+
+                <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <!-- HAMBURGER -->
+            <button id="hamburger" class="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ===================== MOBILE MENU ===================== -->
+    <div id="mobileMenu" class="mobile-menu">
+        <button id="mobileClose" class="mobile-close">&times;</button>
+
+        <div class="mobile-content">
+            <ul class="mobile-links">
+                <li><a href="index.html" class="mobile-link">Home</a></li>
+                <li><a href="about.html" class="mobile-link">About Us</a></li>
+
+                <li class="mobile-accordion">
+                    <button class="accordion-toggle">Services ▾</button>
+                    <ul class="accordion-panel">
+                        <li><a href="ai-videos.html">AI Video Synthesis</a></li>
+                        <li><a href="ai_reels.html">AI-Reels</a></li>
+                        <li><a href="ai_influencer.html">AI-Influencer</a></li>
+                        <li><a href="ad.html">Performance Ads</a></li>
+                        <li><a href="ugc.html">Authentic UGC Systems</a></li>
+                        <li><a href="brand.html">Identity Films</a></li>
+                        <li><a href="podcast.html">Podcast Distribution</a></li>
+                        <li><a href="motion.html">Motion Graphics</a></li>
+                    </ul>
+                </li>
+
+                <li class="mobile-accordion">
+                    <button class="accordion-toggle">Portfolio ▾</button>
+                    <ul class="accordion-panel">
+                        <li><a href="portfolio.html">AI Video Synthesis</a></li>
+                        <li><a href="portfolio.html">Performance Ads</a></li>
+                        <li><a href="portfolio.html">Authentic UGC Systems</a></li>
+                        <li><a href="portfolio.html">Identity Films</a></li>
+                        <li><a href="portfolio.html">Podcast Distribution</a></li>
+                        <li><a href="portfolio.html">Motion Graphics</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="success-hero" style="margin-bottom: 80px;">
+        <div class="particles" id="particles"></div>
+
+        <div class="success-card">
+            <div class="success-icon-container">
+                <i class="fas fa-check"></i>
+            </div>
+            <h1 class="success-title">Submission Successful!</h1>
+            <p class="success-message">
+                Thank you for reaching out to Easein Studio. Your project parameters have been successfully initialized.
+                Our lead architects will review your request and get back to you within 24 hours with a strategic
+                roadmap.
+            </p>
+            <a href="index.html" class="back-home-btn">Return to Home</a>
+        </div>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <img src="logo.png" class="footer-logo" alt="Easein Studio Logo" />
+                <p class="footer-about">
+                    Easein Studio engineers high-performance visual assets that empower global brands to command their
+                    narrative.
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/easeinstudio_official?igsh=Y3I4dDVuZGFhdXdv" target="_blank"
+                        rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1C6FYE3xjG/" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="ai-videos.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Let’s Talk</h3>
+                <p class="footer-contact"><strong>Location:</strong> India</p>
+                <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
+                <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Easein Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Simple particle generation
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 20; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            const size = Math.random() * 5 + 2;
+            p.style.width = size + 'px';
+            p.style.height = size + 'px';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.top = Math.random() * 100 + '%';
+            p.style.animationDuration = (Math.random() * 10 + 5) + 's';
+            p.style.animationDelay = (Math.random() * 5) + 's';
+            particlesContainer.appendChild(p);
+        }
+    </script>
+</body>
+
+</html>
