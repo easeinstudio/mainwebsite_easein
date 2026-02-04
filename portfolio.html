@@ -802,7 +802,7 @@
 
           <p class="footer-contact"><strong>Location:</strong> India</p>
           <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
-          <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
+          <p class="footer-contact"><strong>Phone:</strong> +91 9211374411</p>
 
           <a href="#contact" class="footer-cta" onclick="openQuoteModal()">Request Strategic Quote</a>
         </div>
@@ -818,6 +818,24 @@
       </div>
 
     </footer>
+    <script>
+      window.addEventListener("load", () => {
+        const params = new URLSearchParams(window.location.search);
+        const targetId = params.get("scroll");
+    
+        if (targetId) {
+          const targetEl = document.getElementById(targetId);
+    
+          if (targetEl) {
+            targetEl.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+        }
+      });
+    </script>
+    
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         // Target only the new class 'portfolio-carousel1'

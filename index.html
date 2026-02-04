@@ -55,12 +55,13 @@
         <li class="dropdown">
           <a class="nav-link" href="#">Portfolio ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="portfolio.html">AI Video Synthesis</a></li>
-            <li><a href="portfolio.html">Performance Ads</a></li>
-            <li><a href="portfolio.html">Authentic UGC Systems</a></li>
-            <li><a href="portfolio.html">Identity Films</a></li>
-            <li><a href="portfolio.html">Podcast Distribution</a></li>
-            <li><a href="portfolio.html">Motion Graphics</a></li>
+            <li><a href="portfolio.html?scroll=ai-videos">AI Video Synthesis</a></li>
+            <li><a href="portfolio.html?scroll=ads">Performance Ads</a></li>
+            <li><a href="portfolio.html?scroll=ugc">Authentic UGC Systems</a></li>
+            <li><a href="portfolio.html?scroll=ai-videos">Identity Films</a></li>
+            <li><a href="portfolio.html?scroll=podcast">Podcast Distribution</a></li>
+            <li><a href="portfolio.html?scroll=motion-graphics">Motion Graphics</a></li>
+            
           </ul>
         </li>
 
@@ -102,14 +103,50 @@
         <li class="mobile-accordion">
           <button class="accordion-toggle">Portfolio ▾</button>
           <ul class="accordion-panel">
-            <li><a href="portfolio.html">AI Video Synthesis</a></li>
-            <li><a href="portfolio.html">Performance Ads</a></li>
-            <li><a href="portfolio.html">Authentic UGC Systems</a></li>
-            <li><a href="portfolio.html">Identity Films</a></li>
-            <li><a href="portfolio.html">Podcast Distribution</a></li>
-            <li><a href="portfolio.html">Motion Graphics</a></li>
+            <li>
+              <a href="portfolio.html?scroll=ai-videos"
+                 onclick="document.getElementById('mobileMenu').classList.remove('active')">
+                AI Video Synthesis
+              </a>
+            </li>
+        
+            <li>
+              <a href="portfolio.html?scroll=ads"
+                 onclick="document.getElementById('mobileMenu').classList.remove('active')">
+                Performance Ads
+              </a>
+            </li>
+        
+            <li>
+              <a href="portfolio.html?scroll=ugc"
+                 onclick="document.getElementById('mobileMenu').classList.remove('active')">
+                Authentic UGC Systems
+              </a>
+            </li>
+        
+            <li>
+              <a href="portfolio.html?scroll=identity-films"
+                 onclick="document.getElementById('mobileMenu').classList.remove('active')">
+                Identity Films
+              </a>
+            </li>
+        
+            <li>
+              <a href="portfolio.html?scroll=podcast"
+                 onclick="document.getElementById('mobileMenu').classList.remove('active')">
+                Podcast Distribution
+              </a>
+            </li>
+        
+            <li>
+              <a href="portfolio.html?scroll=motion-graphics"
+                 onclick="document.getElementById('mobileMenu').classList.remove('active')">
+                Motion Graphics
+              </a>
+            </li>
           </ul>
         </li>
+        
 
         <li><a href="contact.html" class="mobile-link">Contact Us</a></li>
       </ul>
@@ -227,13 +264,44 @@
       <!-- RIGHT VIDEO -->
       <div class="brand-reel-right">
         <div class="brand-reel-screen">
-          <video autoplay muted loop playsinline class="brand-reel-video">
+          <video autoplay loop muted playsinline class="brand-reel-video">
             <source
               src="https://res.cloudinary.com/dgqrub1kl/video/upload/v1770033169/EaseinStudio_Brand_video_q4ihqj.mp4">
           </video>
         </div>
       </div>
     </div>
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const video = document.querySelector(".brand-reel-video");
+        if (!video) return;
+    
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                // Section visible → play with sound
+                video.muted = false;
+                video.play().catch(() => {
+                  // autoplay restriction fallback
+                  video.muted = true;
+                  video.play();
+                });
+              } else {
+                // Section out of view → stop & mute
+                video.pause();
+                video.muted = true;
+              }
+            });
+          },
+          {
+            threshold: 0.6 // 60% visible hona zaroori
+          }
+        );
+    
+        observer.observe(video);
+      });
+    </script> -->
   </section>
 
   <!-- ========================= WHY CHOOSE - HOLOGRAM PANELS ========================= -->
@@ -457,8 +525,8 @@
           </button>
 
           <button class="work-item" style="--position: 4"
-            data-video="https://res.cloudinary.com/dv7l89t0t/video/upload/v1770033730/Income_tax_ugrzbq.mp4">
-            <img src="./image/india.png" alt="Brand Video">
+            data-video="https://res.cloudinary.com/dbf0f85bw/video/upload/v1770048985/introz_uyaut2.mp4">
+            <img src="./image/podcast/Screenshot 2026-02-02 214803.png" alt="Brand Video">
             <span class="work-play">▶</span>
           </button>
 
@@ -481,8 +549,8 @@
           </button>
 
           <button class="work-item" style="--position: 8"
-            data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1770034063/Thumbs_up_fpjxo3.mp4">
-            <img src="./image/thumsup-logo.jpeg" alt="Motion Graphics">
+            data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1770034067/KFC_lkxu93.mp4">
+            <img src="./image/kfc-logo.png" alt="Motion Graphics">
             <span class="work-play">▶</span>
           </button>
 
@@ -712,7 +780,7 @@
 
           <p class="footer-contact"><strong>Location:</strong> India</p>
           <p class="footer-contact"><strong>Email:</strong> info@easeinstudio.com</p>
-          <p class="footer-contact"><strong>Phone:</strong> +91 9876543210</p>
+          <p class="footer-contact"><strong>Phone:</strong> +91 9211374411</p>
 
           <a href="#contact" class="footer-cta" onclick="openQuoteModal()">Request Strategic Quote</a>
         </div>
