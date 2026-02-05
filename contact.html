@@ -288,6 +288,37 @@
             </div>
           </div>
         </div>
+          <!-----<script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const video = document.querySelector(".reel-card video");
+        if (!video) return;
+    
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                // Section visible → play with sound
+                video.muted = false;
+                video.play().catch(() => {
+                  // autoplay restriction fallback
+                  video.muted = true;
+                  video.play();
+                });
+              } else {
+                // Section out of view → stop & mute
+                video.pause();
+                video.muted = true;
+              }
+            });
+          },
+          {
+            threshold: 0.6 // 60% visible hona zaroori
+          }
+        );
+    
+        observer.observe(video);
+      });
+    </script> ---->
 
       </aside>
     </div>
@@ -369,9 +400,9 @@
 
   <script src="app.js"></script>
   <script src="contact.js"></script>
-  <script src="typing.js"></script>
-  <script src="nav-contact-fix.js"></script>
 
+  <!-----------<script src="typing.js"></script>
+  <script src="nav-contact-fix.js"></script> ------------>
 </body>
 
 </html>
