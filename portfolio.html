@@ -29,7 +29,8 @@
 
     /* This ensures the section title is not hidden behind the fixed navbar when scrolling */
     section[id] {
-      scroll-margin-top: 100px; /* Adjust this value based on your navbar height */
+      scroll-margin-top: 100px;
+      /* Adjust this value based on your navbar height */
     }
   </style>
 </head>
@@ -71,7 +72,7 @@
             <li><a href="#ai-videos">AI Video Synthesis</a></li>
             <li><a href="#ads">Performance Ads</a></li>
             <li><a href="#ugc">Authentic UGC Systems</a></li>
-            <li><a href="#ai-videos">Identity Films</a></li> 
+            <li><a href="#ai-videos">Identity Films</a></li>
             <li><a href="#podcast">Podcast Distribution</a></li>
             <li><a href="#motion-graphics">Motion Graphics</a></li>
           </ul>
@@ -114,12 +115,18 @@
         <li class="mobile-accordion">
           <button class="accordion-toggle">Portfolio ▾</button>
           <ul class="accordion-panel">
-            <li><a href="#ai-videos" onclick="document.getElementById('mobileMenu').classList.remove('active')">AI Video Synthesis</a></li>
-            <li><a href="#ads" onclick="document.getElementById('mobileMenu').classList.remove('active')">Performance Ads</a></li>
-            <li><a href="#ugc" onclick="document.getElementById('mobileMenu').classList.remove('active')">Authentic UGC Systems</a></li>
-            <li><a href="#ai-videos" onclick="document.getElementById('mobileMenu').classList.remove('active')">Identity Films</a></li>
-            <li><a href="#podcast" onclick="document.getElementById('mobileMenu').classList.remove('active')">Podcast Distribution</a></li>
-            <li><a href="#motion-graphics" onclick="document.getElementById('mobileMenu').classList.remove('active')">Motion Graphics</a></li>
+            <li><a href="#ai-videos" onclick="document.getElementById('mobileMenu').classList.remove('active')">AI Video
+                Synthesis</a></li>
+            <li><a href="#ads" onclick="document.getElementById('mobileMenu').classList.remove('active')">Performance
+                Ads</a></li>
+            <li><a href="#ugc" onclick="document.getElementById('mobileMenu').classList.remove('active')">Authentic UGC
+                Systems</a></li>
+            <li><a href="#ai-videos" onclick="document.getElementById('mobileMenu').classList.remove('active')">Identity
+                Films</a></li>
+            <li><a href="#podcast" onclick="document.getElementById('mobileMenu').classList.remove('active')">Podcast
+                Distribution</a></li>
+            <li><a href="#motion-graphics"
+                onclick="document.getElementById('mobileMenu').classList.remove('active')">Motion Graphics</a></li>
           </ul>
         </li>
 
@@ -243,37 +250,37 @@
           </div>
         </div>
       </div>
-        <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const video = document.querySelector(".reel-video");
-        if (!video) return;
-    
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                // Section visible → play with sound
-                video.muted = false;
-                video.play().catch(() => {
-                  // autoplay restriction fallback
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const video = document.querySelector(".reel-video");
+          if (!video) return;
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  // Section visible → play with sound
+                  video.muted = false;
+                  video.play().catch(() => {
+                    // autoplay restriction fallback
+                    video.muted = true;
+                    video.play();
+                  });
+                } else {
+                  // Section out of view → stop & mute
+                  video.pause();
                   video.muted = true;
-                  video.play();
-                });
-              } else {
-                // Section out of view → stop & mute
-                video.pause();
-                video.muted = true;
-              }
-            });
-          },
-          {
-            threshold: 0.6 // 60% visible hona zaroori
-          }
-        );
-    
-        observer.observe(video);
-      });
-    </script>
+                }
+              });
+            },
+            {
+              threshold: 0.6 // 60% visible hona zaroori
+            }
+          );
+
+          observer.observe(video);
+        });
+      </script>
     </section>
     <!-- Ghost Parallax Text -->
     <div class="ghost-text">EASEIN STUDIO</div>
@@ -296,8 +303,9 @@
 
           <article class="video-card">
             <div class="thumb-wrapper" style="cursor: pointer;"
-              data-video="https://res.cloudinary.com/dnsv6pdqf/video/upload/v1770033307/Ambhuwachi_Mela_2025_pqkziw.mp4">
-              <video src="https://res.cloudinary.com/dnsv6pdqf/video/upload/v1770033307/Ambhuwachi_Mela_2025_pqkziw.mp4"
+              data-video="https://res.cloudinary.com/dnsv6pdqf/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770033307/Ambhuwachi_Mela_2025_pqkziw.mp4">
+              <video
+                src="https://res.cloudinary.com/dnsv6pdqf/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770033307/Ambhuwachi_Mela_2025_pqkziw.mp4"
                 muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" aria-label="Play video" type="button">
@@ -315,9 +323,10 @@
 
           <article class="video-card">
             <div class="thumb-wrapper" style="cursor: pointer;"
-              data-video="https://res.cloudinary.com/dnsv6pdqf/video/upload/v1770033316/Jab_Tu_Sajan_ijwqvt.mp4">
-              <video src="https://res.cloudinary.com/dnsv6pdqf/video/upload/v1770033316/Jab_Tu_Sajan_ijwqvt.mp4" muted
-                loop playsinline preload="metadata"></video>
+              data-video="https://res.cloudinary.com/dnsv6pdqf/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770033316/Jab_Tu_Sajan_ijwqvt.mp4">
+              <video
+                src="https://res.cloudinary.com/dnsv6pdqf/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770033316/Jab_Tu_Sajan_ijwqvt.mp4"
+                muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" aria-label="Play video" type="button">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -334,8 +343,9 @@
 
           <article class="video-card">
             <div class="thumb-wrapper" style="cursor: pointer;"
-              data-video="https://res.cloudinary.com/dnsv6pdqf/video/upload/v1770033299/Jaganath_Yatra_2025_nzf11r.mp4">
-              <video src="https://res.cloudinary.com/dnsv6pdqf/video/upload/v1770033299/Jaganath_Yatra_2025_nzf11r.mp4"
+              data-video="https://res.cloudinary.com/dnsv6pdqf/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770033299/Jaganath_Yatra_2025_nzf11r.mp4">
+              <video
+                src="https://res.cloudinary.com/dnsv6pdqf/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770033299/Jaganath_Yatra_2025_nzf11r.mp4"
                 muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" aria-label="Play video" type="button">
@@ -386,9 +396,9 @@
 
           <article class="video-card">
             <div class="thumb-wrapper" style="cursor: pointer;"
-              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1770034060/Budweiser_magnum_beer_ya1yxb.mp4">
+              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770034060/Budweiser_magnum_beer_ya1yxb.mp4">
               <video
-                src="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1770034060/Budweiser_magnum_beer_ya1yxb.mp4"
+                src="https://res.cloudinary.com/dq3n3gdbt/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770034060/Budweiser_magnum_beer_ya1yxb.mp4"
                 muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" aria-label="Play video" type="button">
@@ -406,9 +416,10 @@
 
           <article class="video-card">
             <div class="thumb-wrapper" style="cursor: pointer;"
-              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1770034067/Redbull_fwgn4y.mp4">
-              <video src="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1770034067/Redbull_fwgn4y.mp4" muted loop
-                playsinline preload="metadata"></video>
+              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770034067/Redbull_fwgn4y.mp4">
+              <video
+                src="https://res.cloudinary.com/dq3n3gdbt/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770034067/Redbull_fwgn4y.mp4"
+                muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -425,8 +436,9 @@
 
           <article class="video-card">
             <div class="thumb-wrapper" style="cursor: pointer;"
-              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1770034071/Cadbury_dairy_milk_ik1r7u.mp4">
-              <video src="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1770034071/Cadbury_dairy_milk_ik1r7u.mp4"
+              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770034071/Cadbury_dairy_milk_ik1r7u.mp4">
+              <video
+                src="https://res.cloudinary.com/dq3n3gdbt/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770034071/Cadbury_dairy_milk_ik1r7u.mp4"
                 muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" aria-label="Play video" type="button">
@@ -444,9 +456,10 @@
 
           <article class="video-card">
             <div class="thumb-wrapper" style="cursor: pointer;"
-              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1770034072/Maggi_hjo1hv.mp4">
-              <video src="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1770034072/Maggi_hjo1hv.mp4" muted loop
-                playsinline preload="metadata"></video>
+              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770034072/Maggi_hjo1hv.mp4">
+              <video
+                src="https://res.cloudinary.com/dq3n3gdbt/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770034072/Maggi_hjo1hv.mp4"
+                muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" aria-label="Play video" type="button">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -463,9 +476,10 @@
 
           <article class="video-card">
             <div class="thumb-wrapper" style="cursor: pointer;"
-              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1770034067/KFC_lkxu93.mp4">
-              <video src="https://res.cloudinary.com/dq3n3gdbt/video/upload/v1770034067/KFC_lkxu93.mp4" muted loop
-                playsinline preload="metadata"></video>
+              data-video="https://res.cloudinary.com/dq3n3gdbt/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770034067/KFC_lkxu93.mp4">
+              <video
+                src="https://res.cloudinary.com/dq3n3gdbt/video/upload/f_mp4,vc_h264,ac_aac,fl_progressive/v1770034067/KFC_lkxu93.mp4"
+                muted loop playsinline preload="metadata"></video>
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -506,7 +520,18 @@
 
           <article class="video-card">
             <div class="thumb-wrapper" style="cursor: pointer;" data-video="">
-              <video src="" muted loop playsinline preload="metadata"></video>
+              <!-- <video src="" muted loop playsinline preload="metadata"></video> -->
+              <!-- ADD THIS IMAGE -->
+              <img src="./image/coming soon.png" alt="Coming Soon" style="
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    z-index: 2;
+    pointer-events: none;
+  " />
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -523,7 +548,17 @@
 
           <article class="video-card">
             <div class="thumb-wrapper" style="cursor: pointer;" data-video="">
-              <video src="" muted loop playsinline preload="metadata"></video>
+              <!-- <video src="" muted loop playsinline preload="metadata"></video> -->
+              <img src="./image/coming soon.png" alt="Coming Soon" style="
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    z-index: 2;
+    pointer-events: none;
+  " />
               <div class="thumb-overlay">
                 <button class="play-btn" type="button" aria-label="Play video">
                   <span class="material-symbols-rounded">play_arrow</span>
@@ -556,8 +591,8 @@
       </div>
 
       <div class="portfolio-carousel1" data-carousel="podcast" style="position: relative;">
-        
-        <button class="carousel-btn prev" aria-label="Previous" 
+
+        <button class="carousel-btn prev" aria-label="Previous"
           style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10;">
           <span class="material-symbols-rounded">chevron_left</span>
         </button>
@@ -668,7 +703,7 @@
         </div>
 
         <button class="carousel-btn next" aria-label="Next"
-           style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10;">
+          style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10;">
           <span class="material-symbols-rounded">chevron_right</span>
         </button>
 
@@ -782,7 +817,7 @@
         </div>
 
         <button class="carousel-btn next" aria-label="Next"
-           style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10;">
+          style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10;">
           <span class="material-symbols-rounded">chevron_right</span>
         </button>
 
@@ -809,9 +844,11 @@
               rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/share/1C6FYE3xjG/" target="_blank" rel="noopener noreferrer"
               aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-              <a href="https://www.youtube.com/@easeinstudioofficial" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href=" https://www.linkedin.com/company/easeinstudio" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@easeinstudioofficial" target="_blank" rel="noopener noreferrer"
+              aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href=" https://www.linkedin.com/company/easeinstudio" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/easeinstudio" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
           </div>
         </div>
 
@@ -853,10 +890,10 @@
       window.addEventListener("load", () => {
         const params = new URLSearchParams(window.location.search);
         const targetId = params.get("scroll");
-    
+
         if (targetId) {
           const targetEl = document.getElementById(targetId);
-    
+
           if (targetEl) {
             targetEl.scrollIntoView({
               behavior: "smooth",
@@ -866,17 +903,17 @@
         }
       });
     </script>
-    
+
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         // Target only the new class 'portfolio-carousel1'
         const carousels = document.querySelectorAll('.portfolio-carousel1');
-    
+
         carousels.forEach(carousel => {
           const track = carousel.querySelector('.carousel-track');
           const nextBtn = carousel.querySelector('.carousel-btn.next');
           const prevBtn = carousel.querySelector('.carousel-btn.prev');
-    
+
           if (track) {
             // Next Button Click
             if (nextBtn) {
@@ -885,7 +922,7 @@
                 track.scrollBy({ left: 340, behavior: 'smooth' });
               });
             }
-    
+
             // Previous Button Click
             if (prevBtn) {
               prevBtn.addEventListener('click', () => {
@@ -901,17 +938,17 @@
     <script src="portfolio.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        
+
         // ---------------------------------------------------------
         // 1. CAROUSEL LOGIC (Your existing code)
         // ---------------------------------------------------------
         const carousels = document.querySelectorAll('.portfolio-carousel1, .portfolio-carousel'); // Added support for both classes
-  
+
         carousels.forEach(carousel => {
           const track = carousel.querySelector('.carousel-track');
           const nextBtn = carousel.querySelector('.carousel-btn.next');
           const prevBtn = carousel.querySelector('.carousel-btn.prev');
-  
+
           if (track) {
             if (nextBtn) {
               nextBtn.addEventListener('click', () => {
@@ -925,25 +962,25 @@
             }
           }
         });
-  
+
         // ---------------------------------------------------------
         // 2. MOBILE MENU FIX (New Code)
         // ---------------------------------------------------------
         const mobileLinks = document.querySelectorAll('#mobileMenu a'); // Select all links in mobile menu
         const closeBtn = document.getElementById('mobileClose'); // Select the close button
-  
+
         mobileLinks.forEach(link => {
           link.addEventListener('click', () => {
             // If the close button exists, "click" it programmatically
             if (closeBtn) {
-              closeBtn.click(); 
+              closeBtn.click();
             } else {
               // Fallback if close button isn't found
               document.getElementById('mobileMenu').classList.remove('active');
             }
           });
         });
-  
+
       });
     </script>
 </body>
