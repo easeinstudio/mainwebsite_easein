@@ -354,61 +354,61 @@ cards1.forEach((card) => {
 
 //   autoScroll();
 // });
-document.querySelectorAll(".portfolio-carousel1").forEach(carousel => {
-  const track = carousel.querySelector(".carousel-track");
-  if (!track) return;
+// document.querySelectorAll(".portfolio-carousel1").forEach(carousel => {
+//   const track = carousel.querySelector(".carousel-track");
+//   if (!track) return;
 
-  let isPaused = false;
-  let isRunning = false;
-  let rafId = null;
-  const SPEED = 1.2; // lighter & smoother
+//   let isPaused = false;
+//   let isRunning = false;
+//   let rafId = null;
+//   const SPEED = 1.2; // lighter & smoother
 
-  if (!track.dataset.cloned) {
-    track.innerHTML += track.innerHTML;
-    track.dataset.cloned = "true";
-  }
+//   if (!track.dataset.cloned) {
+//     track.innerHTML += track.innerHTML;
+//     track.dataset.cloned = "true";
+//   }
 
-  track.scrollLeft = track.scrollWidth / 4;
+//   track.scrollLeft = track.scrollWidth / 4;
 
-  function autoScroll() {
-    if (!isRunning) return;
+//   function autoScroll() {
+//     if (!isRunning) return;
 
-    if (!isPaused) {
-      track.scrollLeft += SPEED;
+//     if (!isPaused) {
+//       track.scrollLeft += SPEED;
 
-      if (track.scrollLeft >= track.scrollWidth / 2) {
-        track.scrollLeft = 0;
-      }
-    }
+//       if (track.scrollLeft >= track.scrollWidth / 2) {
+//         track.scrollLeft = 0;
+//       }
+//     }
 
-    rafId = requestAnimationFrame(autoScroll);
-  }
+//     rafId = requestAnimationFrame(autoScroll);
+//   }
 
-  function start() {
-    if (!isRunning) {
-      isRunning = true;
-      autoScroll();
-    }
-  }
+//   function start() {
+//     if (!isRunning) {
+//       isRunning = true;
+//       autoScroll();
+//     }
+//   }
 
-  function stop() {
-    isRunning = false;
-    if (rafId) cancelAnimationFrame(rafId);
-  }
+//   function stop() {
+//     isRunning = false;
+//     if (rafId) cancelAnimationFrame(rafId);
+//   }
 
-  carousel.addEventListener("mouseenter", () => isPaused = true);
-  carousel.addEventListener("mouseleave", () => isPaused = false);
+//   carousel.addEventListener("mouseenter", () => isPaused = true);
+//   carousel.addEventListener("mouseleave", () => isPaused = false);
 
-  // 🔥 Run only when visible
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) start();
-      else stop();
-    });
-  }, { threshold: 0.2 });
+//   // 🔥 Run only when visible
+//   const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) start();
+//       else stop();
+//     });
+//   }, { threshold: 0.2 });
 
-  observer.observe(carousel);
-});
+//   observer.observe(carousel);
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('aiVideoModal');
