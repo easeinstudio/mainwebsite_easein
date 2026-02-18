@@ -193,6 +193,12 @@ section {
   flex-direction: column;
   gap: 40px;
 }
+.about-hero {
+    background:
+    radial-gradient(circle at 0% 0%, rgba(0, 255, 255, 0.18), transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(0, 120, 180, 0.18), transparent 65%);
+}
+
 
 .about-tag {
   color: var(--accent-1);

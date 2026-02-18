@@ -196,6 +196,14 @@ body {
 .section-header {
   max-width: 1300px;
   margin: 0 auto 30px;
+  padding: 0 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.section-header-mp {
+  max-width: 1300px;
+  margin: 0 auto 30px;
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
@@ -210,6 +218,10 @@ body {
 }
 
 .section-header h2 {
+  font-size: 32px;
+  margin: 5px 0 0;
+}
+.section-header-mp h2 {
   font-size: 32px;
   margin: 5px 0 0;
 }
